@@ -26,18 +26,17 @@ function cli_load_assets() {
      y completar las URLs de redes (LinkedIn es prioridad del brief). */
   wp_localize_script('ourmainjs', 'cliConfig', array(
     'homeUrl'      => esc_url(home_url('/')),
-    'logoUrl'      => '', // p. ej. content_url('/uploads/2026/08/cli-logo.png')
-    'logoWhiteUrl' => '', // versión blanca para el footer
+    'logoUrl'      => esc_url(home_url('/wp-content/uploads/2026/08/CLI_Primary_Logo.webp')),
     'agencyUrl'    => 'https://828marketingsolutions.com',
     'phone'     => '(505) 518-1965',
     'phoneRaw'  => '+15055181965',
     'email'     => 'office@cliconstructions.com',
     'geoLabel'  => 'Albuquerque, NM',
     'mapsUrl'   => 'https://www.google.com/maps/search/?api=1&query=CLI+Construction+Albuquerque+NM',
-    'facebook'  => '#',
-    'instagram' => '#',
-    'yelp'      => '#',
-    'linkedin'  => '#',
+    'facebook'  => 'https://www.facebook.com/cliconstruction',
+    'instagram' => 'https://www.instagram.com/cliconstruction',
+    'yelp'      => 'https://www.yelp.com/biz/c-l-i-construction-albuquerque-2',
+    'linkedin'  => '#', // prioridad del brief — pendiente de crear
   ));
 }
 

@@ -10,14 +10,16 @@ const MAPS_URL =
   cfg.mapsUrl ||
   "https://www.google.com/maps/search/?api=1&query=CLI+Construction+Albuquerque+NM"
 const HOME = cfg.homeUrl || "/"
-const LOGO_WHITE = cfg.logoWhiteUrl || ""
+const LOGO = cfg.logoUrl || ""
 
+/* Rutas reales del sitio en vivo */
 const LINKS = [
-  { label: "Services", href: "/services" },
-  { label: "Commercial", href: "/commercial" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Services", href: "/services/" },
+  { label: "Commercial", href: "/commercial/" },
+  { label: "Gallery", href: "/gallery/" },
+  { label: "About Us", href: "/about-us/" },
+  { label: "Contact", href: "/contact-us/" },
+  { label: "Get an Estimate", href: "/contact/" },
 ]
 
 const AREAS = "Albuquerque · Rio Rancho · Los Lunas · Santa Fe · Santa Rosa"
@@ -36,12 +38,12 @@ function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-ink text-steel">
+    <footer className="bg-ink text-silver">
       {/* ============ STATEMENT ============ */}
       <div className="max-w-7xl mx-auto px-4 pt-20 pb-14">
         <p className="font-display font-extrabold text-paper leading-[1.02] tracking-tight text-[clamp(2rem,5.5vw,3.75rem)] max-w-[18ch]">
           Efficiency. Precision.{" "}
-          <span className="text-gold">Commercial Results.</span>
+          <span className="text-brand">Commercial Results.</span>
         </p>
 
         {/* Nav esencial en una sola línea */}
@@ -58,18 +60,18 @@ function Footer() {
       </div>
 
       {/* ============ BANDA DE DATOS — spec-sheet ============ */}
-      <div className="border-t border-gold/25">
+      <div className="border-t border-silver/25">
         <div className="max-w-7xl mx-auto px-4 py-8 grid gap-6 md:grid-cols-3">
           <div>
-            <p className="cli-spec text-gold">Contact</p>
+            <p className="cli-spec text-silver-2">Contact</p>
             <p className="mt-2.5 text-sm leading-relaxed">
-              <a href={PHONE_HREF} className="hover:text-gold transition-colors">
+              <a href={PHONE_HREF} className="hover:text-silver-2 transition-colors">
                 {PHONE}
               </a>
               <br />
               <a
                 href={"mailto:" + EMAIL}
-                className="hover:text-gold transition-colors"
+                className="hover:text-silver-2 transition-colors"
               >
                 {EMAIL}
               </a>
@@ -78,7 +80,7 @@ function Footer() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gold transition-colors"
+                className="hover:text-silver-2 transition-colors"
               >
                 {GEO_LABEL}
               </a>
@@ -86,7 +88,7 @@ function Footer() {
           </div>
 
           <div>
-            <p className="cli-spec text-gold">Hours</p>
+            <p className="cli-spec text-silver-2">Hours</p>
             <p className="mt-2.5 text-sm leading-relaxed">
               Mon – Fri · 9:00 AM – 5:00 PM
               <br />
@@ -97,29 +99,29 @@ function Footer() {
           </div>
 
           <div>
-            <p className="cli-spec text-gold">Service Area</p>
+            <p className="cli-spec text-silver-2">Service Area</p>
             <p className="mt-2.5 text-sm leading-relaxed">{AREAS}</p>
-            <p className="cli-spec mt-4 text-steel/80">
+            <p className="cli-spec mt-4 text-silver/80">
               BBB Certified · AANM Member · Licensed &amp; Insured
             </p>
           </div>
         </div>
       </div>
 
-      {/* ============ CIERRE ============ */}
-      <div className="border-t border-gold/25">
+      {/* ============ CIERRE — cinta blanca con logo ============ */}
+      <div className="cli-on-light cli-pattern text-ink border-t border-silver/25">
         <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <a href={HOME} className="flex items-center shrink-0">
-            {LOGO_WHITE ? (
+            {LOGO ? (
               <img
-                src={LOGO_WHITE}
+                src={LOGO}
                 alt="CLI Construction"
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             ) : (
-              <span className="font-display font-extrabold text-paper leading-none">
+              <span className="font-display font-extrabold text-ink leading-none">
                 CLI{" "}
-                <span className="cli-spec text-gold font-medium">
+                <span className="cli-spec text-brand-2 font-medium">
                   Construction
                 </span>
               </span>
@@ -134,20 +136,20 @@ function Footer() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cli-spec hover:text-gold transition-colors"
+                className="cli-spec text-ink/60 hover:text-brand-2 transition-colors"
               >
                 {s.label}
               </a>
             ))}
           </div>
 
-          <p className="cli-spec text-steel/70">
+          <p className="cli-spec text-ink/55">
             © {year} CLI Construction ·{" "}
             <a
               href={cfg.agencyUrl || "https://828marketingsolutions.com"}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gold transition-colors"
+              className="hover:text-brand-2 transition-colors"
             >
               Site by 828 Marketing Solutions
             </a>

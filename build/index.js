@@ -25,22 +25,27 @@ const EMAIL = cfg.email || "office@cliconstructions.com";
 const GEO_LABEL = cfg.geoLabel || "Albuquerque, NM";
 const MAPS_URL = cfg.mapsUrl || "https://www.google.com/maps/search/?api=1&query=CLI+Construction+Albuquerque+NM";
 const HOME = cfg.homeUrl || "/";
-const LOGO_WHITE = cfg.logoWhiteUrl || "";
+const LOGO = cfg.logoUrl || "";
+
+/* Rutas reales del sitio en vivo */
 const LINKS = [{
   label: "Services",
-  href: "/services"
+  href: "/services/"
 }, {
   label: "Commercial",
-  href: "/commercial"
+  href: "/commercial/"
 }, {
-  label: "Portfolio",
-  href: "/portfolio"
+  label: "Gallery",
+  href: "/gallery/"
 }, {
-  label: "About",
-  href: "/about"
+  label: "About Us",
+  href: "/about-us/"
 }, {
   label: "Contact",
-  href: "/contact"
+  href: "/contact-us/"
+}, {
+  label: "Get an Estimate",
+  href: "/contact/"
 }];
 const AREAS = "Albuquerque · Rio Rancho · Los Lunas · Santa Fe · Santa Rosa";
 const SOCIALS = [{
@@ -63,13 +68,13 @@ const SOCIALS = [{
 function Footer() {
   const year = new Date().getFullYear();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("footer", {
-    className: "bg-ink text-steel",
+    className: "bg-ink text-silver",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "max-w-7xl mx-auto px-4 pt-20 pb-14",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
         className: "font-display font-extrabold text-paper leading-[1.02] tracking-tight text-[clamp(2rem,5.5vw,3.75rem)] max-w-[18ch]",
         children: ["Efficiency. Precision.", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-          className: "text-gold",
+          className: "text-brand",
           children: "Commercial Results."
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
@@ -82,34 +87,34 @@ function Footer() {
         }, item.label))
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "border-t border-gold/25",
+      className: "border-t border-silver/25",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "max-w-7xl mx-auto px-4 py-8 grid gap-6 md:grid-cols-3",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "cli-spec text-gold",
+            className: "cli-spec text-silver-2",
             children: "Contact"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
             className: "mt-2.5 text-sm leading-relaxed",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
               href: PHONE_HREF,
-              className: "hover:text-gold transition-colors",
+              className: "hover:text-silver-2 transition-colors",
               children: PHONE
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
               href: "mailto:" + EMAIL,
-              className: "hover:text-gold transition-colors",
+              className: "hover:text-silver-2 transition-colors",
               children: EMAIL
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
               href: MAPS_URL,
               target: "_blank",
               rel: "noopener noreferrer",
-              className: "hover:text-gold transition-colors",
+              className: "hover:text-silver-2 transition-colors",
               children: GEO_LABEL
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "cli-spec text-gold",
+            className: "cli-spec text-silver-2",
             children: "Hours"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
             className: "mt-2.5 text-sm leading-relaxed",
@@ -117,32 +122,32 @@ function Footer() {
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "cli-spec text-gold",
+            className: "cli-spec text-silver-2",
             children: "Service Area"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
             className: "mt-2.5 text-sm leading-relaxed",
             children: AREAS
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "cli-spec mt-4 text-steel/80",
+            className: "cli-spec mt-4 text-silver/80",
             children: "BBB Certified \xB7 AANM Member \xB7 Licensed & Insured"
           })]
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "border-t border-gold/25",
+      className: "cli-on-light cli-pattern text-ink border-t border-silver/25",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
           href: HOME,
           className: "flex items-center shrink-0",
-          children: LOGO_WHITE ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-            src: LOGO_WHITE,
+          children: LOGO ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            src: LOGO,
             alt: "CLI Construction",
-            className: "h-8 w-auto"
+            className: "h-10 w-auto"
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-            className: "font-display font-extrabold text-paper leading-none",
+            className: "font-display font-extrabold text-ink leading-none",
             children: ["CLI", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "cli-spec text-gold font-medium",
+              className: "cli-spec text-brand-2 font-medium",
               children: "Construction"
             })]
           })
@@ -152,16 +157,16 @@ function Footer() {
             href: s.href,
             target: "_blank",
             rel: "noopener noreferrer",
-            className: "cli-spec hover:text-gold transition-colors",
+            className: "cli-spec text-ink/60 hover:text-brand-2 transition-colors",
             children: s.label
           }, s.label))
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-          className: "cli-spec text-steel/70",
+          className: "cli-spec text-ink/55",
           children: ["\xA9 ", year, " CLI Construction \xB7", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
             href: cfg.agencyUrl || "https://828marketingsolutions.com",
             target: "_blank",
             rel: "noopener noreferrer",
-            className: "hover:text-gold transition-colors",
+            className: "hover:text-brand-2 transition-colors",
             children: "Site by 828 Marketing Solutions"
           })]
         })]
@@ -220,28 +225,27 @@ const SOCIALS = [{
   full: "LinkedIn",
   href: cfg.linkedin || "#"
 }];
+
+/* Rutas reales del sitio en vivo (cliconstructions.com) */
 const NAV_ITEMS = [{
   label: "Home",
   href: HOME
 }, {
+  label: "About Us",
+  href: "/about-us/"
+}, {
   label: "Services",
-  href: "/services"
+  href: "/services/"
 }, {
   label: "Commercial",
-  href: "/commercial"
+  href: "/commercial/"
 }, {
-  label: "Portfolio",
-  href: "/portfolio"
-}, {
-  label: "About",
-  href: "/about"
-}, {
-  label: "Contact",
-  href: "/contact"
+  label: "Gallery",
+  href: "/gallery/"
 }];
 const CTA = {
   label: "Get an Estimate",
-  href: "/contact"
+  href: "/contact/"
 };
 function Navbar() {
   const headerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
@@ -296,25 +300,25 @@ function Navbar() {
     className: "cli-header" + (condensed && !open ? " is-condensed" : "") + (stuck ? " is-stuck" : ""),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       ref: topbarRef,
-      className: "bg-ink text-steel",
+      className: "bg-ink text-silver",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "cli-topbar-sep max-w-7xl mx-auto px-4 flex items-center justify-between gap-5 py-2.5",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "flex items-center gap-5 min-w-0",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
             href: PHONE_HREF,
-            className: "cli-spec flex items-center gap-2 hover:text-gold transition-colors",
+            className: "cli-spec flex items-center gap-2 hover:text-silver-2 transition-colors",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.PhoneIcon, {
-              className: "w-3.5 h-3.5 text-gold"
+              className: "w-3.5 h-3.5 text-brand"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
               className: "whitespace-nowrap",
               children: PHONE
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
             href: "mailto:" + EMAIL,
-            className: "cli-spec hidden sm:flex items-center gap-2 hover:text-gold transition-colors min-w-0",
+            className: "cli-spec hidden sm:flex items-center gap-2 hover:text-silver-2 transition-colors min-w-0",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.MailIcon, {
-              className: "w-3.5 h-3.5 text-gold"
+              className: "w-3.5 h-3.5 text-brand"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
               className: "truncate normal-case tracking-normal font-body text-xs",
               children: EMAIL
@@ -324,9 +328,9 @@ function Navbar() {
           href: MAPS_URL,
           target: "_blank",
           rel: "noopener noreferrer",
-          className: "cli-spec hidden md:flex items-center gap-2 hover:text-gold transition-colors",
+          className: "cli-spec hidden md:flex items-center gap-2 hover:text-silver-2 transition-colors",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_1__.MapPinIcon, {
-            className: "w-3.5 h-3.5 text-gold"
+            className: "w-3.5 h-3.5 text-brand"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
             children: GEO_LABEL
           })]
@@ -337,13 +341,13 @@ function Navbar() {
             target: "_blank",
             rel: "noopener noreferrer",
             "aria-label": s.full,
-            className: "cli-spec hover:text-gold transition-colors",
+            className: "cli-spec hover:text-silver-2 transition-colors",
             children: s.label
           }, s.label))
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "cli-bar bg-ink-2",
+      className: "cli-bar cli-on-light cli-gradient-flip text-ink",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "max-w-7xl mx-auto px-4 flex items-center justify-between gap-6 h-20",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
@@ -354,9 +358,9 @@ function Navbar() {
             alt: "CLI Construction",
             className: "h-12 w-auto"
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-            className: "font-display font-extrabold text-2xl tracking-tight text-paper leading-none",
+            className: "font-display font-extrabold text-2xl tracking-tight text-ink leading-none",
             children: ["CLI", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "block text-[0.55rem] font-mono font-medium tracking-[0.3em] text-gold mt-1",
+              className: "block text-[0.55rem] font-mono font-medium tracking-[0.3em] text-silver mt-1",
               children: "CONSTRUCTION"
             })]
           })
@@ -378,7 +382,7 @@ function Navbar() {
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
             type: "button",
-            className: "lg:hidden text-paper p-1",
+            className: "lg:hidden text-ink p-1",
             "aria-label": open ? "Close menu" : "Open menu",
             "aria-expanded": open,
             onClick: () => setOpen(v => !v),
@@ -386,7 +390,7 @@ function Navbar() {
           })]
         })]
       }), open && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("nav", {
-        className: "lg:hidden border-t border-gold/25 bg-ink-2",
+        className: "lg:hidden border-t border-silver/30 cli-gradient",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "max-w-7xl mx-auto px-4 py-5 flex flex-col gap-4",
           children: [NAV_ITEMS.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {

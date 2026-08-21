@@ -28,16 +28,16 @@ const SOCIALS = [
   { label: "IN", full: "LinkedIn", href: cfg.linkedin || "#" },
 ]
 
+/* Rutas reales del sitio en vivo (cliconstructions.com) */
 const NAV_ITEMS = [
   { label: "Home", href: HOME },
-  { label: "Services", href: "/services" },
-  { label: "Commercial", href: "/commercial" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "About Us", href: "/about-us/" },
+  { label: "Services", href: "/services/" },
+  { label: "Commercial", href: "/commercial/" },
+  { label: "Gallery", href: "/gallery/" },
 ]
 
-const CTA = { label: "Get an Estimate", href: "/contact" }
+const CTA = { label: "Get an Estimate", href: "/contact/" }
 
 function Navbar() {
   const headerRef = useRef(null)
@@ -103,22 +103,22 @@ function Navbar() {
       }
     >
       {/* ============ TOPBAR — franja de especificación ============ */}
-      <div ref={topbarRef} className="bg-ink text-steel">
+      <div ref={topbarRef} className="bg-ink text-silver">
         <div className="cli-topbar-sep max-w-7xl mx-auto px-4 flex items-center justify-between gap-5 py-2.5">
           {/* Izquierda: teléfono + correo */}
           <div className="flex items-center gap-5 min-w-0">
             <a
               href={PHONE_HREF}
-              className="cli-spec flex items-center gap-2 hover:text-gold transition-colors"
+              className="cli-spec flex items-center gap-2 hover:text-silver-2 transition-colors"
             >
-              <PhoneIcon className="w-3.5 h-3.5 text-gold" />
+              <PhoneIcon className="w-3.5 h-3.5 text-brand" />
               <span className="whitespace-nowrap">{PHONE}</span>
             </a>
             <a
               href={"mailto:" + EMAIL}
-              className="cli-spec hidden sm:flex items-center gap-2 hover:text-gold transition-colors min-w-0"
+              className="cli-spec hidden sm:flex items-center gap-2 hover:text-silver-2 transition-colors min-w-0"
             >
-              <MailIcon className="w-3.5 h-3.5 text-gold" />
+              <MailIcon className="w-3.5 h-3.5 text-brand" />
               <span className="truncate normal-case tracking-normal font-body text-xs">
                 {EMAIL}
               </span>
@@ -130,9 +130,9 @@ function Navbar() {
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="cli-spec hidden md:flex items-center gap-2 hover:text-gold transition-colors"
+            className="cli-spec hidden md:flex items-center gap-2 hover:text-silver-2 transition-colors"
           >
-            <MapPinIcon className="w-3.5 h-3.5 text-gold" />
+            <MapPinIcon className="w-3.5 h-3.5 text-brand" />
             <span>{GEO_LABEL}</span>
           </a>
 
@@ -145,7 +145,7 @@ function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.full}
-                className="cli-spec hover:text-gold transition-colors"
+                className="cli-spec hover:text-silver-2 transition-colors"
               >
                 {s.label}
               </a>
@@ -154,17 +154,17 @@ function Navbar() {
         </div>
       </div>
 
-      {/* ============ BARRA PRINCIPAL — carbón + regla de latón ============ */}
-      <div className="cli-bar bg-ink-2">
+      {/* ============ BARRA PRINCIPAL — blanca + regla de latón ============ */}
+      <div className="cli-bar cli-on-light cli-gradient-flip text-ink">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-6 h-20">
           {/* Logo */}
           <a href={HOME} className="flex items-center shrink-0">
             {LOGO ? (
               <img src={LOGO} alt="CLI Construction" className="h-12 w-auto" />
             ) : (
-              <span className="font-display font-extrabold text-2xl tracking-tight text-paper leading-none">
+              <span className="font-display font-extrabold text-2xl tracking-tight text-ink leading-none">
                 CLI
-                <span className="block text-[0.55rem] font-mono font-medium tracking-[0.3em] text-gold mt-1">
+                <span className="block text-[0.55rem] font-mono font-medium tracking-[0.3em] text-silver mt-1">
                   CONSTRUCTION
                 </span>
               </span>
@@ -188,7 +188,7 @@ function Navbar() {
             </a>
             <button
               type="button"
-              className="lg:hidden text-paper p-1"
+              className="lg:hidden text-ink p-1"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen(v => !v)}
@@ -200,7 +200,7 @@ function Navbar() {
 
         {/* Panel móvil */}
         {open && (
-          <nav className="lg:hidden border-t border-gold/25 bg-ink-2">
+          <nav className="lg:hidden border-t border-silver/30 cli-gradient">
             <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col gap-4">
               {NAV_ITEMS.map(item => (
                 <a

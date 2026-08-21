@@ -1,6 +1,6 @@
 /* Hallmark · component: navbar + footer · genre: luxury-industrial · theme: custom
- * (vibe: "black marble, brass rule, jobsite spec sheet" · paper oklch(20% 0.01 260)
- *  accent oklch(75% 0.09 85) gold · Archivo + Instrument Sans + JetBrains Mono)
+ * (vibe: "black marble, logo red, brushed silver" · paper oklch(16% 0.01 260)
+ *  accent #EC1F24 red + #8D8D8D silver · Archivo + Instrument Sans + JetBrains Mono)
  * pre-emit critique: P4 H4 E4 S4 R4 V4
  * states: default · hover · focus · active (nav links + CTA)
  */
@@ -22,12 +22,16 @@
   /* Claros */
   --color-paper: #ffffff;
   --color-paper-2: #f4f4f2;
-  --color-steel: #9aa0a8;               /* texto secundario sobre oscuro */
+  --color-silver: #8d8d8d;              /* plateado del logo — texto secundario, reglas */
+  --color-silver-2: #b9b9b9;            /* plateado claro — hover sobre oscuro */
+
+  /* Estampado diagonal sobre superficies blancas (rayas translúcidas) */
+  --color-pattern: color-mix(in srgb, var(--color-silver) 10%, transparent);
+  --color-pattern-2: color-mix(in srgb, var(--color-ink) 10%, transparent);
 
   /* Acentos */
-  --color-gold: oklch(75% 0.09 85);     /* latón del deck — regla, hovers, CTA */
-  --color-gold-2: oklch(66% 0.1 80);    /* latón profundo */
-  --color-brand: #c8102e;               /* rojo del logo — acento secundario */
+  --color-brand: #ec1f24;               /* rojo del logo — CTA, hovers, subrayados */
+  --color-brand-2: oklch(48% 0.185 27); /* rojo profundo — texto/hover sobre blanco (AA) */
 
   /* Tipografía — 2 + 1 */
   --font-display: "Archivo", system-ui, sans-serif;
@@ -73,7 +77,7 @@ body.admin-bar #cli-navbar { top: 32px; }
 
 /* La regla de latón separa topbar y barra; con scroll, sombra de contacto */
 .cli-bar {
-  border-top: 1px solid color-mix(in oklch, var(--color-gold) 45%, transparent);
+  border-top: 2px solid var(--color-brand);
   box-shadow: 0 1px 0 oklch(0% 0 0 / 0.5);
 }
 .cli-header.is-stuck .cli-bar {
@@ -95,7 +99,7 @@ body.admin-bar #cli-navbar { top: 32px; }
 /* Separadores verticales de latón entre clusters del topbar (desktop) */
 @media (min-width: 768px) {
   .cli-topbar-sep > * + * {
-    border-left: 1px solid color-mix(in oklch, var(--color-gold) 25%, transparent);
+    border-left: 1px solid color-mix(in oklch, var(--color-silver) 35%, transparent);
     padding-left: 1.25rem;
   }
 }
@@ -110,7 +114,7 @@ body.admin-bar #cli-navbar { top: 32px; }
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-paper);
+  color: inherit; /* la superficie define el color base */
   transition: color 0.2s var(--ease-out);
 }
 .cli-link::after {
@@ -120,18 +124,18 @@ body.admin-bar #cli-navbar { top: 32px; }
   bottom: -0.45rem;
   width: 100%;
   height: 1px;
-  background: var(--color-gold);
+  background: var(--cli-link-hover, var(--color-brand));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s var(--ease-out);
 }
 .cli-link:hover,
-.cli-link.is-active { color: var(--color-gold); }
+.cli-link.is-active { color: var(--cli-link-hover, var(--color-brand)); }
 .cli-link:hover::after,
 .cli-link.is-active::after,
 .cli-link:focus-visible::after { transform: scaleX(1); }
 .cli-link:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-brand);
   outline-offset: 4px;
 }
 
@@ -144,8 +148,8 @@ body.admin-bar #cli-navbar { top: 32px; }
   gap: 0.5em;
   min-height: 44px;
   padding: 0.65rem 1.35rem;
-  border: 1px solid var(--color-gold);
-  color: var(--color-gold);
+  border: 1px solid var(--color-brand);
+  color: var(--color-brand);
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -156,16 +160,81 @@ body.admin-bar #cli-navbar { top: 32px; }
     color 0.2s var(--ease-out);
 }
 .cli-cta:hover {
-  background: var(--color-gold);
-  color: var(--color-ink);
+  background: var(--color-brand);
+  color: var(--color-paper);
 }
-.cli-cta:active { background: var(--color-gold-2); border-color: var(--color-gold-2); }
+.cli-cta:active { background: var(--color-brand-2); border-color: var(--color-brand-2); }
 .cli-cta:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-brand);
   outline-offset: 3px;
+}
+
+/* Gradiente plateado↔blanco (navbar y hero) */
+.cli-gradient {
+  background: linear-gradient(
+    180deg,
+    var(--color-paper) 0%,
+    color-mix(in srgb, var(--color-silver) 22%, var(--color-paper)) 100%
+  );
+}
+.cli-gradient-flip {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-silver) 22%, var(--color-paper)) 0%,
+    var(--color-paper) 100%
+  );
+}
+
+/* Estampado diagonal para secciones de fondo blanco
+   (adaptado de Uiverse.io by SouravBandyopadhyay a los tokens de marca) */
+.cli-pattern {
+  background-color: var(--color-paper);
+  background-image: linear-gradient(
+    45deg,
+    transparent 33.33%,
+    var(--color-pattern) 33.33%,
+    var(--color-pattern-2) 66.66%,
+    transparent 66.66%
+  );
+  background-size: 20px 20px;
+}
+
+/* Superficies claras (barra blanca, cinta final del footer) */
+.cli-on-light {
+  --cli-link-hover: var(--color-brand-2);
+}
+.cli-on-light .cli-cta {
+  border-color: var(--color-brand);
+  color: var(--color-brand-2);
+}
+.cli-on-light .cli-cta:hover {
+  background: var(--color-brand);
+  color: var(--color-paper);
+}
+.cli-on-light .cli-cta:active {
+  background: var(--color-brand-2);
+  border-color: var(--color-brand-2);
+}
+.cli-on-light .cli-cta:focus-visible {
+  outline-color: var(--color-brand-2);
+}
+
+/* Marquee continuo (franja de credenciales del hero) */
+.cli-marquee { overflow: hidden; }
+.cli-marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  width: max-content;
+  padding-right: 2.5rem;
+  animation: cli-marquee 30s linear infinite;
+}
+@keyframes cli-marquee {
+  to { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .cli-header { transition-duration: 0.01ms; }
   .cli-link::after { transition: none; }
+  .cli-marquee__track { animation: none; }
 }
