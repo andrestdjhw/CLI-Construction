@@ -71,7 +71,7 @@ $values = array(
         Los Lunas, Santa Rosa, and surrounding areas.
       </p>
       <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-8 inline-flex">
-        Get an Estimate <span aria-hidden="true">&rarr;</span>
+        <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
       </a>
     </div>
     <div class="lg:col-span-5">
@@ -192,8 +192,8 @@ $values = array(
       renovations, roofing, and more &mdash; serving Albuquerque, Santa Fe, and
       surrounding New Mexico communities with pride.
     </p>
-    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-9 bg-brand !text-paper hover:!bg-brand-2 hover:border-brand-2">
-      Get an Estimate <span aria-hidden="true">&rarr;</span>
+    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-9 bg-brand !text-paper">
+      <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
     </a>
   </div>
 </section>

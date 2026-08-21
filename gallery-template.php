@@ -89,8 +89,8 @@ for ($i = 1; $i <= 15; $i++) {
       Tell us about your property and the scope you have in mind &mdash;
       we&rsquo;ll get back to you with next steps.
     </p>
-    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-8 bg-brand !text-paper hover:!bg-brand-2 hover:border-brand-2">
-      Get an Estimate <span aria-hidden="true">&rarr;</span>
+    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-8 bg-brand !text-paper">
+      <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
     </a>
   </div>
 </section>

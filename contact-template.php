@@ -137,8 +137,8 @@ $faqs = array(
       Call us and tell us about your property &mdash; we&rsquo;ll walk you
       through scope, timelines, and next steps.
     </p>
-    <a href="tel:+15055181965" class="cli-cta mt-9 bg-brand !text-paper hover:!bg-brand-2 hover:border-brand-2">
-      Call (505) 518-1965
+    <a href="tel:+15055181965" class="cli-cta mt-9 bg-brand !text-paper">
+      <span class="cli-cta__text">Call (505) 518-1965</span>
     </a>
   </div>
 </section>

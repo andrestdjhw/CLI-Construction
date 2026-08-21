@@ -71,8 +71,8 @@ $process = array(
         and roofing across New Mexico &mdash; the whole scope, one accountable
         company.
       </p>
-      <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-8 bg-brand !text-paper hover:!bg-brand-2 hover:border-brand-2">
-        Get an Estimate <span aria-hidden="true">&rarr;</span>
+      <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-8 bg-brand !text-paper">
+        <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
       </a>
     </div>
   </div>
@@ -191,8 +191,8 @@ $process = array(
       Serving Albuquerque, Rio Rancho, Los Lunas, Santa Fe, Santa Rosa, and
       surrounding New Mexico communities.
     </p>
-    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-9 bg-brand !text-paper hover:!bg-brand-2 hover:border-brand-2">
-      Get an Estimate <span aria-hidden="true">&rarr;</span>
+    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-9 bg-brand !text-paper">
+      <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
     </a>
   </div>
 </section>

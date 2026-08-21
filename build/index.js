@@ -347,7 +347,7 @@ function Navbar() {
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "cli-bar cli-on-light cli-gradient-flip text-ink",
+      className: "cli-bar cli-on-light bg-paper text-ink",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "max-w-7xl mx-auto px-4 flex items-center justify-between gap-6 h-20",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
@@ -376,7 +376,10 @@ function Navbar() {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
             href: CTA.href,
             className: "cli-cta hidden sm:inline-flex",
-            children: [CTA.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "cli-cta__text",
+              children: CTA.label
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
               "aria-hidden": "true",
               children: "\u2192"
             })]
@@ -390,7 +393,7 @@ function Navbar() {
           })]
         })]
       }), open && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("nav", {
-        className: "lg:hidden border-t border-silver/30 cli-gradient",
+        className: "lg:hidden border-t border-silver/30 bg-paper",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "max-w-7xl mx-auto px-4 py-5 flex flex-col gap-4",
           children: [NAV_ITEMS.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
@@ -402,7 +405,10 @@ function Navbar() {
             href: CTA.href,
             className: "cli-cta mt-2 justify-center",
             onClick: () => setOpen(false),
-            children: [CTA.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "cli-cta__text",
+              children: CTA.label
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
               "aria-hidden": "true",
               children: "\u2192"
             })]

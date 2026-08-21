@@ -155,7 +155,7 @@ function Navbar() {
       </div>
 
       {/* ============ BARRA PRINCIPAL — blanca + regla de latón ============ */}
-      <div className="cli-bar cli-on-light cli-gradient-flip text-ink">
+      <div className="cli-bar cli-on-light bg-paper text-ink">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-6 h-20">
           {/* Logo */}
           <a href={HOME} className="flex items-center shrink-0">
@@ -183,7 +183,7 @@ function Navbar() {
           {/* CTA + hamburguesa */}
           <div className="flex items-center gap-3 shrink-0">
             <a href={CTA.href} className="cli-cta hidden sm:inline-flex">
-              {CTA.label}
+              <span className="cli-cta__text">{CTA.label}</span>
               <span aria-hidden="true">→</span>
             </a>
             <button
@@ -200,7 +200,7 @@ function Navbar() {
 
         {/* Panel móvil */}
         {open && (
-          <nav className="lg:hidden border-t border-silver/30 cli-gradient">
+          <nav className="lg:hidden border-t border-silver/30 bg-paper">
             <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col gap-4">
               {NAV_ITEMS.map(item => (
                 <a
@@ -217,7 +217,7 @@ function Navbar() {
                 className="cli-cta mt-2 justify-center"
                 onClick={() => setOpen(false)}
               >
-                {CTA.label}
+                <span className="cli-cta__text">{CTA.label}</span>
                 <span aria-hidden="true">→</span>
               </a>
             </div>

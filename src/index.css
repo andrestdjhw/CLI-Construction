@@ -114,7 +114,6 @@ body.admin-bar #cli-navbar { top: 32px; }
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: inherit; /* la superficie define el color base */
   transition: color 0.2s var(--ease-out);
 }
 .cli-link::after {
@@ -149,36 +148,72 @@ body.admin-bar #cli-navbar { top: 32px; }
   min-height: 44px;
   padding: 0.65rem 1.35rem;
   border: 1px solid var(--color-brand);
-  color: var(--color-brand);
+  color: var(--color-brand-2);
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition:
-    background-color 0.2s var(--ease-out),
-    color 0.2s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  transition: color 0.2s ease 0.08s;
 }
-.cli-cta:hover {
-  background: var(--color-brand);
-  color: var(--color-paper);
+
+/* Cuña diagonal (idea de Uiverse.io by doniaskima, reimplementada con
+   transform): capa de tinta sesgada que entra desde la derecha al hover */
+.cli-cta::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -25%;
+  right: -25%;
+  z-index: 0;
+  background: var(--color-ink);
+  transform: translateX(112%) skewX(-14deg);
+  transition: transform 0.3s ease;
 }
-.cli-cta:active { background: var(--color-brand-2); border-color: var(--color-brand-2); }
+.cli-cta:hover,
+.cli-cta:focus-visible { color: var(--color-paper); }
+.cli-cta:hover::before,
+.cli-cta:focus-visible::before { transform: translateX(0) skewX(-14deg); }
+
+.cli-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Roll del texto al hover */
+@keyframes cli-cta-roll {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(80%); }
+  51% { transform: translateY(-80%); }
+  to { transform: translateY(0); }
+}
+.cli-cta:hover .cli-cta__text {
+  animation: cli-cta-roll 0.3s ease forwards;
+}
+
+.cli-cta .cli-cta__text { display: block; }
+
 .cli-cta:focus-visible {
   outline: 2px solid var(--color-brand);
   outline-offset: 3px;
 }
 
-/* Gradiente plateado↔blanco (navbar y hero) */
+
+/* Gradiente plateado↔blanco (hero y secciones) — con fallback sólido */
 .cli-gradient {
-  background: linear-gradient(
+  background-color: var(--color-paper);
+  background-image: linear-gradient(
     180deg,
     var(--color-paper) 0%,
     color-mix(in srgb, var(--color-silver) 22%, var(--color-paper)) 100%
   );
 }
 .cli-gradient-flip {
-  background: linear-gradient(
+  background-color: var(--color-paper);
+  background-image: linear-gradient(
     180deg,
     color-mix(in srgb, var(--color-silver) 22%, var(--color-paper)) 0%,
     var(--color-paper) 100%
@@ -203,38 +238,52 @@ body.admin-bar #cli-navbar { top: 32px; }
 .cli-on-light {
   --cli-link-hover: var(--color-brand-2);
 }
-.cli-on-light .cli-cta {
-  border-color: var(--color-brand);
-  color: var(--color-brand-2);
-}
-.cli-on-light .cli-cta:hover {
-  background: var(--color-brand);
-  color: var(--color-paper);
-}
-.cli-on-light .cli-cta:active {
-  background: var(--color-brand-2);
-  border-color: var(--color-brand-2);
-}
 .cli-on-light .cli-cta:focus-visible {
   outline-color: var(--color-brand-2);
 }
 
-/* Marquee continuo (franja de credenciales del hero) */
+/* Estampado de cubos isométricos para bandas oscuras
+   (adaptado de Uiverse.io by om_6153 a los tokens de marca) */
+.cli-cubes {
+  --s: 200px;
+  background-color: var(--color-ink);
+  background:
+    repeating-conic-gradient(
+        from 30deg,
+        #0000 90deg 120deg,
+        var(--color-ink-2) 0deg 180deg
+      )
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--color-ink) 0deg 60deg,
+      var(--color-ink-3) 0deg 120deg,
+      var(--color-ink-2) 0deg 180deg
+    );
+  background-size: var(--s) calc(var(--s) * 0.577);
+}
+
+/* Marquee continuo (credenciales del hero y cards de services) */
 .cli-marquee { overflow: hidden; }
 .cli-marquee__track {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  width: max-content;
-  padding-right: 2.5rem;
+  width: max-content; /* refuerzo del w-max del markup */
   animation: cli-marquee 30s linear infinite;
 }
 @keyframes cli-marquee {
   to { transform: translateX(-50%); }
+}
+.cli-marquee:hover .cli-marquee__track,
+.cli-marquee:focus-within .cli-marquee__track {
+  animation-play-state: paused;
+}
+.cli-marquee--cards .cli-marquee__track {
+  animation-duration: 55s;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .cli-header { transition-duration: 0.01ms; }
   .cli-link::after { transition: none; }
   .cli-marquee__track { animation: none; }
+  .cli-cta::before { transition: none; }
+  .cli-cta:hover .cli-cta__text { animation: none; }
 }
