@@ -96,7 +96,7 @@ $faqs = array(
     autoplay muted loop playsinline
   ></video>
   <div class="relative w-full max-w-7xl mx-auto px-4 py-20 flex-grow flex items-center">
-    <div class="max-w-3xl border-l-2 border-brand pl-6 lg:pl-10">
+    <div class="max-w-3xl border-l-2 border-brand pl-6 lg:pl-10 cli-reveal-left is-visible">
       <h1 class="font-display font-extrabold text-ink leading-[1.02] tracking-tight text-[clamp(2.25rem,5.5vw,4rem)]">
         Trusted Construction Experts for Multi&#8209;Housing &amp; Commercial Projects
       </h1>
@@ -141,7 +141,7 @@ $faqs = array(
       >
     </div>
     <div class="flex items-center">
-      <div class="w-full max-w-2xl px-6 py-16 lg:px-14 lg:py-24">
+      <div class="w-full max-w-2xl px-6 py-16 lg:px-14 lg:py-24 cli-reveal-right">
         <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
           A Little About Us
         </h2>
@@ -163,7 +163,7 @@ $faqs = array(
 <!-- ============ SERVICES — carrusel continuo de cards (patrón IPR) ============ -->
 <section id="services" class="bg-paper-2 cli-on-light py-20 lg:py-28 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4">
-    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Our Services
     </h2>
     <p class="mt-4 text-ink/70 text-lg leading-relaxed max-w-3xl">
@@ -182,12 +182,14 @@ $faqs = array(
             class="group w-80 shrink-0 flex flex-col bg-paper border border-ink/15"
             <?php echo $copy ? 'aria-hidden="true" tabindex="-1"' : ''; ?>
           >
-            <img
-              src="<?php echo esc_url($live . $s['img']); ?>"
-              alt=""
-              class="w-full aspect-[4/3] object-cover"
-              loading="lazy"
-            >
+            <div class="cli-card-media">
+              <img
+                src="<?php echo esc_url($live . $s['img']); ?>"
+                alt=""
+                class="w-full aspect-[4/3] object-cover"
+                loading="lazy"
+              >
+            </div>
             <div class="flex flex-col flex-grow p-6">
               <h3 class="font-display font-bold text-ink text-xl tracking-tight group-hover:text-brand-2 transition-colors">
                 <?php echo esc_html($s['title']); ?>
@@ -215,7 +217,7 @@ $faqs = array(
 <!-- ============ GALLERY — cinta horizontal ============ -->
 <section class="bg-ink py-16 lg:py-20 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-end justify-between gap-6">
-    <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+    <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Recent Work
     </h2>
     <a href="<?php echo esc_url(home_url('/gallery/')); ?>" class="cli-link text-paper">Explore Full Gallery</a>
@@ -240,12 +242,12 @@ $faqs = array(
 <!-- ============ LOCATIONS ============ -->
 <section class="cli-gradient">
   <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
-    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Where We Work
     </h2>
     <div class="mt-12 grid gap-px bg-ink/15 border border-ink/15 sm:grid-cols-2 lg:grid-cols-4">
       <?php foreach ($locations as $loc) : ?>
-        <a href="<?php echo esc_url(home_url($loc['href'])); ?>" class="group bg-paper p-7 hover:bg-paper-2 transition-colors">
+        <a href="<?php echo esc_url(home_url($loc['href'])); ?>" class="group bg-paper p-7 hover:bg-paper-2 transition-colors cli-reveal-stagger">
           <span class="cli-spec text-silver">New Mexico</span>
           <h3 class="mt-2 font-display font-bold text-ink text-xl tracking-tight group-hover:text-brand-2 transition-colors">
             <?php echo esc_html($loc['city']); ?>
@@ -286,7 +288,7 @@ $yelp_review = 'https://www.yelp.com/writeareview/biz/c-l-i-construction-albuque
 <section id="reviews" class="cli-cubes">
   <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
     <div class="flex flex-wrap items-end justify-between gap-6">
-      <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+      <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
         What Clients Say
       </h2>
       <a
@@ -301,7 +303,7 @@ $yelp_review = 'https://www.yelp.com/writeareview/biz/c-l-i-construction-albuque
 
     <div class="mt-12 grid gap-px bg-silver/25 border border-silver/25 md:grid-cols-2">
       <?php foreach ($reviews as $r) : ?>
-        <figure class="bg-paper p-8 flex flex-col">
+        <figure class="bg-paper p-8 flex flex-col cli-reveal-stagger">
           <div class="text-brand tracking-[0.2em]" aria-label="5 star review">
             &#9733;&#9733;&#9733;&#9733;&#9733;
           </div>
@@ -330,7 +332,7 @@ $yelp_review = 'https://www.yelp.com/writeareview/biz/c-l-i-construction-albuque
 <!-- ============ FAQ — filas de acordeón ============ -->
 <section class="cli-gradient">
   <div class="max-w-4xl mx-auto px-4 py-20 lg:py-28">
-    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Frequently Asked Questions
     </h2>
     <div class="mt-10 border-t border-ink/15">
@@ -342,7 +344,7 @@ $yelp_review = 'https://www.yelp.com/writeareview/biz/c-l-i-construction-albuque
             </h3>
             <span aria-hidden="true" class="text-brand text-2xl leading-none transition-transform group-open:rotate-45">+</span>
           </summary>
-          <p class="pb-6 text-ink/70 leading-relaxed max-w-3xl">
+          <p class="cli-faq-answer pb-6 text-ink/70 leading-relaxed max-w-3xl">
             <?php echo esc_html($f['a']); ?>
           </p>
         </details>
