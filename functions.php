@@ -37,6 +37,10 @@ function cli_load_assets() {
     'instagram' => 'https://www.instagram.com/cliconstruction',
     'yelp'      => 'https://www.yelp.com/biz/c-l-i-construction-albuquerque-2',
     'linkedin'  => '#', // prioridad del brief — pendiente de crear
+    'ajaxUrl'      => esc_url(admin_url('admin-ajax.php')),
+    'contactNonce' => wp_create_nonce('cli_contact'),
+    'privacyUrl'   => esc_url(home_url('/privacy-policy/')),
+    'termsUrl'     => esc_url(home_url('/terms-and-conditions/')),
   ));
 }
 
@@ -48,3 +52,37 @@ function cli_add_support() {
 }
 
 add_action('after_setup_theme', 'cli_add_support');
+
+/* ============ Contact Form (React) — endpoint AJAX ============ */
+function cli_handle_contact() {
+  check_ajax_referer('cli_contact', 'nonce');
+
+  /* Honeypot: si viene lleno, responder OK sin enviar nada */
+  if (!empty($_POST['company'])) {
+    wp_send_json_success();
+  }
+
+  $name    = sanitize_text_field(wp_unslash($_POST['name'] ?? ''));
+  $phone   = sanitize_text_field(wp_unslash($_POST['phone'] ?? ''));
+  $email   = sanitize_email(wp_unslash($_POST['email'] ?? ''));
+  $service = sanitize_text_field(wp_unslash($_POST['service'] ?? ''));
+  $message = sanitize_textarea_field(wp_unslash($_POST['message'] ?? ''));
+
+  if (!$name || !$phone || !is_email($email)) {
+    wp_send_json_error(array('message' => 'Missing required fields.'), 400);
+  }
+
+  $to      = apply_filters('cli_contact_recipient', 'office@cliconstructions.com');
+  $subject = 'New estimate request — ' . $name;
+  $body    = "Name: {$name}\nPhone: {$phone}\nEmail: {$email}\nService: {$service}\n\nMessage:\n{$message}";
+  $headers = array('Reply-To: ' . $name . ' <' . $email . '>');
+
+  if (wp_mail($to, $subject, $body, $headers)) {
+    wp_send_json_success();
+  }
+
+  wp_send_json_error(array('message' => 'Mail could not be sent.'), 500);
+}
+
+add_action('wp_ajax_cli_contact', 'cli_handle_contact');
+add_action('wp_ajax_nopriv_cli_contact', 'cli_handle_contact');

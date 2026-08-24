@@ -12,35 +12,35 @@ $live = 'https://cliconstructions.com/wp-content/uploads/2025/05/';
 $services = array(
   array(
     'num'   => '01',
-    'img'   => 'IMAGE-CLI-85.webp',
+    'img'   => '/wp-content/uploads/2026/08/CLIRenovations.webp',
     'title' => 'Renovations',
     'desc'  => 'Expert renovation services in Albuquerque and surrounding areas, focused on multi-housing and commercial properties.',
     'href'  => '/service/renovations/',
   ),
   array(
     'num'   => '02',
-    'img'   => 'IMAGE-CLI-78.webp',
+    'img'   => '/wp-content/uploads/2026/08/PaintingCLI-scaled.webp',
     'title' => 'Painting',
     'desc'  => 'Professional interior and exterior painting services for commercial and multi-housing projects.',
     'href'  => '/service/painting/',
   ),
   array(
     'num'   => '03',
-    'img'   => 'IMAGE-CLI-71.webp',
+    'img'   => '/wp-content/uploads/2026/08/CLIStucco.webp',
     'title' => 'Stucco',
     'desc'  => 'Top-quality stucco application and repair, a New Mexico specialty done right.',
     'href'  => '/service/stucco/',
   ),
   array(
     'num'   => '04',
-    'img'   => 'IMAGE-CLI-27.webp',
+    'img'   => '/wp-content/uploads/2026/08/CLIRemodels.jpg',
     'title' => 'Remodels',
     'desc'  => 'Comprehensive remodeling for commercial and multi-housing properties.',
     'href'  => '/service/remodels/',
   ),
   array(
     'num'   => '05',
-    'img'   => 'IMAGE-CLI-6.webp',
+    'img'   => '/wp-content/uploads/2026/08/RoofingCLI.jpg',
     'title' => 'Roofing',
     'desc'  => 'Reliable roofing services focused on multi-housing and commercial buildings in New Mexico.',
     'href'  => '/service/roofing/',
@@ -48,10 +48,10 @@ $services = array(
 );
 
 $locations = array(
-  array('city' => 'Albuquerque, NM', 'href' => '/location/albuquerque-nm/'),
-  array('city' => 'Los Lunas, NM',   'href' => '/location/los-lunas-nm/'),
-  array('city' => 'Santa Fe, NM',    'href' => '/location/santa-fe-nm/'),
-  array('city' => 'Santa Rosa, NM',  'href' => '/location/santa-rosa-nm/'),
+  array('city' => 'Albuquerque, NM', 'href' => 'https://www.google.com/maps/search/?api=1&query=Albuquerque+NM'),
+  array('city' => 'Los Lunas, NM',   'href' => 'https://www.google.com/maps/search/?api=1&query=Los+Lunas+NM'),
+  array('city' => 'Santa Fe, NM',    'href' => 'https://www.google.com/maps/search/?api=1&query=Santa+Fe+NM'),
+  array('city' => 'Santa Rosa, NM',  'href' => 'https://www.google.com/maps/search/?api=1&query=Santa+Rosa+NM'),
 );
 
 $gallery = array(
@@ -89,18 +89,20 @@ $faqs = array(
 ?>
 
 <!-- ============ HERO — video, sesgado a la izquierda ============ -->
-<section class="relative cli-gradient cli-on-light overflow-hidden flex flex-col min-h-[calc(100svh-7.5rem)]">
+<section class="relative bg-ink overflow-hidden flex flex-col min-h-[calc(100svh-7.5rem)]">
   <video
-    class="absolute inset-0 w-full h-full object-cover opacity-20"
-    src="<?php echo esc_url($live . 'VIDEO-Hero-Section.mp4'); ?>"
+    class="absolute inset-0 w-full h-full object-cover"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIHero.mp4')); ?>"
     autoplay muted loop playsinline
   ></video>
-  <div class="relative w-full max-w-7xl mx-auto px-4 py-20 flex-grow flex items-center">
-    <div class="max-w-3xl border-l-2 border-brand pl-6 lg:pl-10 cli-reveal-left is-visible">
-      <h1 class="font-display font-extrabold text-ink leading-[1.02] tracking-tight text-[clamp(2.25rem,5.5vw,4rem)]">
+  <div class="absolute inset-0 bg-ink/70" aria-hidden="true"></div>
+  <div class="relative w-full max-w-7xl mx-auto px-4 py-16 lg:py-20 flex-grow flex items-center">
+    <div class="w-full grid gap-10 lg:grid-cols-12 items-center">
+    <div class="lg:col-span-7 max-w-3xl border-l-2 border-brand pl-6 lg:pl-10 cli-reveal-left is-visible">
+      <h1 class="font-display font-extrabold text-paper leading-[1.02] tracking-tight text-[clamp(2.25rem,5.5vw,4rem)]">
         Trusted Construction Experts for Multi&#8209;Housing &amp; Commercial Projects
       </h1>
-      <p class="mt-6 text-ink/70 text-lg leading-relaxed max-w-xl">
+      <p class="mt-6 text-silver-2 text-lg leading-relaxed max-w-xl">
         Family-owned renovations, roofing, painting, stucco &amp; remodels
         serving Albuquerque, Santa Fe, and surrounding areas in New Mexico.
       </p>
@@ -108,21 +110,31 @@ $faqs = array(
         <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta bg-brand !text-paper">
           <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
         </a>
-        <a href="#services" class="cli-cta"><span class="cli-cta__text">Explore Our Services</span></a>
+        <a href="#services" class="cli-cta !text-paper"><span class="cli-cta__text">Explore Our Services</span></a>
       </div>
+    </div>
+
+    <!-- Contact Form (React) — panel del hero -->
+    <div class="lg:col-span-5 cli-reveal-right is-visible">
+      <div
+        class="bg-paper border border-ink/15 shadow-[0_18px_44px_-18px_rgb(0_0_0_/_0.35)]"
+        data-cli-contact-form
+        data-variant="card"
+      ></div>
+    </div>
     </div>
   </div>
 
   <!-- Franja de credenciales — marquee continuo -->
   <?php $creds = array('Family-Owned', 'BBB Certified', 'Apartment Association of New Mexico', 'Licensed &amp; Insured'); ?>
-  <div class="relative bg-ink py-4 cli-marquee" aria-label="Credentials">
+  <div class="relative bg-brand py-4 cli-marquee" aria-label="Credentials">
     <div class="cli-marquee__track flex items-center gap-10 w-max pr-10">
       <?php for ($copy = 0; $copy < 2; $copy++) : ?>
         <?php foreach ($creds as $c) : ?>
-          <span class="cli-spec text-silver whitespace-nowrap" <?php echo $copy ? 'aria-hidden="true"' : ''; ?>>
+          <span class="cli-spec text-paper whitespace-nowrap" <?php echo $copy ? 'aria-hidden="true"' : ''; ?>>
             <?php echo $c; ?>
           </span>
-          <span class="text-brand" aria-hidden="true">&#9670;</span>
+          <span class="text-ink" aria-hidden="true">&#9670;</span>
         <?php endforeach; ?>
       <?php endfor; ?>
     </div>
@@ -134,14 +146,14 @@ $faqs = array(
   <div class="grid lg:grid-cols-2 items-stretch">
     <div class="min-h-80 lg:min-h-[34rem]">
       <img
-        src="<?php echo esc_url($live . 'IMAGE-COMPANY-4.webp'); ?>"
+        src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/AboutSectionHome-scaled.webp')); ?>"
         alt="The CLI Constructions team"
         class="w-full h-full object-cover"
         loading="lazy"
       >
     </div>
     <div class="flex items-center">
-      <div class="w-full max-w-2xl px-6 py-16 lg:px-14 lg:py-24 cli-reveal-right">
+      <div class="w-full max-w-xl mx-auto px-6 py-16 lg:px-10 lg:py-24 cli-reveal-right">
         <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
           A Little About Us
         </h2>
@@ -184,7 +196,7 @@ $faqs = array(
           >
             <div class="cli-card-media">
               <img
-                src="<?php echo esc_url($live . $s['img']); ?>"
+                src="<?php echo esc_url(strpos($s['img'], '/') === 0 ? home_url($s['img']) : $live . $s['img']); ?>"
                 alt=""
                 class="w-full aspect-[4/3] object-cover"
                 loading="lazy"
@@ -247,7 +259,12 @@ $faqs = array(
     </h2>
     <div class="mt-12 grid gap-px bg-ink/15 border border-ink/15 sm:grid-cols-2 lg:grid-cols-4">
       <?php foreach ($locations as $loc) : ?>
-        <a href="<?php echo esc_url(home_url($loc['href'])); ?>" class="group bg-paper p-7 hover:bg-paper-2 transition-colors cli-reveal-stagger">
+        <a
+          href="<?php echo esc_url($loc['href']); ?>"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-paper p-7 hover:bg-paper-2 transition-colors cli-reveal-stagger"
+        >
           <span class="cli-spec text-silver">New Mexico</span>
           <h3 class="mt-2 font-display font-bold text-ink text-xl tracking-tight group-hover:text-brand-2 transition-colors">
             <?php echo esc_html($loc['city']); ?>
@@ -370,4 +387,4 @@ $yelp_review = 'https://www.yelp.com/writeareview/biz/c-l-i-construction-albuque
   </div>
 </section>
 
-<?php get_footer();
+<?php get_footer(); ?>

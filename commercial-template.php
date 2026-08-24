@@ -62,7 +62,7 @@ $process = array(
 <!-- ============ PAGE HERO ============ -->
 <section class="cli-gradient cli-on-light">
   <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
-    <div class="max-w-3xl border-l-2 border-brand pl-6 lg:pl-10">
+    <div class="max-w-3xl border-l-2 border-brand pl-6 lg:pl-10 cli-reveal-left is-visible">
       <h1 class="font-display font-extrabold text-ink leading-[1.05] tracking-tight text-[clamp(2.25rem,5vw,3.5rem)]">
         Commercial &amp; Multi&#8209;Housing Construction
       </h1>
@@ -78,28 +78,30 @@ $process = array(
   </div>
 </section>
 
-<!-- ============ STATEMENT — la ventaja integrada ============ -->
-<section class="bg-ink">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-24 grid gap-10 lg:grid-cols-12 items-center">
-    <div class="lg:col-span-7">
-      <h2 class="font-display font-extrabold text-paper leading-[1.05] tracking-tight text-[clamp(1.9rem,4vw,3rem)]">
-        Efficiency. Precision. <span class="text-brand">Commercial Results.</span>
-      </h2>
-      <p class="mt-6 text-silver-2 text-lg leading-relaxed max-w-2xl">
-        Most commercial projects juggle separate contractors for painting,
-        stucco, roofing, and remodels. CLI Constructions integrates the full
-        scope under one family-owned company &mdash; one contract, one
-        schedule, one team accountable for the result.
-      </p>
-      <p class="cli-spec mt-8 text-silver">
-        Family-Owned &middot; BBB Certified &middot; AANM Member &middot; Licensed &amp; Insured
-      </p>
+<!-- ============ STATEMENT — split 50/50 texto / foto full-bleed ============ -->
+<section class="cli-cubes">
+  <div class="grid lg:grid-cols-2 items-stretch">
+    <div class="flex items-center">
+      <div class="w-full max-w-xl mx-auto px-6 py-16 lg:px-10 lg:py-24 cli-reveal-left">
+        <h2 class="font-display font-extrabold text-paper leading-[1.05] tracking-tight text-[clamp(1.9rem,4vw,3rem)]">
+          Efficiency. Precision. <span class="text-brand">Commercial Results.</span>
+        </h2>
+        <p class="mt-6 text-silver-2 text-lg leading-relaxed">
+          Most commercial projects juggle separate contractors for painting,
+          stucco, roofing, and remodels. CLI Constructions integrates the full
+          scope under one family-owned company &mdash; one contract, one
+          schedule, one team accountable for the result.
+        </p>
+        <p class="cli-spec mt-8 text-silver">
+          Family-Owned &middot; BBB Certified &middot; AANM Member &middot; Licensed &amp; Insured
+        </p>
+      </div>
     </div>
-    <div class="lg:col-span-5">
+    <div class="min-h-80 lg:min-h-[34rem] cli-reveal-right">
       <img
         src="<?php echo esc_url($live . 'IMAGE-CLI-1.webp'); ?>"
         alt="Commercial project by CLI Constructions"
-        class="w-full h-auto object-cover"
+        class="w-full h-full object-cover"
         loading="lazy"
       >
     </div>
@@ -109,12 +111,12 @@ $process = array(
 <!-- ============ WHO WE SERVE — grid hairline ============ -->
 <section class="cli-pattern">
   <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
-    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Who We Serve
     </h2>
     <div class="mt-12 grid gap-px bg-ink/15 border border-ink/15 md:grid-cols-2">
       <?php foreach ($segments as $seg) : ?>
-        <div class="bg-paper p-8">
+        <div class="bg-paper p-8 cli-reveal-stagger">
           <h3 class="font-display font-bold text-ink text-xl tracking-tight">
             <?php echo esc_html($seg['title']); ?>
           </h3>
@@ -131,7 +133,7 @@ $process = array(
 <section class="bg-paper-2 cli-on-light">
   <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
     <div class="flex flex-wrap items-end justify-between gap-6">
-      <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+      <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
         Full-Scope Capabilities
       </h2>
       <a href="<?php echo esc_url(home_url('/services/')); ?>" class="cli-link text-ink">Explore All Services</a>
@@ -140,7 +142,7 @@ $process = array(
       <?php foreach ($capabilities as $c) : ?>
         <a
           href="<?php echo esc_url(home_url($c['href'])); ?>"
-          class="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-6 py-5 border-b border-ink/15 transition-colors hover:bg-paper"
+          class="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-6 py-5 border-b border-ink/15 transition-colors hover:bg-paper cli-reveal-stagger"
         >
           <span class="cli-spec text-silver"><?php echo esc_html($c['num']); ?></span>
           <h3 class="font-display font-bold text-ink text-xl tracking-tight group-hover:text-brand-2 transition-colors">
@@ -156,7 +158,7 @@ $process = array(
 <!-- ============ PROCESS — secuencia numerada ============ -->
 <section class="cli-gradient">
   <div class="max-w-4xl mx-auto px-4 py-20 lg:py-28">
-    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       How We Work
     </h2>
     <p class="mt-4 text-ink/70 text-lg leading-relaxed max-w-2xl">
@@ -165,7 +167,7 @@ $process = array(
     </p>
     <div class="mt-10 border-t border-ink/15">
       <?php foreach ($process as $p) : ?>
-        <div class="grid grid-cols-[auto_1fr] gap-x-6 py-7 border-b border-ink/15">
+        <div class="grid grid-cols-[auto_1fr] gap-x-6 py-7 border-b border-ink/15 cli-reveal-stagger">
           <span class="cli-spec text-brand-2"><?php echo esc_html($p['num']); ?></span>
           <div>
             <h3 class="font-display font-bold text-ink text-xl tracking-tight">
@@ -182,7 +184,7 @@ $process = array(
 </section>
 
 <!-- ============ CIERRE ============ -->
-<section class="bg-ink">
+<section class="cli-cubes">
   <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
     <h2 class="font-display font-extrabold text-paper leading-[1.05] tracking-tight text-[clamp(2rem,4.5vw,3.25rem)] max-w-3xl">
       Let&rsquo;s Scope Your Next <span class="text-brand">Commercial Project</span>
@@ -197,4 +199,4 @@ $process = array(
   </div>
 </section>
 
-<?php get_footer();
+<?php get_footer(); ?>

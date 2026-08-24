@@ -1,4 +1,10 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import {
+  FacebookIcon,
+  InstagramIcon,
+  YelpIcon,
+  LinkedInIcon,
+} from "./icons"
 
 const cfg = window.cliConfig || {}
 
@@ -36,10 +42,47 @@ const SOCIALS = [
    sin fila de iconos. */
 function Footer() {
   const year = new Date().getFullYear()
+  const [dockVisible, setDockVisible] = useState(false)
+
+  /* El dock aparece al hacer scroll down (pasado el hero) */
+  useEffect(() => {
+    let ticking = false
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(() => {
+        setDockVisible(window.scrollY > 300)
+        ticking = false
+      })
+    }
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   return (
     <footer className="bg-ink text-silver">
-      {/* Botón flotante de llamada — visible en todo el sitio */}
+      {/* Dock flotante — redes + llamada, visible en todo el sitio */}
+      <div className={"cli-float-dock" + (dockVisible ? " is-visible" : "")}>
+        {[
+          { key: "facebook", label: "Facebook", href: cfg.facebook, Icon: FacebookIcon },
+          { key: "instagram", label: "Instagram", href: cfg.instagram, Icon: InstagramIcon },
+          { key: "yelp", label: "Yelp", href: cfg.yelp, Icon: YelpIcon },
+          { key: "linkedin", label: "LinkedIn", href: cfg.linkedin, Icon: LinkedInIcon },
+        ]
+          .filter(s => s.href && s.href !== "#")
+          .map(({ key, label, href, Icon }) => (
+            <a
+              key={key}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className={"cli-float-social cli-float-social--" + key}
+            >
+              <Icon className="w-5 h-5" />
+            </a>
+          ))}
       <a href={PHONE_HREF} className="cli-float-call" aria-label={"Call " + PHONE}>
         <svg
           viewBox="0 0 24 24"
@@ -55,6 +98,7 @@ function Footer() {
         </svg>
         <span className="cli-float-call__text cli-spec">Call {PHONE}</span>
       </a>
+      </div>
       {/* ============ STATEMENT ============ */}
       <div className="max-w-7xl mx-auto px-4 pt-20 pb-14">
         <p className="font-display font-extrabold text-paper leading-[1.02] tracking-tight text-[clamp(2rem,5.5vw,3.75rem)] max-w-[18ch]">

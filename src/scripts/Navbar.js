@@ -32,9 +32,43 @@ const SOCIALS = [
 const NAV_ITEMS = [
   { label: "Home", href: HOME },
   { label: "About Us", href: "/about-us/" },
-  { label: "Services", href: "/services/" },
+  { label: "Services", href: "/services/", mega: true },
   { label: "Commercial", href: "/commercial/" },
   { label: "Gallery", href: "/gallery/" },
+]
+
+/* Mega menu de Services — fotos locales de cada servicio */
+const MEGA_SERVICES = [
+  {
+    label: "Renovations",
+    href: "/service/renovations/",
+    desc: "Quality craftsmanship with timely completion.",
+    img: "/wp-content/uploads/2026/08/CLIRenovations.webp",
+  },
+  {
+    label: "Remodels",
+    href: "/service/remodels/",
+    desc: "Comprehensive commercial & multi-housing remodeling.",
+    img: "/wp-content/uploads/2026/08/CLIRemodels.jpg",
+  },
+  {
+    label: "Painting",
+    href: "/service/painting/",
+    desc: "Interior & exterior with durable finishes.",
+    img: "/wp-content/uploads/2026/08/PaintingCLI-scaled.webp",
+  },
+  {
+    label: "Stucco",
+    href: "/service/stucco/",
+    desc: "Application & repair — a NM specialty done right.",
+    img: "/wp-content/uploads/2026/08/CLIStucco.webp",
+  },
+  {
+    label: "Roofing",
+    href: "/service/roofing/",
+    desc: "Installation, repairs & maintenance.",
+    img: "/wp-content/uploads/2026/08/RoofingCLI.jpg",
+  },
 ]
 
 const CTA = { label: "Get an Estimate", href: "/contact/" }
@@ -45,6 +79,17 @@ function Navbar() {
   const [condensed, setCondensed] = useState(false)
   const [stuck, setStuck] = useState(false)
   const [open, setOpen] = useState(false)
+  const [megaOpen, setMegaOpen] = useState(false)
+
+  /* Cerrar el mega menu con Escape */
+  useEffect(() => {
+    if (!megaOpen) return
+    const onKey = e => {
+      if (e.key === "Escape") setMegaOpen(false)
+    }
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [megaOpen])
 
   /* Altura real del topbar → variable CSS para el translateY exacto */
   useEffect(() => {
@@ -154,8 +199,8 @@ function Navbar() {
         </div>
       </div>
 
-      {/* ============ BARRA PRINCIPAL — blanca + regla de latón ============ */}
-      <div className="cli-bar cli-on-light bg-paper text-ink">
+      {/* ============ BARRA PRINCIPAL ============ */}
+      <div className="cli-bar cli-on-light bg-paper text-ink relative">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-6 h-20">
           {/* Logo */}
           <a href={HOME} className="flex items-center shrink-0">
@@ -173,11 +218,39 @@ function Navbar() {
 
           {/* Nav desktop */}
           <nav className="hidden lg:flex items-center gap-8">
-            {NAV_ITEMS.map(item => (
-              <a key={item.label} href={item.href} className="cli-link whitespace-nowrap">
-                {item.label}
-              </a>
-            ))}
+            {NAV_ITEMS.map(item =>
+              item.mega ? (
+                <div
+                  key={item.label}
+                  className="h-20 flex items-center"
+                  onMouseEnter={() => setMegaOpen(true)}
+                  onMouseLeave={() => setMegaOpen(false)}
+                >
+                  <a
+                    href={item.href}
+                    className={"cli-link whitespace-nowrap" + (megaOpen ? " is-active" : "")}
+                    aria-haspopup="true"
+                    aria-expanded={megaOpen}
+                    onFocus={() => setMegaOpen(true)}
+                  >
+                    {item.label}{" "}
+                    <span
+                      aria-hidden="true"
+                      className={
+                        "inline-block text-[0.6em] align-middle transition-transform " +
+                        (megaOpen ? "rotate-180" : "")
+                      }
+                    >
+                      &#9660;
+                    </span>
+                  </a>
+                </div>
+              ) : (
+                <a key={item.label} href={item.href} className="cli-link whitespace-nowrap">
+                  {item.label}
+                </a>
+              )
+            )}
           </nav>
 
           {/* CTA + hamburguesa */}
@@ -198,20 +271,96 @@ function Navbar() {
           </div>
         </div>
 
+        {/* Mega menu — Services (desktop) */}
+        <div
+          className={"cli-mega hidden lg:block" + (megaOpen ? " is-open" : "")}
+          onMouseEnter={() => setMegaOpen(true)}
+          onMouseLeave={() => setMegaOpen(false)}
+        >
+          <div className="max-w-7xl mx-auto px-4 py-8">
+            <div className="grid grid-cols-5 gap-5">
+              {MEGA_SERVICES.map(s => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  className="group"
+                  tabIndex={megaOpen ? 0 : -1}
+                >
+                  <div className="cli-card-media">
+                    <img
+                      src={s.img}
+                      alt=""
+                      className="w-full aspect-[16/10] object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 className="mt-3 font-display font-bold text-ink tracking-tight group-hover:text-brand-2 transition-colors">
+                    {s.label}
+                  </h3>
+                  <p className="mt-1 text-xs text-ink/60 leading-relaxed">{s.desc}</p>
+                </a>
+              ))}
+            </div>
+            <div className="mt-7 pt-5 border-t border-ink/15 flex flex-wrap items-center justify-between gap-4">
+              <a href="/services/" className="cli-link text-ink" tabIndex={megaOpen ? 0 : -1}>
+                Explore All Services
+              </a>
+              <a
+                href={CTA.href}
+                className="cli-cta"
+                tabIndex={megaOpen ? 0 : -1}
+              >
+                <span className="cli-cta__text">{CTA.label}</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Panel móvil */}
         {open && (
           <nav className="lg:hidden border-t border-silver/30 bg-paper">
             <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col gap-4">
-              {NAV_ITEMS.map(item => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="cli-link py-1.5 w-fit"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {NAV_ITEMS.map(item =>
+                item.mega ? (
+                  <details key={item.label} className="group">
+                    <summary className="cli-link py-1.5 w-fit list-none cursor-pointer [&::-webkit-details-marker]:hidden">
+                      {item.label}{" "}
+                      <span aria-hidden="true" className="inline-block text-[0.6em] align-middle transition-transform group-open:rotate-180">
+                        &#9660;
+                      </span>
+                    </summary>
+                    <div className="mt-2 ml-4 flex flex-col gap-2.5 border-l border-silver/40 pl-4">
+                      {MEGA_SERVICES.map(s => (
+                        <a
+                          key={s.label}
+                          href={s.href}
+                          className="text-sm font-medium text-ink/80 hover:text-brand-2 transition-colors"
+                          onClick={() => setOpen(false)}
+                        >
+                          {s.label}
+                        </a>
+                      ))}
+                      <a
+                        href={item.href}
+                        className="cli-spec text-brand-2"
+                        onClick={() => setOpen(false)}
+                      >
+                        All Services →
+                      </a>
+                    </div>
+                  </details>
+                ) : (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="cli-link py-1.5 w-fit"
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                )
+              )}
               <a
                 href={CTA.href}
                 className="cli-cta mt-2 justify-center"

@@ -23,7 +23,7 @@ for ($i = 1; $i <= 15; $i++) {
 <!-- ============ PAGE HERO ============ -->
 <section class="cli-gradient cli-on-light">
   <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
-    <div class="max-w-3xl border-l-2 border-brand pl-6 lg:pl-10">
+    <div class="max-w-3xl border-l-2 border-brand pl-6 lg:pl-10 cli-reveal-left is-visible">
       <h1 class="font-display font-extrabold text-ink leading-[1.05] tracking-tight text-[clamp(2.25rem,5vw,3.5rem)]">
         Gallery
       </h1>
@@ -40,7 +40,7 @@ for ($i = 1; $i <= 15; $i++) {
 <section id="images" class="cli-pattern">
   <div class="max-w-7xl mx-auto px-4 py-16 lg:py-24">
     <div class="flex flex-wrap items-end justify-between gap-6">
-      <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+      <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
         Images
       </h2>
       <a href="#videos" class="cli-link text-ink">Jump to Videos</a>
@@ -59,9 +59,9 @@ for ($i = 1; $i <= 15; $i++) {
 </section>
 
 <!-- ============ VIDEOS ============ -->
-<section id="videos" class="bg-ink">
+<section id="videos" class="cli-cubes">
   <div class="max-w-7xl mx-auto px-4 py-16 lg:py-24">
-    <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+    <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Videos
     </h2>
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -95,4 +95,4 @@ for ($i = 1; $i <= 15; $i++) {
   </div>
 </section>
 
-<?php get_footer();
+<?php get_footer(); ?>

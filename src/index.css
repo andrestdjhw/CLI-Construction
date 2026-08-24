@@ -263,6 +263,45 @@ body.admin-bar #cli-navbar { top: 32px; }
   background-size: var(--s) calc(var(--s) * 0.577);
 }
 
+/* Carrusel manual con flechas (services-template) */
+.cli-carousel__track {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.cli-carousel__track::-webkit-scrollbar { display: none; }
+
+.cli-carousel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-ink);
+  color: var(--color-ink);
+  font-size: 1.15rem;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.cli-carousel-btn:hover,
+.cli-carousel-btn:focus-visible {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: var(--color-paper);
+}
+.cli-carousel-btn:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+/* Flechas sobre superficies oscuras (cubos) */
+.cli-cubes .cli-carousel-btn {
+  border-color: var(--color-paper);
+  color: var(--color-paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cli-carousel__track { scroll-behavior: auto; }
+}
+
 /* Marquee continuo (credenciales del hero y cards de services) */
 .cli-marquee { overflow: hidden; }
 .cli-marquee__track {
@@ -278,6 +317,36 @@ body.admin-bar #cli-navbar { top: 32px; }
 }
 .cli-marquee--cards .cli-marquee__track {
   animation-duration: 55s;
+}
+
+/* ============================================================
+   Mega menu (Services)
+   ============================================================ */
+.cli-mega {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: var(--color-paper);
+  border-top: 1px solid color-mix(in oklch, var(--color-silver) 35%, transparent);
+  border-bottom: 2px solid var(--color-brand);
+  box-shadow: 0 24px 48px -20px oklch(0% 0 0 / 0.35);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.22s var(--ease-out), transform 0.22s var(--ease-out), visibility 0s linear 0.22s;
+}
+.cli-mega.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.22s var(--ease-out), transform 0.22s var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cli-mega { transition: none; }
 }
 
 /* ============================================================
@@ -325,32 +394,75 @@ details[open] > .cli-faq-answer {
 }
 
 /* Botón flotante de llamada — esquinas vivas, pulso rojo */
-.cli-float-call {
+.cli-float-dock {
   position: fixed;
   right: 1.25rem;
   bottom: 1.25rem;
   z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.cli-float-dock.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Cuadritos de redes — color oficial de cada red */
+.cli-float-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: #fff;
+  box-shadow: 0 8px 20px oklch(0% 0 0 / 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cli-float-social:hover,
+.cli-float-social:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px oklch(0% 0 0 / 0.4);
+}
+.cli-float-social:focus-visible {
+  outline: 2px solid var(--color-paper);
+  outline-offset: 2px;
+}
+.cli-float-social--facebook { background: #1877f2; }
+.cli-float-social--instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.cli-float-social--yelp { background: #d32323; }
+.cli-float-social--linkedin { background: #0a66c2; }
+
+.cli-float-call {
   display: inline-flex;
   align-items: center;
   gap: 0.6em;
-  height: 3.5rem;
-  width: 3.5rem;
-  padding: 0 1rem;
+  height: 2.75rem;
+  width: 2.75rem;
+  padding: 0 0.75rem;
   overflow: hidden;
   white-space: nowrap;
-  background: var(--color-brand);
-  color: var(--color-paper);
+  background: var(--color-silver);
+  color: var(--color-ink);
   transition: width 0.4s var(--ease-out), transform 0.3s ease;
   animation: cli-float-pulse 2.8s ease-in-out infinite;
 }
 .cli-float-call:hover,
 .cli-float-call:focus-visible {
-  width: 15rem;
+  width: 13.5rem;
   transform: translateY(-2px);
   animation-play-state: paused;
 }
 .cli-float-call:focus-visible {
-  outline: 2px solid var(--color-paper);
+  outline: 2px solid var(--color-ink);
   outline-offset: 3px;
 }
 .cli-float-call__text {
@@ -364,8 +476,8 @@ details[open] > .cli-faq-answer {
   transform: translateX(0);
 }
 @keyframes cli-float-pulse {
-  0%, 100% { box-shadow: 0 10px 26px oklch(0% 0 0 / 0.35), 0 0 0 0 oklch(60% 0.2 25 / 0.4); }
-  50% { box-shadow: 0 10px 26px oklch(0% 0 0 / 0.35), 0 0 0 10px oklch(60% 0.2 25 / 0); }
+  0%, 100% { box-shadow: 0 10px 26px oklch(0% 0 0 / 0.35), 0 0 0 0 oklch(70% 0 0 / 0.45); }
+  50% { box-shadow: 0 10px 26px oklch(0% 0 0 / 0.35), 0 0 0 10px oklch(70% 0 0 / 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -377,7 +489,8 @@ details[open] > .cli-faq-answer {
   }
   .cli-card-media img { transition: none; }
   details[open] > .cli-faq-answer { animation: none; }
-  .cli-float-call, .cli-float-call__text { animation: none !important; transition: none !important; }
+  .cli-float-call, .cli-float-call__text, .cli-float-social { animation: none !important; transition: none !important; }
+  .cli-float-dock { transition: none !important; }
   .cli-link::after { transition: none; }
   .cli-marquee__track { animation: none; }
   .cli-cta::before { transition: none; }
