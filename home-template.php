@@ -173,8 +173,15 @@ $faqs = array(
 </section>
 
 <!-- ============ SERVICES — carrusel continuo de cards (patrón IPR) ============ -->
-<section id="services" class="bg-paper-2 cli-on-light py-20 lg:py-28 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4">
+<section id="services" class="relative bg-paper cli-on-light py-20 lg:py-28 overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4">
     <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Our Services
     </h2>
@@ -185,7 +192,7 @@ $faqs = array(
     </p>
   </div>
 
-  <div class="cli-marquee cli-marquee--cards mt-12" aria-label="Services">
+  <div class="relative cli-marquee cli-marquee--cards mt-12" aria-label="Services">
     <div class="cli-marquee__track flex items-stretch gap-5 w-max pr-5">
       <?php for ($copy = 0; $copy < 2; $copy++) : ?>
         <?php foreach ($services as $s) : ?>
@@ -219,7 +226,7 @@ $faqs = array(
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 mt-10">
+  <div class="relative max-w-7xl mx-auto px-4 mt-10">
     <a href="<?php echo esc_url(home_url('/services/')); ?>" class="cli-link text-ink">
       Explore All Services
     </a>
@@ -252,8 +259,15 @@ $faqs = array(
 </section>
 
 <!-- ============ LOCATIONS ============ -->
-<section class="cli-gradient">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
+<section class="relative bg-paper overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-28">
     <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Where We Work
     </h2>
@@ -347,8 +361,15 @@ $yelp_review = 'https://www.yelp.com/writeareview/biz/c-l-i-construction-albuque
 </section>
 
 <!-- ============ FAQ — filas de acordeón ============ -->
-<section class="cli-gradient">
-  <div class="max-w-4xl mx-auto px-4 py-20 lg:py-28">
+<section class="relative bg-paper overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative max-w-4xl mx-auto px-4 py-20 lg:py-28">
     <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Frequently Asked Questions
     </h2>

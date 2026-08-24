@@ -58,10 +58,17 @@ $values = array(
 </section>
 
 <!-- ============ INTRO — split 50/50 texto / foto full-bleed ============ -->
-<section class="cli-pattern">
-  <div class="grid lg:grid-cols-2 items-stretch">
+<section class="relative bg-paper overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative grid lg:grid-cols-2 items-stretch">
     <div class="flex items-center">
-      <div class="w-full max-w-xl mx-auto px-6 py-16 lg:px-10 lg:py-24 cli-reveal-left">
+      <div class="relative w-full max-w-xl mx-auto px-6 py-16 lg:px-10 lg:py-24 cli-reveal-left">
         <p class="text-ink text-xl lg:text-2xl leading-relaxed font-medium">
           CLI Constructions is a family-owned and managed construction company
           based in Albuquerque, New Mexico.
@@ -110,9 +117,16 @@ $values = array(
 </section>
 
 <!-- ============ TEAM / CREDENCIALES — split 50/50 foto full-bleed / texto ============ -->
-<section class="cli-gradient">
-  <div class="grid lg:grid-cols-2 items-stretch">
-    <div class="min-h-80 lg:min-h-[34rem] cli-reveal-left">
+<section class="relative bg-paper overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative grid lg:grid-cols-2 items-stretch">
+    <div class="relative min-h-80 lg:min-h-[34rem] cli-reveal-left">
       <img
         src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIFull.jpg')); ?>"
         alt="CLI Constructions crew on site"
@@ -141,8 +155,15 @@ $values = array(
 </section>
 
 <!-- ============ WHY US — grid con hairlines ============ -->
-<section class="cli-pattern">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
+<section class="relative bg-paper overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-28">
     <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Why Us?
     </h2>
@@ -162,8 +183,15 @@ $values = array(
 </section>
 
 <!-- ============ VALUES — filas numeradas ============ -->
-<section class="cli-gradient">
-  <div class="max-w-4xl mx-auto px-4 py-20 lg:py-28">
+<section class="relative bg-paper overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative max-w-4xl mx-auto px-4 py-20 lg:py-28">
     <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       3 Values that Define Our Company
     </h2>

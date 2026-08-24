@@ -109,8 +109,15 @@ $process = array(
 </section>
 
 <!-- ============ WHO WE SERVE — grid hairline ============ -->
-<section class="cli-pattern">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
+<section class="relative bg-paper overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-28">
     <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Who We Serve
     </h2>

@@ -30,8 +30,15 @@ get_header(); ?>
 </section>
 
 <!-- ============ OVERVIEW + ALCANCE ============ -->
-<section class="cli-pattern cli-on-light">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28 grid gap-12 lg:grid-cols-12">
+<section class="relative bg-paper cli-on-light overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-28 grid gap-12 lg:grid-cols-12">
     <div class="lg:col-span-7 cli-reveal-left">
       <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
         Remodels Done Right

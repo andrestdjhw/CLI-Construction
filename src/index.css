@@ -263,6 +263,23 @@ body.admin-bar #cli-navbar { top: 32px; }
   background-size: var(--s) calc(var(--s) * 0.577);
 }
 
+/* Filtros de la galería */
+.cli-g-filter {
+  border-color: color-mix(in oklch, var(--color-ink) 25%, transparent);
+  color: var(--color-ink);
+  background: var(--color-paper);
+}
+.cli-g-filter:hover { border-color: var(--color-brand); color: var(--color-brand-2); }
+.cli-g-filter.is-active {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: var(--color-paper);
+}
+.cli-g-filter:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
 /* Carrusel manual con flechas (services-template) */
 .cli-carousel__track {
   scroll-behavior: smooth;
@@ -317,6 +334,26 @@ body.admin-bar #cli-navbar { top: 32px; }
 }
 .cli-marquee--cards .cli-marquee__track {
   animation-duration: 55s;
+}
+
+/* ============================================================
+   Video de fondo blueprint para secciones claras
+   ============================================================ */
+.cli-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cli-bg-video__veil {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--color-paper) 86%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cli-bg-video { display: none; }
+  .cli-bg-video__veil { background: var(--color-paper); }
 }
 
 /* ============================================================
