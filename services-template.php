@@ -59,6 +59,29 @@ $why = array(
     'desc'  => 'Certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico, CLI Constructions is a reliable choice committed to quality, ethics, and customer satisfaction.',
   ),
 );
+
+$faqs = array(
+  array(
+    'q' => 'What services does CLI Constructions offer?',
+    'a' => 'CLI Constructions specializes in renovations, painting, stucco, remodels, and roofing for multi-housing and commercial properties in Albuquerque and surrounding New Mexico areas.',
+  ),
+  array(
+    'q' => 'Where does CLI Constructions provide services?',
+    'a' => 'We serve Albuquerque, Santa Fe, Los Lunas, Santa Rosa, and all surrounding areas throughout New Mexico.',
+  ),
+  array(
+    'q' => 'Is CLI Constructions a licensed and certified company?',
+    'a' => 'Yes, CLI Constructions is certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico.',
+  ),
+  array(
+    'q' => 'Can CLI Constructions handle commercial construction projects?',
+    'a' => 'Absolutely. We focus primarily on commercial and multi-housing construction, offering expert renovations, roofing, and remodeling services.',
+  ),
+  array(
+    'q' => 'How can I request an estimate from CLI Constructions?',
+    'a' => 'You can request a free estimate by contacting us via phone at (505) 518-1965 or email at office@cliconstructions.com.',
+  ),
+);
 ?>
 
 <!-- ============ PAGE HERO ============ -->
@@ -77,51 +100,51 @@ $why = array(
   </div>
 </section>
 
-<!-- ============ SERVICIOS — carrusel manual ============ -->
-<section class="cli-cubes" data-cli-carousel>
-  <div class="max-w-7xl mx-auto px-4 pt-16 lg:pt-24 flex items-end justify-between gap-6">
+<!-- ============ SERVICIOS — carrusel continuo de cartillas ============ -->
+<section class="cli-cubes overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 py-16 lg:py-24">
     <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Explore Each Service
     </h2>
-    <div class="flex gap-2 shrink-0">
-      <button type="button" class="cli-carousel-btn" data-prev aria-label="Previous service">&larr;</button>
-      <button type="button" class="cli-carousel-btn" data-next aria-label="Next service">&rarr;</button>
-    </div>
   </div>
 
-  <div
-    class="cli-carousel__track mt-10 pb-16 lg:pb-24 flex gap-5 overflow-x-auto snap-x snap-mandatory px-4 lg:px-[max(1rem,calc((100vw-80rem)/2))]"
-    data-track
-  >
-    <?php foreach ($services as $s) : ?>
-      <article class="w-[88%] md:w-[75%] lg:w-[64%] shrink-0 snap-start grid md:grid-cols-2 bg-paper border border-ink/15 cli-reveal-stagger">
-        <div class="cli-card-media min-h-64 md:min-h-full">
-          <img
-            src="<?php echo esc_url(strpos($s['img'], '/') === 0 ? home_url($s['img']) : $live . $s['img']); ?>"
-            alt="<?php echo esc_attr($s['title'] . ' — CLI Constructions'); ?>"
-            class="w-full h-full object-cover"
-            loading="lazy"
+  <div class="relative cli-marquee cli-marquee--cards mt-10" aria-label="Services">
+    <div class="cli-marquee__track flex items-stretch gap-6 w-max pr-6">
+      <?php for ($copy = 0; $copy < 2; $copy++) : ?>
+        <?php foreach ($services as $s) : ?>
+          <article
+            class="group w-80 sm:w-96 shrink-0 flex flex-col bg-paper border border-ink/15"
+            <?php echo $copy ? 'aria-hidden="true"' : ''; ?>
           >
-        </div>
-        <div class="flex flex-col p-7 lg:p-10">
-          <span class="cli-spec text-silver"><?php echo esc_html($s['num']); ?></span>
-          <h3 class="mt-2 font-display font-extrabold text-ink tracking-tight text-[clamp(1.4rem,2.5vw,2rem)] leading-tight">
-            <?php echo esc_html($s['title']); ?>
-          </h3>
-          <p class="mt-4 text-ink/70 leading-relaxed">
-            <?php echo esc_html($s['desc']); ?>
-          </p>
-          <div class="mt-auto pt-7 flex flex-wrap items-center gap-5">
-            <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta">
-              <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
-            </a>
-            <a href="<?php echo esc_url(home_url($s['href'])); ?>" class="cli-link text-ink">
-              Keep Reading
-            </a>
-          </div>
-        </div>
-      </article>
-    <?php endforeach; ?>
+            <div class="cli-card-media">
+              <img
+                src="<?php echo esc_url(strpos($s['img'], '/') === 0 ? home_url($s['img']) : $live . $s['img']); ?>"
+                alt="<?php echo esc_attr($s['title'] . ' — CLI Constructions'); ?>"
+                class="w-full aspect-[4/3] object-cover"
+                loading="lazy"
+              >
+            </div>
+            <div class="flex flex-col flex-grow p-7">
+              <span class="cli-spec text-silver"><?php echo esc_html($s['num']); ?></span>
+              <h3 class="mt-2 font-display font-extrabold text-ink tracking-tight text-xl group-hover:text-brand-2 transition-colors">
+                <?php echo esc_html($s['title']); ?>
+              </h3>
+              <p class="mt-3 text-ink/65 leading-relaxed">
+                <?php echo esc_html($s['desc']); ?>
+              </p>
+              <div class="mt-auto pt-6 flex flex-wrap items-center gap-5">
+                <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta" <?php echo $copy ? 'tabindex="-1"' : ''; ?>>
+                  <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
+                </a>
+                <a href="<?php echo esc_url(home_url($s['href'])); ?>" class="cli-link text-ink" <?php echo $copy ? 'tabindex="-1"' : ''; ?>>
+                  Keep Reading
+                </a>
+              </div>
+            </div>
+          </article>
+        <?php endforeach; ?>
+      <?php endfor; ?>
+    </div>
   </div>
 </section>
 
@@ -141,6 +164,37 @@ $why = array(
             <?php echo esc_html($w['desc']); ?>
           </p>
         </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ — filas de acordeón ============ -->
+<section class="relative bg-paper overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative max-w-4xl mx-auto px-4 py-20 lg:py-28">
+    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
+      Frequently Asked Questions
+    </h2>
+    <div class="mt-10 border-t border-ink/15">
+      <?php foreach ($faqs as $f) : ?>
+        <details class="group border-b border-ink/15">
+          <summary class="flex items-center justify-between gap-6 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+            <h3 class="font-display font-bold text-ink text-lg tracking-tight">
+              <?php echo esc_html($f['q']); ?>
+            </h3>
+            <span aria-hidden="true" class="text-brand text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="cli-faq-answer pb-6 text-ink/70 leading-relaxed max-w-3xl">
+            <?php echo esc_html($f['a']); ?>
+          </p>
+        </details>
       <?php endforeach; ?>
     </div>
   </div>

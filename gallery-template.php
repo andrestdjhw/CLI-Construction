@@ -5,8 +5,6 @@ Template Name: Gallery Template
 
 get_header();
 
-$live = 'https://cliconstructions.com/wp-content/uploads/2025/05/'; // assets aún en producción (videos)
-
 /* ── GALLERY — PROYECTOS ─────────────────────────────────────────────────────
  * Esquema editable: agrega proyectos copiando un bloque del array.
  * 'img'    = foto principal (After). 'before' = foto Before (opcional):
@@ -84,11 +82,257 @@ $projects = array(
     'has_ba'    => false,
     'size'      => '',
   ),
+
+  /* ── Fotos de campo agregadas a la biblioteca de medios (agosto 2026) ──
+   * Categorizadas a partir del contenido de cada foto (sin datos de
+   * dirección/cliente reales); ajustar título/desc/categoría si hace falta. */
+  array(
+    'id' => 6, 'category' => 'renovations', 'title' => 'Home Addition — Framing Stage',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A residential addition captured mid-framing, part of a larger renovation scope built from the ground up.',
+    'scope' => 'Framing · Structural build-out',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-27.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 7, 'category' => 'renovations', 'title' => 'Unit Renovation — Bedroom Turn',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A fully turned bedroom with new flooring and closet doors, ready for the next tenant.',
+    'scope' => 'Flooring · Closet doors · Paint',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-41.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 8, 'category' => 'renovations', 'title' => 'Unit Renovation — Living Area Turn',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A renovated living area with fresh paint and flooring, finished on schedule for move-in.',
+    'scope' => 'Flooring · Paint · Move-in ready',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-44.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 9, 'category' => 'renovations', 'title' => 'Single-Family Home Renovation — Exterior',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A full exterior renovation with a new stucco finish and updated garage door and windows.',
+    'scope' => 'Exterior renovation · Garage door · Windows',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-52.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 10, 'category' => 'renovations', 'title' => 'Single-Family Home Renovation — Garage & Driveway',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'Same property, a second angle showing the finished garage and driveway after renovation.',
+    'scope' => 'Exterior renovation · Driveway · Garage door',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-53.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 11, 'category' => 'renovations', 'title' => 'Manufactured Home Renovation',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A manufactured home refreshed with updated siding, windows, and exterior finishes.',
+    'scope' => 'Siding · Windows · Exterior refresh',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-56.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 12, 'category' => 'renovations', 'title' => 'Unit Renovation — Bedroom with Barn Doors',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A renovated bedroom featuring sliding barn-door closets and new wood-look flooring.',
+    'scope' => 'Barn doors · Flooring · Paint',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-66.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 13, 'category' => 'renovations', 'title' => 'Unit Renovation — Open Living Space',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'An open living space renovated with new flooring and a fresh coat of paint throughout.',
+    'scope' => 'Flooring · Paint · Trim',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-68.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 14, 'category' => 'renovations', 'title' => 'Unit Renovation — Hallway & Kitchen Access',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A renovated hallway leading into the kitchen, finished with matching flooring and paint.',
+    'scope' => 'Flooring · Paint · Interior doors',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-70.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 15, 'category' => 'renovations', 'title' => 'Unit Renovation — Bedroom Turn',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'Another completed bedroom turn, with new flooring, paint, and ceiling fan installed.',
+    'scope' => 'Flooring · Paint · Fixtures',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-72.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 16, 'category' => 'renovations', 'title' => 'Unit Renovation — Living Room with Patio Access',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A renovated living room with new flooring and glass patio doors letting in natural light.',
+    'scope' => 'Flooring · Patio doors · Paint',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-74.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 17, 'category' => 'renovations', 'title' => 'Community Common Area — Ramada & Courtyard',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A multi-housing common area renovated with a new shade ramada and landscaped courtyard.',
+    'scope' => 'Ramada construction · Landscaping · Hardscape',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-80.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 18, 'category' => 'renovations', 'title' => 'Community Common Area — Landscaping',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'Refreshed landscaping and turf at a multi-housing community, improving curb appeal for residents.',
+    'scope' => 'Landscaping · Turf · Retaining walls',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-81.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 19, 'category' => 'renovations', 'title' => 'Community Common Area — Courtyard',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A renovated courtyard at a multi-housing property, with new landscaping and walkways.',
+    'scope' => 'Landscaping · Walkways · Hardscape',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-82.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 20, 'category' => 'renovations', 'title' => 'Community Common Area — Patio & BBQ Area',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A shared patio and BBQ area renovated for a multi-housing community, built for everyday use.',
+    'scope' => 'Hardscape · Outdoor amenities · Landscaping',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-83.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 21, 'category' => 'renovations', 'title' => 'Unit Renovation — Bedroom Turn',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A completed unit turn with new carpet, paint, and lighting ready for the next resident.',
+    'scope' => 'Carpet · Paint · Lighting',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-88.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 22, 'category' => 'renovations', 'title' => 'Interior Renovation — Framing & Insulation',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'Mid-project view of interior framing and insulation during a larger renovation build-out.',
+    'scope' => 'Framing · Insulation · Rough-in',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-96.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 23, 'category' => 'renovations', 'title' => 'Interior Renovation — Structural Framing',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'Structural framing in progress, opening up the interior ahead of drywall and finishes.',
+    'scope' => 'Framing · Structural work',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-98.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 24, 'category' => 'renovations', 'title' => 'Commercial Building Renovation — Exterior',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A large-scale commercial renovation, with exterior work underway across the full building.',
+    'scope' => 'Exterior renovation · Commercial scope',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-103.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 25, 'category' => 'renovations', 'title' => 'Interior Renovation — Drywall Finish',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'Freshly finished drywall ahead of paint, with a new patio door bringing in natural light.',
+    'scope' => 'Drywall · Patio door · Paint prep',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-105.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+
+  array(
+    'id' => 26, 'category' => 'remodels', 'title' => 'Kitchen Remodel — White Cabinetry',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A full kitchen remodel with white shaker cabinetry, a center island, and stainless appliances.',
+    'scope' => 'Cabinetry · Island · Appliances',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-15.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 27, 'category' => 'remodels', 'title' => 'Bathroom Remodel — Tub & Shower',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A remodeled bathroom with a new tub-shower combo and updated vanity.',
+    'scope' => 'Tub-shower · Vanity · Tile',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-46.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 28, 'category' => 'remodels', 'title' => 'Bathroom Remodel — Marble-Look Tile',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A bathroom remodel finished with marble-look tile surround from floor to ceiling.',
+    'scope' => 'Tile surround · Tub · Lighting',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-61.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 29, 'category' => 'remodels', 'title' => 'Bathroom Remodel — Vanity & Tub',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A remodeled bathroom pairing a new vanity and mirror with a refreshed tub and tile.',
+    'scope' => 'Vanity · Mirror · Tile',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-62.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 30, 'category' => 'remodels', 'title' => 'Bathroom Remodel — Vanity & Lighting',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A compact bathroom remodel with a new vanity, updated lighting, and fresh finishes.',
+    'scope' => 'Vanity · Lighting · Finishes',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-76.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 31, 'category' => 'remodels', 'title' => 'Kitchen Remodel — Full Galley Kitchen',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A galley kitchen remodel with new cabinetry, countertops, and appliances end to end.',
+    'scope' => 'Cabinetry · Countertops · Appliances',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-78.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+
+  array(
+    'id' => 32, 'category' => 'stucco', 'title' => 'Commercial Stucco — Leasing Office Exterior',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A commercial leasing office finished with a clean, durable stucco exterior.',
+    'scope' => 'Stucco application · Commercial exterior',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-7.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 33, 'category' => 'stucco', 'title' => 'Stucco Finish — Building Signage Wall',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A textured stucco finish on a multi-housing building wall, framing the property signage.',
+    'scope' => 'Stucco texture · Exterior finish',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-10.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 34, 'category' => 'stucco', 'title' => 'Stucco Monument Sign',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A stucco-finished monument sign structure, built to match the property\'s exterior finishes.',
+    'scope' => 'Stucco application · Monument sign',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-11.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+  array(
+    'id' => 35, 'category' => 'stucco', 'title' => 'New Stucco Application — Home Exterior',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A fresh stucco application across a full home exterior, weather-resistant and New Mexico tough.',
+    'scope' => 'Stucco application · Weather-resistant finish',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-58.webp', 'before' => '', 'has_ba' => false, 'size' => '',
+  ),
+
+  array(
+    'id' => 36, 'category' => 'painting', 'title' => 'Exterior Painting — Multi-Housing Stairwell',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'Exterior painting on a multi-housing stairwell, with bright accent doors against clean white walls.',
+    'scope' => 'Exterior painting · Accent doors',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-85.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 37, 'category' => 'painting', 'title' => 'Exterior Painting — Unit Doors & Railings',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'Freshly painted unit doors and railings finish off this multi-housing exterior painting project.',
+    'scope' => 'Exterior painting · Doors · Railings',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-86.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
+  array(
+    'id' => 38, 'category' => 'painting', 'title' => 'Exterior Painting — Building Unit Numbering',
+    'city' => 'Albuquerque, NM',
+    'desc' => 'A crisp, freshly painted building exterior with clear unit numbering for a multi-housing property.',
+    'scope' => 'Exterior painting · Building signage',
+    'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-87.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
+  ),
 );
 
+/* Editable: agrega/quita videos copiando un bloque. 'file' = ruta local en
+ * la biblioteca de medios de WP (siempre a partir de "/wp-content/..."),
+ * resuelta con home_url() al renderizar — así sobrevive intacta el cambio
+ * de dominio al migrar a producción. 'title' = etiqueta mostrada en el
+ * reproductor principal y en la miniatura. */
 $videos = array();
 for ($i = 1; $i <= 15; $i++) {
-  $videos[] = 'VIDEO-CLI-' . $i . '.mp4';
+  $videos[] = array(
+    'file'  => '/wp-content/uploads/2026/08/VIDEO-CLI-' . $i . '.mp4',
+    'title' => 'Project Video ' . str_pad($i, 2, '0', STR_PAD_LEFT),
+  );
 }
 ?>
 
@@ -174,26 +418,153 @@ for ($i = 1; $i <= 15; $i++) {
   </div>
 </section>
 
-<!-- ============ VIDEOS ============ -->
-<section id="videos" class="cli-cubes">
-  <div class="max-w-7xl mx-auto px-4 py-16 lg:py-24">
+<!-- ============ VIDEOS — loop principal + carrusel continuo de cartillas ============
+     El video grande arriba siempre está reproduciéndose en loop, muteado.
+     Abajo, un carrusel continuo (mismo patrón que Services) de cartillas con
+     miniatura; al seleccionar una, ese video pasa a reproducirse arriba. -->
+<section id="videos" class="relative cli-cubes overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/Steel-Gemetry-Background.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil cli-bg-video__veil--dark" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-16 lg:py-24">
     <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Videos
     </h2>
-    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <?php foreach ($videos as $v) : ?>
-        <video
-          src="<?php echo esc_url($live . $v); ?>"
-          class="w-full h-auto bg-ink-2"
-          controls
-          muted
-          playsinline
-          preload="none"
-        ></video>
-      <?php endforeach; ?>
+    <p class="mt-4 text-silver-2 text-lg leading-relaxed max-w-2xl">
+      Watch recent projects come together, from prep work to the final
+      walk-through.
+    </p>
+
+    <!-- Reproductor principal — loop muteado, siempre activo -->
+    <div id="cli-v-main" class="relative aspect-video bg-ink-2 overflow-hidden mt-10 mb-6">
+      <video
+        id="cli-v-player"
+        class="absolute inset-0 w-full h-full object-cover"
+        src="<?php echo esc_url(home_url($videos[0]['file'])); ?>"
+        data-index="0"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      ></video>
+      <span id="cli-v-label" class="cli-spec absolute bottom-3 left-3 bg-ink/70 text-paper px-2.5 py-1">
+        <?php echo esc_html($videos[0]['title']); ?>
+      </span>
+      <button
+        id="cli-v-mute"
+        type="button"
+        class="absolute bottom-3 right-3 flex items-center justify-center w-9 h-9 bg-ink/70 text-paper hover:bg-brand transition-colors"
+        aria-label="Unmute video"
+        aria-pressed="false"
+      >
+        <svg id="cli-v-mute-icon-off" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 10v4h4l5 5V5L7 10H3z" />
+          <path d="M16 8.5a4.5 4.5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" />
+          <line x1="19" y1="6" x2="19" y2="18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" transform="rotate(45 19 12)" />
+        </svg>
+        <svg id="cli-v-mute-icon-on" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 10v4h4l5 5V5L7 10H3z" />
+          <path d="M16 8.5a4.5 4.5 0 0 1 0 7M18.5 6a8 8 0 0 1 0 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Carrusel continuo de cartillas (mismo patrón que Services) -->
+    <div id="cli-v-thumbs" class="relative cli-marquee cli-marquee--cards" aria-label="Video thumbnails">
+      <div class="cli-marquee__track flex items-stretch gap-4 w-max pr-4">
+        <?php for ($copy = 0; $copy < 2; $copy++) : ?>
+          <?php foreach ($videos as $i => $v) : ?>
+            <button
+              type="button"
+              data-index="<?php echo esc_attr($i); ?>"
+              data-src="<?php echo esc_url(home_url($v['file'])); ?>"
+              data-title="<?php echo esc_attr($v['title']); ?>"
+              class="cli-v-card group relative w-56 sm:w-64 shrink-0 aspect-video overflow-hidden border transition-colors <?php echo $i === 0 ? 'border-brand' : 'border-silver/25 hover:border-brand/70'; ?>"
+              <?php echo $copy ? 'aria-hidden="true" tabindex="-1"' : ''; ?>
+            >
+              <video
+                class="cli-v-card-video absolute inset-0 w-full h-full object-cover"
+                src="<?php echo esc_url(home_url($v['file'])); ?>"
+                muted
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="absolute inset-0 bg-ink/25 group-hover:bg-ink/10 transition-colors"></div>
+              <div class="absolute top-1.5 right-1.5 flex items-center justify-center w-6 h-6 rounded-full bg-paper/90 text-ink">
+                <svg class="w-3 h-3 ml-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <span class="cli-spec absolute bottom-1.5 left-1.5 right-1.5 text-paper truncate text-left">
+                <?php echo esc_html($v['title']); ?>
+              </span>
+            </button>
+          <?php endforeach; ?>
+        <?php endfor; ?>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+(function () {
+  const player = document.getElementById('cli-v-player');
+  const label = document.getElementById('cli-v-label');
+  const muteBtn = document.getElementById('cli-v-mute');
+  const thumbsWrap = document.getElementById('cli-v-thumbs');
+  if (!player || !thumbsWrap) return;
+
+  const cards = thumbsWrap.querySelectorAll('.cli-v-card');
+
+  /* Cartillas: fijan un frame estático como miniatura sin reproducirse */
+  thumbsWrap.querySelectorAll('.cli-v-card-video').forEach(function (video) {
+    function showFrame() {
+      try { video.currentTime = Math.min(0.15, (video.duration || 1) / 10); } catch (e) { /* noop */ }
+    }
+    if (video.readyState >= 1) showFrame();
+    else video.addEventListener('loadedmetadata', showFrame, { once: true });
+  });
+
+  function activate(idx, src, title) {
+    if (player.getAttribute('data-index') === String(idx)) return;
+    player.setAttribute('data-index', idx);
+    player.src = src;
+    player.load();
+    const playPromise = player.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function () { /* autoplay bloqueado; reintenta en el próximo gesto */ });
+    }
+    label.textContent = title;
+
+    cards.forEach(function (c) {
+      const isActive = c.getAttribute('data-index') === String(idx);
+      c.classList.toggle('border-brand', isActive);
+      c.classList.toggle('border-silver/25', !isActive);
+    });
+  }
+
+  cards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      activate(card.getAttribute('data-index'), card.getAttribute('data-src'), card.getAttribute('data-title'));
+    });
+  });
+
+  if (muteBtn) {
+    muteBtn.addEventListener('click', function () {
+      player.muted = !player.muted;
+      muteBtn.setAttribute('aria-pressed', String(!player.muted));
+      muteBtn.setAttribute('aria-label', player.muted ? 'Unmute video' : 'Mute video');
+      document.getElementById('cli-v-mute-icon-off').classList.toggle('hidden', !player.muted);
+      document.getElementById('cli-v-mute-icon-on').classList.toggle('hidden', player.muted);
+    });
+  }
+})();
+</script>
 
 <!-- ============ CIERRE ============ -->
 <section class="cli-gradient cli-on-light">

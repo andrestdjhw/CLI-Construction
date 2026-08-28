@@ -54,14 +54,19 @@ $locations = array(
   array('city' => 'Santa Rosa, NM',  'href' => 'https://www.google.com/maps/search/?api=1&query=Santa+Rosa+NM'),
 );
 
+/* Ya viven en la biblioteca de medios local; si se agrega una foto que aún
+ * solo exista en el sitio en producción, se puede referenciar como nombre
+ * suelto (sin "/" inicial) y cae al fallback de $live, igual que $services. */
 $gallery = array(
-  'IMAGE-CLI-6.webp',
-  'IMAGE-CLI-1.webp',
-  'IMAGE-CLI-27.webp',
-  'IMAGE-CLI-71.webp',
-  'IMAGE-CLI-78.webp',
-  'IMAGE-CLI-85.webp',
-  'IMAGE-COMPANY-4.webp',
+  '/wp-content/uploads/2026/08/CLIRenovations.webp',
+  '/wp-content/uploads/2026/08/PaintingCLI-scaled.webp',
+  '/wp-content/uploads/2026/08/CLIStucco.webp',
+  '/wp-content/uploads/2026/08/CLIRemodels.jpg',
+  '/wp-content/uploads/2026/08/RoofingCLI.jpg',
+  '/wp-content/uploads/2026/08/CLIFull.jpg',
+  '/wp-content/uploads/2026/08/CLIFotos1-scaled.webp',
+  '/wp-content/uploads/2026/08/CLIFotos62-scaled.webp',
+  '/wp-content/uploads/2026/08/CLIFotos54-scaled.webp',
 );
 
 $faqs = array(
@@ -246,7 +251,7 @@ $faqs = array(
       <?php for ($copy = 0; $copy < 2; $copy++) : ?>
         <?php foreach ($gallery as $img) : ?>
           <img
-            src="<?php echo esc_url($live . $img); ?>"
+            src="<?php echo esc_url(strpos($img, '/') === 0 ? home_url($img) : $live . $img); ?>"
             alt="<?php echo $copy ? '' : 'CLI Constructions project'; ?>"
             <?php echo $copy ? 'aria-hidden="true"' : ''; ?>
             class="h-64 lg:h-80 w-auto object-cover shrink-0"
@@ -316,8 +321,15 @@ $reviews = array(
 $yelp_biz    = 'https://www.yelp.com/biz/c-l-i-construction-albuquerque-2';
 $yelp_review = 'https://www.yelp.com/writeareview/biz/c-l-i-construction-albuquerque-2';
 ?>
-<section id="reviews" class="cli-cubes">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
+<section id="reviews" class="relative cli-cubes overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/Steel-Gemetry-Background.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil cli-bg-video__veil--dark" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-28">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
         What Clients Say
@@ -391,20 +403,34 @@ $yelp_review = 'https://www.yelp.com/writeareview/biz/c-l-i-construction-albuque
   </div>
 </section>
 
-<!-- ============ CIERRE — statement + CTA ============ -->
+<!-- ============ CIERRE — split 50/50 mapa / formulario ============ -->
 <section class="cli-cubes">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
-    <h2 class="font-display font-extrabold text-paper leading-[1.05] tracking-tight text-[clamp(2rem,4.5vw,3.25rem)] max-w-3xl">
-      Expert Construction Solutions You Can <span class="text-brand">Count On</span>
-    </h2>
-    <p class="mt-6 text-silver-2 text-lg leading-relaxed max-w-2xl">
-      Partner with CLI Constructions for trusted commercial and multi-housing
-      renovations, roofing, and more &mdash; serving Albuquerque, Santa Fe, and
-      surrounding New Mexico communities with pride.
-    </p>
-    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-9 bg-brand !text-paper">
-      <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
-    </a>
+  <div class="grid lg:grid-cols-2 items-stretch">
+    <div class="min-h-80 lg:min-h-[34rem] cli-reveal-left">
+      <iframe
+        src="https://www.google.com/maps?q=CLI+Construction+Albuquerque+NM&output=embed"
+        class="w-full h-full grayscale-20 contrast-[1.05]"
+        style="border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="CLI Constructions location map"
+      ></iframe>
+    </div>
+    <div class="flex items-center">
+      <div class="w-full max-w-xl mx-auto px-6 py-16 lg:px-10 lg:py-24 cli-reveal-right">
+        <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight">
+          Expert Construction Solutions You Can <span class="text-brand">Count On</span>
+        </h2>
+        <p class="mt-5 text-silver-2 text-lg leading-relaxed">
+          Partner with CLI Constructions for trusted commercial and
+          multi-housing renovations, roofing, and more &mdash; serving
+          Albuquerque, Santa Fe, and surrounding New Mexico communities with
+          pride.
+        </p>
+        <!-- Contact Form (React) -->
+        <div class="mt-8 bg-paper border border-ink/15" data-cli-contact-form></div>
+      </div>
+    </div>
   </div>
 </section>
 

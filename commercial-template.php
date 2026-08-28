@@ -28,11 +28,41 @@ $segments = array(
 );
 
 $capabilities = array(
-  array('num' => '01', 'title' => 'Renovations', 'href' => '/service/renovations/'),
-  array('num' => '02', 'title' => 'Remodels', 'href' => '/service/remodels/'),
-  array('num' => '03', 'title' => 'Painting', 'href' => '/service/painting/'),
-  array('num' => '04', 'title' => 'Stucco', 'href' => '/service/stucco/'),
-  array('num' => '05', 'title' => 'Roofing', 'href' => '/service/roofing/'),
+  array(
+    'num'   => '01',
+    'img'   => '/wp-content/uploads/2026/08/CLIRenovations.webp',
+    'title' => 'Renovations',
+    'desc'  => 'Expert renovation services in Albuquerque and surrounding areas, focused on multi-housing and commercial properties.',
+    'href'  => '/service/renovations/',
+  ),
+  array(
+    'num'   => '02',
+    'img'   => '/wp-content/uploads/2026/08/CLIRemodels.jpg',
+    'title' => 'Remodels',
+    'desc'  => 'Comprehensive remodeling for commercial and multi-housing properties.',
+    'href'  => '/service/remodels/',
+  ),
+  array(
+    'num'   => '03',
+    'img'   => '/wp-content/uploads/2026/08/PaintingCLI-scaled.webp',
+    'title' => 'Painting',
+    'desc'  => 'Professional interior and exterior painting services for commercial and multi-housing projects.',
+    'href'  => '/service/painting/',
+  ),
+  array(
+    'num'   => '04',
+    'img'   => '/wp-content/uploads/2026/08/CLIStucco.webp',
+    'title' => 'Stucco',
+    'desc'  => 'Top-quality stucco application and repair, a New Mexico specialty done right.',
+    'href'  => '/service/stucco/',
+  ),
+  array(
+    'num'   => '05',
+    'img'   => '/wp-content/uploads/2026/08/RoofingCLI.jpg',
+    'title' => 'Roofing',
+    'desc'  => 'Reliable roofing services focused on multi-housing and commercial buildings in New Mexico.',
+    'href'  => '/service/roofing/',
+  ),
 );
 
 $process = array(
@@ -136,29 +166,64 @@ $process = array(
   </div>
 </section>
 
-<!-- ============ CAPABILITIES — filas spec-sheet ============ -->
-<section class="bg-paper-2 cli-on-light">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
-    <div class="flex flex-wrap items-end justify-between gap-6">
-      <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
-        Full-Scope Capabilities
-      </h2>
-      <a href="<?php echo esc_url(home_url('/services/')); ?>" class="cli-link text-ink">Explore All Services</a>
+<!-- ============ CAPABILITIES — carrusel continuo de cards (patrón IPR) ============ -->
+<section id="services" class="relative bg-paper cli-on-light py-20 lg:py-28 overflow-hidden">
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4">
+    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
+      Full-Scope Capabilities
+    </h2>
+    <p class="mt-4 text-ink/70 text-lg leading-relaxed max-w-3xl">
+      One integrated partner for renovations, remodels, painting, stucco, and
+      roofing, tailored specifically for commercial and multi-housing
+      properties.
+    </p>
+  </div>
+
+  <div class="relative cli-marquee cli-marquee--cards mt-12" aria-label="Capabilities">
+    <div class="cli-marquee__track flex items-stretch gap-5 w-max pr-5">
+      <?php for ($copy = 0; $copy < 2; $copy++) : ?>
+        <?php foreach ($capabilities as $c) : ?>
+          <a
+            href="<?php echo esc_url(home_url($c['href'])); ?>"
+            class="group w-80 shrink-0 flex flex-col bg-paper border border-ink/15"
+            <?php echo $copy ? 'aria-hidden="true" tabindex="-1"' : ''; ?>
+          >
+            <div class="cli-card-media">
+              <img
+                src="<?php echo esc_url(home_url($c['img'])); ?>"
+                alt=""
+                class="w-full aspect-[4/3] object-cover"
+                loading="lazy"
+              >
+            </div>
+            <div class="flex flex-col flex-grow p-6">
+              <h3 class="font-display font-bold text-ink text-xl tracking-tight group-hover:text-brand-2 transition-colors">
+                <?php echo esc_html($c['title']); ?>
+              </h3>
+              <p class="mt-2 text-ink/65 text-sm leading-relaxed">
+                <?php echo esc_html($c['desc']); ?>
+              </p>
+              <span class="cli-spec mt-auto pt-5 text-brand-2">
+                Learn More <span aria-hidden="true">&rarr;</span>
+              </span>
+            </div>
+          </a>
+        <?php endforeach; ?>
+      <?php endfor; ?>
     </div>
-    <div class="mt-12 border-t border-ink/15">
-      <?php foreach ($capabilities as $c) : ?>
-        <a
-          href="<?php echo esc_url(home_url($c['href'])); ?>"
-          class="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-6 py-5 border-b border-ink/15 transition-colors hover:bg-paper cli-reveal-stagger"
-        >
-          <span class="cli-spec text-silver"><?php echo esc_html($c['num']); ?></span>
-          <h3 class="font-display font-bold text-ink text-xl tracking-tight group-hover:text-brand-2 transition-colors">
-            <?php echo esc_html($c['title']); ?>
-          </h3>
-          <span aria-hidden="true" class="text-brand text-xl transition-transform group-hover:translate-x-1.5">&rarr;</span>
-        </a>
-      <?php endforeach; ?>
-    </div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 mt-10">
+    <a href="<?php echo esc_url(home_url('/services/')); ?>" class="cli-link text-ink">
+      Explore All Services
+    </a>
   </div>
 </section>
 

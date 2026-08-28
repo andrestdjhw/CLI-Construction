@@ -351,9 +351,16 @@ body.admin-bar #cli-navbar { top: 32px; }
   inset: 0;
   background: color-mix(in srgb, var(--color-paper) 86%, transparent);
 }
+
+/* Variante para superficies oscuras (footer, sección de videos de la galería) */
+.cli-bg-video__veil--dark {
+  background: color-mix(in srgb, var(--color-ink) 82%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cli-bg-video { display: none; }
   .cli-bg-video__veil { background: var(--color-paper); }
+  .cli-bg-video__veil--dark { background: var(--color-ink); }
 }
 
 /* ============================================================

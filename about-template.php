@@ -39,6 +39,29 @@ $values = array(
     'desc'  => 'Our success is built on teamwork. CLI Constructions fosters strong collaboration among our family-owned management, skilled crew, and clients to ensure exceptional results in multi-housing and commercial construction projects.',
   ),
 );
+
+$faqs = array(
+  array(
+    'q' => 'What services does CLI Constructions offer?',
+    'a' => 'CLI Constructions specializes in renovations, painting, stucco, remodels, and roofing for multi-housing and commercial properties in Albuquerque and surrounding New Mexico areas.',
+  ),
+  array(
+    'q' => 'Where does CLI Constructions provide services?',
+    'a' => 'We serve Albuquerque, Santa Fe, Los Lunas, Santa Rosa, and all surrounding areas throughout New Mexico.',
+  ),
+  array(
+    'q' => 'Is CLI Constructions a licensed and certified company?',
+    'a' => 'Yes, CLI Constructions is certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico.',
+  ),
+  array(
+    'q' => 'Can CLI Constructions handle commercial construction projects?',
+    'a' => 'Absolutely. We focus primarily on commercial and multi-housing construction, offering expert renovations, roofing, and remodeling services.',
+  ),
+  array(
+    'q' => 'How can I request an estimate from CLI Constructions?',
+    'a' => 'You can request a free estimate by contacting us via phone at (505) 518-1965 or email at office@cliconstructions.com.',
+  ),
+);
 ?>
 
 <!-- ============ PAGE HERO ============ -->
@@ -208,6 +231,30 @@ $values = array(
             </p>
           </div>
         </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ — filas de acordeón ============ -->
+<section class="cli-gradient">
+  <div class="max-w-4xl mx-auto px-4 py-20 lg:py-28">
+    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
+      Frequently Asked Questions
+    </h2>
+    <div class="mt-10 border-t border-ink/15">
+      <?php foreach ($faqs as $f) : ?>
+        <details class="group border-b border-ink/15">
+          <summary class="flex items-center justify-between gap-6 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+            <h3 class="font-display font-bold text-ink text-lg tracking-tight">
+              <?php echo esc_html($f['q']); ?>
+            </h3>
+            <span aria-hidden="true" class="text-brand text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="cli-faq-answer pb-6 text-ink/70 leading-relaxed max-w-3xl">
+            <?php echo esc_html($f['a']); ?>
+          </p>
+        </details>
       <?php endforeach; ?>
     </div>
   </div>
