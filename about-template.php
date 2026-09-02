@@ -64,14 +64,20 @@ $faqs = array(
 );
 ?>
 
-<!-- ============ PAGE HERO ============ -->
-<section class="cli-gradient cli-on-light">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
+<!-- ============ PAGE HERO — foto + scrim ============ -->
+<section class="relative bg-ink overflow-hidden">
+  <img
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIFull.jpg')); ?>"
+    alt=""
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+  <div class="absolute inset-0 bg-ink/70" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-28">
     <div class="max-w-3xl border-l-2 border-brand pl-6 lg:pl-10 cli-reveal-left is-visible">
-      <h1 class="font-display font-extrabold text-ink leading-[1.05] tracking-tight text-[clamp(2.25rem,5vw,3.5rem)]">
+      <h1 class="font-display font-extrabold text-paper leading-[1.05] tracking-tight text-[clamp(2.25rem,5vw,3.5rem)]">
         About Us
       </h1>
-      <p class="mt-5 text-ink/70 text-lg leading-relaxed">
+      <p class="mt-5 text-silver-2 text-lg leading-relaxed">
         Discover who we are &mdash; a family-owned construction company
         committed to quality, trust, and long-term relationships in
         multi-housing and commercial renovations.
@@ -119,7 +125,8 @@ $faqs = array(
 
 <!-- ============ MISSION / VISION — banda oscura ============ -->
 <section class="cli-cubes">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-24 grid gap-12 md:grid-cols-2">
+  <?php cli_dark_bg_video(); ?>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-24 grid gap-12 md:grid-cols-2">
     <div class="border-l-2 border-brand pl-6 cli-reveal-stagger">
       <p class="cli-spec text-silver-2">Our Mission</p>
       <p class="mt-4 text-paper text-lg leading-relaxed">
@@ -206,27 +213,28 @@ $faqs = array(
 </section>
 
 <!-- ============ VALUES — filas numeradas ============ -->
-<section class="relative bg-paper overflow-hidden">
-  <video
-    class="cli-bg-video"
-    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIBluePrintPattern.mp4')); ?>"
-    autoplay muted loop playsinline preload="metadata"
-    aria-hidden="true"
-  ></video>
-  <div class="cli-bg-video__veil" aria-hidden="true"></div>
+<section class="cli-cubes">
+  <?php cli_dark_bg_video(); ?>
   <div class="relative max-w-4xl mx-auto px-4 py-20 lg:py-28">
-    <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
+    <p class="cli-spec text-silver cli-reveal-up">Our Approach</p>
+    <h2 class="mt-3 font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       3 Values that Define Our Company
     </h2>
-    <div class="mt-10 border-t border-ink/15">
+    <p class="mt-4 text-silver-2 text-lg leading-relaxed max-w-xl cli-reveal-up">
+      Not a mission statement on a wall &mdash; the order every CLI Constructions
+      project actually runs in.
+    </p>
+
+    <div class="relative mt-14">
+      <span class="cli-values-spine" aria-hidden="true"></span>
       <?php foreach ($values as $v) : ?>
-        <div class="grid grid-cols-[auto_1fr] gap-x-6 py-7 border-b border-ink/15 cli-reveal-stagger">
-          <span class="cli-spec text-brand-2"><?php echo esc_html($v['num']); ?></span>
+        <div class="relative grid grid-cols-[auto_1fr] items-center gap-x-8 py-10 border-b border-paper/15 last:border-b-0 cli-reveal-stagger">
+          <span class="cli-svc-num-lg cli-shine-text"><?php echo esc_html($v['num']); ?></span>
           <div>
-            <h3 class="font-display font-bold text-ink text-xl tracking-tight">
+            <h3 class="font-display font-bold text-paper text-2xl tracking-tight">
               <?php echo esc_html($v['title']); ?>
             </h3>
-            <p class="mt-2 text-ink/65 leading-relaxed">
+            <p class="mt-3 text-silver-2 leading-relaxed max-w-2xl">
               <?php echo esc_html($v['desc']); ?>
             </p>
           </div>
@@ -262,7 +270,8 @@ $faqs = array(
 
 <!-- ============ CIERRE ============ -->
 <section class="cli-cubes">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
+  <?php cli_dark_bg_video(); ?>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-28">
     <h2 class="font-display font-extrabold text-paper leading-[1.05] tracking-tight text-[clamp(2rem,4.5vw,3.25rem)] max-w-3xl">
       Expert Construction Solutions You Can <span class="text-brand">Count On</span>
     </h2>

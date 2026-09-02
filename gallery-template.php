@@ -336,14 +336,20 @@ for ($i = 1; $i <= 15; $i++) {
 }
 ?>
 
-<!-- ============ PAGE HERO ============ -->
-<section class="cli-gradient cli-on-light">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28">
+<!-- ============ PAGE HERO — foto + scrim ============ -->
+<section class="relative bg-ink overflow-hidden">
+  <img
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIRemodels.jpg')); ?>"
+    alt=""
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+  <div class="absolute inset-0 bg-ink/70" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-28">
     <div class="max-w-3xl border-l-2 border-brand pl-6 lg:pl-10 cli-reveal-left is-visible">
-      <h1 class="font-display font-extrabold text-ink leading-[1.05] tracking-tight text-[clamp(2.25rem,5vw,3.5rem)]">
+      <h1 class="font-display font-extrabold text-paper leading-[1.05] tracking-tight text-[clamp(2.25rem,5vw,3.5rem)]">
         Gallery
       </h1>
-      <p class="mt-5 text-ink/70 text-lg leading-relaxed">
+      <p class="mt-5 text-silver-2 text-lg leading-relaxed">
         Browse photos showcasing our craftsmanship, from detailed renovations
         to large-scale roofing and painting projects across Albuquerque and
         surrounding areas.

@@ -33,10 +33,25 @@
   --color-brand: #ec1f24;               /* rojo del logo — CTA, hovers, subrayados */
   --color-brand-2: oklch(48% 0.185 27); /* rojo profundo — texto/hover sobre blanco (AA) */
 
-  /* Tipografía — 2 + 1 */
-  --font-display: "Archivo", system-ui, sans-serif;
-  --font-body: "Instrument Sans", system-ui, sans-serif;
+  /* Tipografía — 2 + 1 (match: rcscomplete.com → Montserrat + DM Sans) */
+  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Gradiente de marca — negro → rojo (ref: rcscomplete.com), 135deg */
+  --gradient-brand: linear-gradient(
+    135deg,
+    var(--color-ink) 0%,
+    var(--color-ink-2) 35%,
+    var(--color-brand-2) 72%,
+    var(--color-brand) 100%
+  );
+  --gradient-brand-hover: linear-gradient(
+    135deg,
+    var(--color-ink-2) 0%,
+    var(--color-ink-3) 35%,
+    var(--color-brand) 100%
+  );
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -105,37 +120,59 @@ body.admin-bar #cli-navbar { top: 32px; }
 }
 
 /* ============================================================
-   Nav links: caps tracked + subrayado de latón que se dibuja
+   Nav links: chip elevado con bisel, no subrayado
+   (ref: rcscomplete.com — el link se "levanta" en hover con un
+   relleno rojo tenue + reborde + sombra de bisel de dos capas,
+   y se "hunde" al presionarlo o mientras su dropdown está abierto)
    ============================================================ */
 .cli-link {
   position: relative;
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: color 0.2s var(--ease-out);
-}
-.cli-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.45rem;
-  width: 100%;
-  height: 1px;
-  background: var(--cli-link-hover, var(--color-brand));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s var(--ease-out);
+  padding: 0.45rem 0.7rem;
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  transform: translateY(0);
+  transition: color 0.18s ease, background-color 0.18s ease,
+    border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
 .cli-link:hover,
-.cli-link.is-active { color: var(--cli-link-hover, var(--color-brand)); }
-.cli-link:hover::after,
-.cli-link.is-active::after,
-.cli-link:focus-visible::after { transform: scaleX(1); }
+.cli-link:focus-visible {
+  color: var(--cli-link-hover, var(--color-brand));
+  background: color-mix(in srgb, var(--color-brand) 8%, transparent);
+  border-color: color-mix(in srgb, var(--color-brand) 24%, transparent);
+  box-shadow:
+    inset 0 1px 0 oklch(100% 0 0 / 0.5),
+    inset 0 -1px 0 oklch(0% 0 0 / 0.05),
+    0 1px 2px oklch(0% 0 0 / 0.12),
+    0 4px 10px color-mix(in srgb, var(--color-brand) 22%, transparent);
+  transform: translateY(-2px);
+}
+.cli-link:active {
+  box-shadow:
+    inset 0 2px 4px oklch(0% 0 0 / 0.18),
+    inset 0 -1px 0 oklch(100% 0 0 / 0.4);
+  transform: translateY(1px);
+}
+/* Trigger del mega menu mientras está abierto: chip "hundido" (engaged) */
+.cli-link.is-active {
+  color: var(--cli-link-hover, var(--color-brand));
+  background: color-mix(in srgb, var(--color-brand) 8%, transparent);
+  border-color: color-mix(in srgb, var(--color-brand) 24%, transparent);
+  box-shadow:
+    inset 0 2px 4px oklch(0% 0 0 / 0.18),
+    inset 0 -1px 0 oklch(100% 0 0 / 0.4);
+  transform: translateY(1px);
+}
 .cli-link:focus-visible {
   outline: 2px solid var(--color-brand);
-  outline-offset: 4px;
+  outline-offset: 3px;
 }
 
 /* ============================================================
@@ -183,6 +220,17 @@ body.admin-bar #cli-navbar { top: 32px; }
   z-index: 1;
 }
 
+/* Relleno rojo → gradiente negro↔rojo (ref: rcscomplete.com).
+   Sobrescribe la utilidad .bg-brand de Tailwind: al vivir fuera de un
+   @layer, gana siempre sobre las utilidades generadas. */
+.bg-brand {
+  background-color: var(--color-brand); /* fallback sin color-mix/gradientes */
+  background-image: var(--gradient-brand);
+}
+.hover\:bg-brand:hover {
+  background-image: var(--gradient-brand-hover);
+}
+
 /* Roll del texto al hover */
 @keyframes cli-cta-roll {
   0% { transform: translateY(0); }
@@ -201,6 +249,23 @@ body.admin-bar #cli-navbar { top: 32px; }
   outline-offset: 3px;
 }
 
+
+/* Panel del formulario de contacto — vidrio oscuro translúcido
+   (ref: everridgeus.com — panel rgba(8,8,10,.55) + blur(28px) + filo
+   superior de acento). Siempre vive sobre fondos oscuros: cli-cubes /
+   bg-ink, así que texto e inputs son claros (ver ContactForm.js). */
+.cli-form-panel {
+  background-color: color-mix(in srgb, var(--color-ink) 62%, transparent);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  backdrop-filter: blur(28px) saturate(140%);
+  border: 1px solid color-mix(in srgb, var(--color-paper) 12%, transparent);
+  border-top: 2px solid var(--color-brand);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .cli-form-panel {
+    background-color: color-mix(in srgb, var(--color-ink) 92%, transparent);
+  }
+}
 
 /* Gradiente plateado↔blanco (hero y secciones) — con fallback sólido */
 .cli-gradient {
@@ -242,25 +307,13 @@ body.admin-bar #cli-navbar { top: 32px; }
   outline-color: var(--color-brand-2);
 }
 
-/* Estampado de cubos isométricos para bandas oscuras
-   (adaptado de Uiverse.io by om_6153 a los tokens de marca) */
+/* Bandas oscuras: antes estampado de cubos isométricos, ahora video
+   de fondo en loop (DarkBackgroundLoop2.mp4, ver cli_dark_bg_video()
+   en functions.php). El color sólido queda como fallback/base. */
 .cli-cubes {
-  --s: 200px;
+  position: relative;
+  overflow: hidden;
   background-color: var(--color-ink);
-  background:
-    repeating-conic-gradient(
-        from 30deg,
-        #0000 90deg 120deg,
-        var(--color-ink-2) 0deg 180deg
-      )
-      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
-    repeating-conic-gradient(
-      from 30deg,
-      var(--color-ink) 0deg 60deg,
-      var(--color-ink-3) 0deg 120deg,
-      var(--color-ink-2) 0deg 180deg
-    );
-  background-size: var(--s) calc(var(--s) * 0.577);
 }
 
 /* Filtros de la galería */
@@ -271,7 +324,7 @@ body.admin-bar #cli-navbar { top: 32px; }
 }
 .cli-g-filter:hover { border-color: var(--color-brand); color: var(--color-brand-2); }
 .cli-g-filter.is-active {
-  background: var(--color-brand);
+  background: var(--gradient-brand);
   border-color: var(--color-brand);
   color: var(--color-paper);
 }
@@ -300,7 +353,7 @@ body.admin-bar #cli-navbar { top: 32px; }
 }
 .cli-carousel-btn:hover,
 .cli-carousel-btn:focus-visible {
-  background: var(--color-brand);
+  background: var(--gradient-brand-hover);
   border-color: var(--color-brand);
   color: var(--color-paper);
 }
@@ -334,6 +387,84 @@ body.admin-bar #cli-navbar { top: 32px; }
 }
 .cli-marquee--cards .cli-marquee__track {
   animation-duration: 55s;
+}
+/* Difumina los bordes izq/der del carrusel (ref: rcscomplete.com) */
+.cli-marquee--fade {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+}
+
+/* ============================================================
+   Project cards — "Recent Work" (ref: rcscomplete.com "Our Work")
+   Card con foto + degradado + tag siempre visibles, caption con
+   punto de marca + ubicación, y "lift" con rebote sutil al hover.
+   ============================================================ */
+.cli-proj-card {
+  display: block;
+  width: 21.25rem; /* 340px */
+  background: var(--color-paper);
+  border: 1px solid color-mix(in oklch, var(--color-ink) 12%, transparent);
+  box-shadow: 0 6px 18px oklch(0% 0 0 / 0.12);
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.33, 1.15, 0.45, 1), box-shadow 0.4s ease;
+}
+.cli-proj-card:hover,
+.cli-proj-card:focus-visible {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 22px 46px oklch(0% 0 0 / 0.22);
+}
+.cli-proj-card:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+.cli-proj-thumb {
+  position: relative;
+  height: 17.5rem; /* 280px */
+  overflow: hidden;
+}
+.cli-proj-thumb__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    oklch(0% 0 0 / 0.8) 0%,
+    oklch(0% 0 0 / 0.1) 55%,
+    transparent 75%
+  );
+}
+.cli-proj-tag {
+  position: absolute;
+  left: 0.9rem;
+  bottom: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-paper);
+  background: oklch(100% 0 0 / 0.14);
+  border: 1px solid oklch(100% 0 0 / 0.3);
+  padding: 0.25rem 0.55rem;
+}
+.cli-proj-caption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: color-mix(in oklch, var(--color-ink) 55%, transparent);
+}
+.cli-proj-dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: var(--color-brand);
+  flex-shrink: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cli-proj-card { transition: none; }
+  .cli-proj-card:hover, .cli-proj-card:focus-visible { transform: none; }
 }
 
 /* ============================================================
@@ -389,8 +520,43 @@ body.admin-bar #cli-navbar { top: 32px; }
   transition: opacity 0.22s var(--ease-out), transform 0.22s var(--ease-out);
 }
 
+/* Marquee de áreas de servicio: sin animar mientras el mega menu está cerrado */
+.cli-mega:not(.is-open) .cli-marquee__track {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cli-mega { transition: none; }
+}
+
+/* Cards de servicio del mega menu — pop 3D al hover */
+.cli-mega__grid {
+  perspective: 1400px;
+}
+.cli-mega-card {
+  display: block;
+  background: var(--color-paper);
+  border: 1px solid color-mix(in oklch, var(--color-ink) 10%, transparent);
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.35s var(--ease-out);
+}
+.cli-mega-card:hover,
+.cli-mega-card:focus-visible {
+  transform: translateY(-8px) scale(1.02) rotateX(4deg);
+  box-shadow:
+    0 30px 50px -22px oklch(0% 0 0 / 0.4),
+    0 10px 18px -10px oklch(0% 0 0 / 0.25);
+  border-color: var(--color-brand);
+}
+.cli-mega-card:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cli-mega-card { transition: none; }
+  .cli-mega-card:hover, .cli-mega-card:focus-visible { transform: none; }
 }
 
 /* ============================================================
@@ -426,6 +592,46 @@ body.admin-bar #cli-navbar { top: 32px; }
 a:hover .cli-card-media img,
 a:focus-visible .cli-card-media img {
   transform: scale(1.06);
+}
+
+/* Numeración de servicios — chip oscuro en la esquina, número en
+   plata brillando (reutiliza el shimmer .cli-shine-text del hero) */
+/* Números grandes en plata brillando (ref: "How We Work" de
+   ecconstructioninc.com) — lista de valores/pasos sobre fondo oscuro,
+   con una "columna vertebral" vertical conectando los números. */
+.cli-svc-num-lg {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.cli-values-spine {
+  position: absolute;
+  left: 2.25rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: color-mix(in srgb, var(--color-paper) 15%, transparent);
+}
+
+.cli-svc-num {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.0625rem;
+  letter-spacing: -0.02em;
+  background-color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 
 /* Entrada de la respuesta del FAQ al abrir */
@@ -524,6 +730,59 @@ details[open] > .cli-faq-answer {
   50% { box-shadow: 0 10px 26px oklch(0% 0 0 / 0.35), 0 0 0 10px oklch(70% 0 0 / 0); }
 }
 
+/* ============================================================
+   Levitación — panel del formulario del hero flota suavemente
+   ============================================================ */
+.cli-levitate {
+  animation: cli-levitate 6s ease-in-out infinite;
+}
+@keyframes cli-levitate {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* ============================================================
+   Destello plateado — el titular del hero brilla como metal
+   pulido: una franja de luz cruza el texto cada tanto
+   ============================================================ */
+.cli-shine-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-paper) 0%,
+    var(--color-paper) 30%,
+    #ffffff 45%,
+    var(--color-silver-2) 50%,
+    #ffffff 55%,
+    var(--color-paper) 70%,
+    var(--color-paper) 100%
+  );
+  background-size: 300% 100%;
+  background-position: 220% 0;
+  background-repeat: repeat-x;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: cli-shine 8s var(--ease-in-out) infinite;
+}
+@keyframes cli-shine {
+  0% { background-position: 220% 0; }
+  55% { background-position: -20% 0; }
+  100% { background-position: -20% 0; }
+}
+
+/* ============================================================
+   Ken Burns sutil — fotos "respirando" en loop para que una
+   imagen estática no se sienta congelada (sección About del home)
+   ============================================================ */
+.cli-ken-burns {
+  animation: cli-ken-burns 16s ease-in-out infinite alternate;
+}
+@keyframes cli-ken-burns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.08) translate(-1.5%, -1.5%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cli-header { transition-duration: 0.01ms; }
   .cli-reveal-up, .cli-reveal-left, .cli-reveal-right, .cli-reveal-stagger {
@@ -535,8 +794,16 @@ details[open] > .cli-faq-answer {
   details[open] > .cli-faq-answer { animation: none; }
   .cli-float-call, .cli-float-call__text, .cli-float-social { animation: none !important; transition: none !important; }
   .cli-float-dock { transition: none !important; }
-  .cli-link::after { transition: none; }
+  .cli-link { transition: none; }
   .cli-marquee__track { animation: none; }
   .cli-cta::before { transition: none; }
   .cli-cta:hover .cli-cta__text { animation: none; }
+  .cli-levitate { animation: none; }
+  .cli-ken-burns { animation: none; }
+  .cli-shine-text {
+    animation: none;
+    background-image: none;
+    color: var(--color-paper);
+    -webkit-text-fill-color: var(--color-paper);
+  }
 }

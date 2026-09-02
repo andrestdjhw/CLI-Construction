@@ -5,6 +5,10 @@ import {
   MapPinIcon,
   MenuIcon,
   CloseIcon,
+  FacebookIcon,
+  InstagramIcon,
+  YelpIcon,
+  LinkedInIcon,
 } from "./icons"
 
 /* Config inyectada desde functions.php (wp_localize_script) con fallbacks */
@@ -13,7 +17,7 @@ const cfg = window.cliConfig || {}
 const PHONE = cfg.phone || "(505) 518-1965"
 const PHONE_HREF = "tel:" + (cfg.phoneRaw || "+15055181965")
 const EMAIL = cfg.email || "office@cliconstructions.com"
-const GEO_LABEL = cfg.geoLabel || "Albuquerque, NM"
+const GEO_LABEL = cfg.geoLabel || "3136 Coors Blvd NW Ste B, Albuquerque, NM"
 const MAPS_URL =
   cfg.mapsUrl ||
   "https://www.google.com/maps/search/?api=1&query=CLI+Construction+Albuquerque+NM"
@@ -22,10 +26,10 @@ const LOGO = cfg.logoUrl || ""
 
 /* Redes como texto mono, no fila de iconos — voz de spec-sheet */
 const SOCIALS = [
-  { label: "FB", full: "Facebook", href: cfg.facebook || "#" },
-  { label: "IG", full: "Instagram", href: cfg.instagram || "#" },
-  { label: "YELP", full: "Yelp", href: cfg.yelp || "#" },
-  { label: "IN", full: "LinkedIn", href: cfg.linkedin || "#" },
+  { full: "Facebook", href: cfg.facebook || "#", Icon: FacebookIcon },
+  { full: "Instagram", href: cfg.instagram || "#", Icon: InstagramIcon },
+  { full: "Yelp", href: cfg.yelp || "#", Icon: YelpIcon },
+  { full: "LinkedIn", href: cfg.linkedin || "#", Icon: LinkedInIcon },
 ]
 
 /* Rutas reales del sitio en vivo (cliconstructions.com) */
@@ -35,6 +39,7 @@ const NAV_ITEMS = [
   { label: "Services", href: "/services/", mega: true },
   { label: "Commercial", href: "/commercial/" },
   { label: "Gallery", href: "/gallery/" },
+  { label: "Locations", href: "/locations/" },
 ]
 
 /* Mega menu de Services — fotos locales de cada servicio */
@@ -72,6 +77,9 @@ const MEGA_SERVICES = [
 ]
 
 const CTA = { label: "Get an Estimate", href: "/contact/" }
+
+/* Áreas de servicio — mismas ciudades que el footer (AREAS) */
+const SERVICE_AREAS = ["Albuquerque", "Rio Rancho", "Los Lunas", "Santa Fe", "Santa Rosa"]
 
 function Navbar() {
   const headerRef = useRef(null)
@@ -148,20 +156,20 @@ function Navbar() {
       }
     >
       {/* ============ TOPBAR — franja de especificación ============ */}
-      <div ref={topbarRef} className="bg-ink text-silver">
-        <div className="cli-topbar-sep max-w-7xl mx-auto px-4 flex items-center justify-between gap-5 py-2.5">
+      <div ref={topbarRef} className="bg-ink text-paper">
+        <div className="cli-topbar-sep max-w-7xl mx-auto px-4 flex items-center justify-between gap-5 py-3.5">
           {/* Izquierda: teléfono + correo */}
           <div className="flex items-center gap-5 min-w-0">
             <a
               href={PHONE_HREF}
-              className="cli-spec flex items-center gap-2 hover:text-silver-2 transition-colors"
+              className="cli-spec flex items-center gap-2 hover:text-brand transition-colors"
             >
               <PhoneIcon className="w-3.5 h-3.5 text-brand" />
               <span className="whitespace-nowrap">{PHONE}</span>
             </a>
             <a
               href={"mailto:" + EMAIL}
-              className="cli-spec hidden sm:flex items-center gap-2 hover:text-silver-2 transition-colors min-w-0"
+              className="cli-spec hidden sm:flex items-center gap-2 hover:text-brand transition-colors min-w-0"
             >
               <MailIcon className="w-3.5 h-3.5 text-brand" />
               <span className="truncate normal-case tracking-normal font-body text-xs">
@@ -175,24 +183,24 @@ function Navbar() {
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="cli-spec hidden md:flex items-center gap-2 hover:text-silver-2 transition-colors"
+            className="cli-spec hidden md:flex items-center gap-2 hover:text-brand transition-colors min-w-0"
           >
-            <MapPinIcon className="w-3.5 h-3.5 text-brand" />
-            <span>{GEO_LABEL}</span>
+            <MapPinIcon className="w-3.5 h-3.5 shrink-0" />
+            <span className="normal-case tracking-normal font-body text-xs truncate">{GEO_LABEL}</span>
           </a>
 
-          {/* Derecha: redes como índice mono */}
+          {/* Derecha: redes como iconos */}
           <div className="flex items-center gap-4">
-            {SOCIALS.map(s => (
+            {SOCIALS.map(({ full, href, Icon }) => (
               <a
-                key={s.label}
-                href={s.href}
+                key={full}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={s.full}
-                className="cli-spec hover:text-silver-2 transition-colors"
+                aria-label={full}
+                className="hover:text-brand transition-colors"
               >
-                {s.label}
+                <Icon className="w-3.5 h-3.5" />
               </a>
             ))}
           </div>
@@ -278,12 +286,12 @@ function Navbar() {
           onMouseLeave={() => setMegaOpen(false)}
         >
           <div className="max-w-7xl mx-auto px-4 py-8">
-            <div className="grid grid-cols-5 gap-5">
+            <div className="grid grid-cols-5 gap-5 cli-mega__grid">
               {MEGA_SERVICES.map(s => (
                 <a
                   key={s.label}
                   href={s.href}
-                  className="group"
+                  className="cli-mega-card group"
                   tabIndex={megaOpen ? 0 : -1}
                 >
                   <div className="cli-card-media">
@@ -294,25 +302,46 @@ function Navbar() {
                       loading="lazy"
                     />
                   </div>
-                  <h3 className="mt-3 font-display font-bold text-ink tracking-tight group-hover:text-brand-2 transition-colors">
-                    {s.label}
-                  </h3>
-                  <p className="mt-1 text-xs text-ink/60 leading-relaxed">{s.desc}</p>
+                  <div className="px-3.5 pt-3.5 pb-4">
+                    <h3 className="font-display font-bold text-ink tracking-tight group-hover:text-brand-2 transition-colors">
+                      {s.label}
+                    </h3>
+                    <p className="mt-1 text-xs text-ink/60 leading-relaxed">{s.desc}</p>
+                  </div>
                 </a>
               ))}
             </div>
-            <div className="mt-7 pt-5 border-t border-ink/15 flex flex-wrap items-center justify-between gap-4">
-              <a href="/services/" className="cli-link text-ink" tabIndex={megaOpen ? 0 : -1}>
-                Explore All Services
-              </a>
+            <div className="mt-7 pt-5 border-t border-ink/15 flex items-center gap-6">
               <a
-                href={CTA.href}
-                className="cli-cta"
+                href="/services/"
+                className="cli-link text-ink shrink-0"
                 tabIndex={megaOpen ? 0 : -1}
               >
-                <span className="cli-cta__text">{CTA.label}</span>
-                <span aria-hidden="true">→</span>
+                Explore All Services
               </a>
+              {/* Marquee continuo de áreas de servicio */}
+              <div
+                className="cli-marquee flex-1 min-w-0 border-l border-ink/15 pl-6"
+                aria-label="Service areas"
+              >
+                <div className="cli-marquee__track flex items-center gap-6 w-max pr-6">
+                  {[0, 1].map(copy =>
+                    SERVICE_AREAS.map(city => (
+                      <React.Fragment key={copy + "-" + city}>
+                        <span
+                          className="cli-spec text-silver whitespace-nowrap"
+                          {...(copy ? { "aria-hidden": "true" } : {})}
+                        >
+                          {city}
+                        </span>
+                        <span className="text-brand" aria-hidden="true">
+                          &#9670;
+                        </span>
+                      </React.Fragment>
+                    ))
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>

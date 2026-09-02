@@ -52,7 +52,8 @@ $faqs = array(
 
 <!-- ============ GET IN TOUCH + FORM ============ -->
 <section id="estimate" class="cli-cubes">
-  <div class="max-w-7xl mx-auto px-4 py-16 lg:py-24 grid gap-12 lg:grid-cols-12">
+  <?php cli_dark_bg_video(); ?>
+  <div class="relative max-w-7xl mx-auto px-4 py-16 lg:py-24 grid gap-12 lg:grid-cols-12">
     <!-- Panel de contacto -->
     <div class="lg:col-span-5 cli-reveal-left">
       <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.6rem,3vw,2.25rem)] leading-tight">
@@ -104,7 +105,7 @@ $faqs = array(
     <!-- Formulario (React) -->
     <div class="lg:col-span-7 cli-reveal-right">
       <!-- Contact Form (React) -->
-      <div class="bg-paper border border-ink/15" data-cli-contact-form></div>
+      <div class="cli-form-panel" data-cli-contact-form></div>
     </div>
   </div>
 </section>
@@ -135,7 +136,8 @@ $faqs = array(
 
 <!-- ============ CIERRE ============ -->
 <section class="cli-cubes">
-  <div class="max-w-7xl mx-auto px-4 py-20 lg:py-24">
+  <?php cli_dark_bg_video(); ?>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-24">
     <h2 class="font-display font-extrabold text-paper leading-[1.05] tracking-tight text-[clamp(2rem,4.5vw,3.25rem)] max-w-3xl">
       Prefer to Talk It Through?
     </h2>

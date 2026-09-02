@@ -3,7 +3,7 @@
 function cli_load_assets() {
   wp_enqueue_style(
     'cli-fonts',
-    'https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap',
+    'https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
     array(),
     null
   );
@@ -31,7 +31,7 @@ function cli_load_assets() {
     'phone'     => '(505) 518-1965',
     'phoneRaw'  => '+15055181965',
     'email'     => 'office@cliconstructions.com',
-    'geoLabel'  => 'Albuquerque, NM',
+    'geoLabel'  => '3136 Coors Blvd NW Ste B, Albuquerque, NM',
     'mapsUrl'   => 'https://www.google.com/maps/search/?api=1&query=CLI+Construction+Albuquerque+NM',
     'facebook'  => 'https://www.facebook.com/cliconstruction',
     'instagram' => 'https://www.instagram.com/cliconstruction',
@@ -86,3 +86,19 @@ function cli_handle_contact() {
 
 add_action('wp_ajax_cli_contact', 'cli_handle_contact');
 add_action('wp_ajax_nopriv_cli_contact', 'cli_handle_contact');
+
+/* ============ Video de fondo para bandas ".cli-cubes" ============
+   Reemplaza el antiguo estampado de cubos isométricos. Se llama como
+   primer hijo de cada <section class="cli-cubes">; el contenido que
+   sigue necesita la clase "relative" para quedar por encima. */
+function cli_dark_bg_video() {
+  ?>
+  <video
+    class="cli-bg-video"
+    src="<?php echo esc_url(home_url('/wp-content/uploads/2026/09/DarkBackgroundLoop2.mp4')); ?>"
+    autoplay muted loop playsinline preload="metadata"
+    aria-hidden="true"
+  ></video>
+  <div class="cli-bg-video__veil cli-bg-video__veil--dark" aria-hidden="true"></div>
+  <?php
+}

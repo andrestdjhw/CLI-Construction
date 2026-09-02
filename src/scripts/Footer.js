@@ -185,7 +185,7 @@ function Footer() {
       </div>
 
       {/* ============ CIERRE — cinta blanca con logo ============ */}
-      <div className="cli-on-light cli-pattern text-ink border-t border-silver/25">
+      <div className="cli-on-light bg-paper text-ink border-t border-silver/25">
         <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <a href={HOME} className="flex items-center shrink-0">
             {LOGO ? (

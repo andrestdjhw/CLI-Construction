@@ -12,10 +12,12 @@ const SERVICES = [
   "Commercial / Multi-Housing",
 ]
 
+/* Inputs de vidrio: el panel ya es oscuro translúcido (.cli-form-panel),
+   así que los campos van claros sobre ese fondo, no blancos sólidos. */
 const inputClasses =
-  "w-full bg-paper border border-ink/20 px-3.5 py-2.5 text-sm text-ink " +
-  "placeholder:text-ink/35 focus:outline-none focus:border-brand " +
-  "focus:ring-1 focus:ring-brand transition-colors"
+  "w-full bg-paper/10 border border-paper/20 px-3.5 py-2.5 text-sm text-paper " +
+  "placeholder:text-paper/40 focus:outline-none focus:border-brand focus:bg-paper/15 " +
+  "focus:ring-1 focus:ring-brand transition-colors [color-scheme:dark]"
 
 function Field({ label, htmlFor, required, children }) {
   return (
@@ -77,14 +79,14 @@ function ContactForm({ variant = "full" }) {
   if (status === "success") {
     return (
       <div className={isCard ? "p-6 lg:p-7" : "p-7 lg:p-10"}>
-        <p className="cli-spec text-brand-2">Request received</p>
-        <h3 className="mt-2 font-display font-extrabold text-ink text-2xl tracking-tight">
+        <p className="cli-spec text-brand">Request received</p>
+        <h3 className="mt-2 font-display font-extrabold text-paper text-2xl tracking-tight">
           Thank you!
         </h3>
-        <p className="mt-3 text-ink/70 leading-relaxed">
+        <p className="mt-3 text-paper/70 leading-relaxed">
           We got your request and will get back to you with next steps.
           Need it faster? Call us at{" "}
-          <a href={"tel:" + (cfg.phoneRaw || "+15055181965")} className="text-brand-2 font-semibold">
+          <a href={"tel:" + (cfg.phoneRaw || "+15055181965")} className="text-brand font-semibold">
             {cfg.phone || "(505) 518-1965"}
           </a>
           .
@@ -96,7 +98,7 @@ function ContactForm({ variant = "full" }) {
   return (
     <form onSubmit={submit} className={isCard ? "p-6 lg:p-7" : "p-7 lg:p-10"} noValidate>
       {isCard && (
-        <h3 className="font-display font-extrabold text-ink text-xl tracking-tight">
+        <h3 className="font-display font-extrabold text-paper text-xl tracking-tight">
           Get a Fast Estimate
         </h3>
       )}
@@ -177,7 +179,7 @@ function ContactForm({ variant = "full" }) {
         </label>
       </div>
 
-      <label className="mt-5 flex items-start gap-2.5 text-xs text-ink/65 leading-relaxed">
+      <label className="mt-5 flex items-start gap-2.5 text-xs text-paper/65 leading-relaxed">
         <input
           type="checkbox"
           required
@@ -187,11 +189,11 @@ function ContactForm({ variant = "full" }) {
         />
         <span>
           I agree to the website&rsquo;s{" "}
-          <a href={cfg.privacyUrl || "/privacy-policy/"} className="underline hover:text-brand-2">
+          <a href={cfg.privacyUrl || "/privacy-policy/"} className="underline hover:text-brand">
             Privacy Policy
           </a>{" "}
           and{" "}
-          <a href={cfg.termsUrl || "/terms-and-conditions/"} className="underline hover:text-brand-2">
+          <a href={cfg.termsUrl || "/terms-and-conditions/"} className="underline hover:text-brand">
             Terms &amp; Conditions
           </a>
           .
@@ -199,7 +201,7 @@ function ContactForm({ variant = "full" }) {
       </label>
 
       {status === "error" && (
-        <p className="mt-4 text-sm text-brand-2">
+        <p className="mt-4 text-sm text-brand">
           Something went wrong sending your request. Please try again, or call
           us at {cfg.phone || "(505) 518-1965"}.
         </p>

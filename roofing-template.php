@@ -133,7 +133,8 @@ get_header(); ?>
 
 <!-- ============ ESTIMATE — contact form ============ -->
 <section id="estimate" class="cli-cubes">
-  <div class="max-w-7xl mx-auto px-4 py-16 lg:py-24 grid gap-12 lg:grid-cols-12">
+  <?php cli_dark_bg_video(); ?>
+  <div class="relative max-w-7xl mx-auto px-4 py-16 lg:py-24 grid gap-12 lg:grid-cols-12">
     <div class="lg:col-span-5 cli-reveal-left">
       <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.6rem,3vw,2.25rem)] leading-tight">
         Get a Roofing Estimate
@@ -152,7 +153,7 @@ get_header(); ?>
     </div>
     <div class="lg:col-span-7 cli-reveal-right">
       <!-- Contact Form (React) -->
-      <div class="bg-paper border border-ink/15" data-cli-contact-form></div>
+      <div class="cli-form-panel" data-cli-contact-form></div>
     </div>
   </div>
 </section>

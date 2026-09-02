@@ -102,7 +102,8 @@ $faqs = array(
 
 <!-- ============ SERVICIOS — carrusel continuo de cartillas ============ -->
 <section class="cli-cubes overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 py-16 lg:py-24">
+  <?php cli_dark_bg_video(); ?>
+  <div class="relative max-w-7xl mx-auto px-4 py-16 lg:py-24">
     <h2 class="font-display font-extrabold text-paper tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Explore Each Service
     </h2>
