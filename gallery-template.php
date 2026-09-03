@@ -19,6 +19,7 @@ $categories = array(
   'painting'    => 'Painting',
   'stucco'      => 'Stucco',
   'roofing'     => 'Roofing',
+  'flooring'    => 'Flooring',
 );
 
 $projects = array(
@@ -27,7 +28,7 @@ $projects = array(
     'category'  => 'roofing',
     'title'     => 'Multi-Housing Roofing',
     'city'      => 'Albuquerque, NM',
-    'desc'      => 'Reliable roofing focused on multi-housing and commercial buildings — installation, repairs, and maintenance that protect the property and its tenants.',
+    'desc'      => 'Reliable roofing focused on multi-housing and commercial buildings: installation, repairs, and maintenance that protect the property and its tenants.',
     'scope'     => 'Roof installation · Repairs · Maintenance',
     'img'       => '/wp-content/uploads/2026/08/RoofingCLI.jpg',
     'before'    => '',
@@ -39,7 +40,7 @@ $projects = array(
     'category'  => 'remodels',
     'title'     => 'Commercial Remodel',
     'city'      => 'Albuquerque, NM',
-    'desc'      => 'Comprehensive remodeling for commercial and multi-housing properties — expert design and skilled workmanship from scope to final walk-through.',
+    'desc'      => 'Comprehensive remodeling for commercial and multi-housing properties: expert design and skilled workmanship from scope to final walk-through.',
     'scope'     => 'Interior updates · Unit turns · Design + workmanship',
     'img'       => '/wp-content/uploads/2026/08/CLIRemodels.jpg',
     'before'    => '',
@@ -51,7 +52,7 @@ $projects = array(
     'category'  => 'stucco',
     'title'     => 'Stucco Application & Repair',
     'city'      => 'Albuquerque, NM',
-    'desc'      => 'Durable, weather-resistant stucco tailored for commercial and multi-housing buildings — a New Mexico specialty done right.',
+    'desc'      => 'Durable, weather-resistant stucco tailored for commercial and multi-housing buildings, a New Mexico specialty done right.',
     'scope'     => 'Stucco application · Stucco repair · Weather-resistant systems',
     'img'       => '/wp-content/uploads/2026/08/CLIStucco.webp',
     'before'    => '',
@@ -75,7 +76,7 @@ $projects = array(
     'category'  => 'renovations',
     'title'     => 'Multi-Housing Renovation',
     'city'      => 'Albuquerque, NM',
-    'desc'      => 'Property renovations with quality craftsmanship, timely completion, and lasting value — one accountable partner for the whole scope.',
+    'desc'      => 'Property renovations with quality craftsmanship, timely completion, and lasting value, with one accountable partner for the whole scope.',
     'scope'     => 'Property renovations · Craftsmanship · Timely completion',
     'img'       => '/wp-content/uploads/2026/08/CLIRenovations.webp',
     'before'    => '',
@@ -87,35 +88,35 @@ $projects = array(
    * Categorizadas a partir del contenido de cada foto (sin datos de
    * dirección/cliente reales); ajustar título/desc/categoría si hace falta. */
   array(
-    'id' => 6, 'category' => 'renovations', 'title' => 'Home Addition — Framing Stage',
+    'id' => 6, 'category' => 'renovations', 'title' => 'Home Addition: Framing Stage',
     'city' => 'Albuquerque, NM',
     'desc' => 'A residential addition captured mid-framing, part of a larger renovation scope built from the ground up.',
     'scope' => 'Framing · Structural build-out',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-27.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 7, 'category' => 'renovations', 'title' => 'Unit Renovation — Bedroom Turn',
+    'id' => 7, 'category' => 'renovations', 'title' => 'Unit Renovation: Bedroom Turn',
     'city' => 'Albuquerque, NM',
     'desc' => 'A fully turned bedroom with new flooring and closet doors, ready for the next tenant.',
     'scope' => 'Flooring · Closet doors · Paint',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-41.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 8, 'category' => 'renovations', 'title' => 'Unit Renovation — Living Area Turn',
+    'id' => 8, 'category' => 'renovations', 'title' => 'Unit Renovation: Living Area Turn',
     'city' => 'Albuquerque, NM',
     'desc' => 'A renovated living area with fresh paint and flooring, finished on schedule for move-in.',
     'scope' => 'Flooring · Paint · Move-in ready',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-44.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 9, 'category' => 'renovations', 'title' => 'Single-Family Home Renovation — Exterior',
+    'id' => 9, 'category' => 'renovations', 'title' => 'Single-Family Home Renovation: Exterior',
     'city' => 'Albuquerque, NM',
     'desc' => 'A full exterior renovation with a new stucco finish and updated garage door and windows.',
     'scope' => 'Exterior renovation · Garage door · Windows',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-52.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 10, 'category' => 'renovations', 'title' => 'Single-Family Home Renovation — Garage & Driveway',
+    'id' => 10, 'category' => 'renovations', 'title' => 'Single-Family Home Renovation: Garage & Driveway',
     'city' => 'Albuquerque, NM',
     'desc' => 'Same property, a second angle showing the finished garage and driveway after renovation.',
     'scope' => 'Exterior renovation · Driveway · Garage door',
@@ -129,98 +130,98 @@ $projects = array(
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-56.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 12, 'category' => 'renovations', 'title' => 'Unit Renovation — Bedroom with Barn Doors',
+    'id' => 12, 'category' => 'renovations', 'title' => 'Unit Renovation: Bedroom with Barn Doors',
     'city' => 'Albuquerque, NM',
     'desc' => 'A renovated bedroom featuring sliding barn-door closets and new wood-look flooring.',
     'scope' => 'Barn doors · Flooring · Paint',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-66.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 13, 'category' => 'renovations', 'title' => 'Unit Renovation — Open Living Space',
+    'id' => 13, 'category' => 'renovations', 'title' => 'Unit Renovation: Open Living Space',
     'city' => 'Albuquerque, NM',
     'desc' => 'An open living space renovated with new flooring and a fresh coat of paint throughout.',
     'scope' => 'Flooring · Paint · Trim',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-68.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 14, 'category' => 'renovations', 'title' => 'Unit Renovation — Hallway & Kitchen Access',
+    'id' => 14, 'category' => 'renovations', 'title' => 'Unit Renovation: Hallway & Kitchen Access',
     'city' => 'Albuquerque, NM',
     'desc' => 'A renovated hallway leading into the kitchen, finished with matching flooring and paint.',
     'scope' => 'Flooring · Paint · Interior doors',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-70.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 15, 'category' => 'renovations', 'title' => 'Unit Renovation — Bedroom Turn',
+    'id' => 15, 'category' => 'renovations', 'title' => 'Unit Renovation: Bedroom Turn',
     'city' => 'Albuquerque, NM',
     'desc' => 'Another completed bedroom turn, with new flooring, paint, and ceiling fan installed.',
     'scope' => 'Flooring · Paint · Fixtures',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-72.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 16, 'category' => 'renovations', 'title' => 'Unit Renovation — Living Room with Patio Access',
+    'id' => 16, 'category' => 'flooring', 'title' => 'New Flooring: Living Room Turn',
     'city' => 'Albuquerque, NM',
     'desc' => 'A renovated living room with new flooring and glass patio doors letting in natural light.',
     'scope' => 'Flooring · Patio doors · Paint',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-74.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 17, 'category' => 'renovations', 'title' => 'Community Common Area — Ramada & Courtyard',
+    'id' => 17, 'category' => 'renovations', 'title' => 'Community Common Area: Ramada & Courtyard',
     'city' => 'Albuquerque, NM',
     'desc' => 'A multi-housing common area renovated with a new shade ramada and landscaped courtyard.',
     'scope' => 'Ramada construction · Landscaping · Hardscape',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-80.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 18, 'category' => 'renovations', 'title' => 'Community Common Area — Landscaping',
+    'id' => 18, 'category' => 'renovations', 'title' => 'Community Common Area: Landscaping',
     'city' => 'Albuquerque, NM',
     'desc' => 'Refreshed landscaping and turf at a multi-housing community, improving curb appeal for residents.',
     'scope' => 'Landscaping · Turf · Retaining walls',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-81.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 19, 'category' => 'renovations', 'title' => 'Community Common Area — Courtyard',
+    'id' => 19, 'category' => 'renovations', 'title' => 'Community Common Area: Courtyard',
     'city' => 'Albuquerque, NM',
     'desc' => 'A renovated courtyard at a multi-housing property, with new landscaping and walkways.',
     'scope' => 'Landscaping · Walkways · Hardscape',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-82.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 20, 'category' => 'renovations', 'title' => 'Community Common Area — Patio & BBQ Area',
+    'id' => 20, 'category' => 'renovations', 'title' => 'Community Common Area: Patio & BBQ Area',
     'city' => 'Albuquerque, NM',
     'desc' => 'A shared patio and BBQ area renovated for a multi-housing community, built for everyday use.',
     'scope' => 'Hardscape · Outdoor amenities · Landscaping',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-83.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 21, 'category' => 'renovations', 'title' => 'Unit Renovation — Bedroom Turn',
+    'id' => 21, 'category' => 'renovations', 'title' => 'Unit Renovation: Bedroom Turn',
     'city' => 'Albuquerque, NM',
     'desc' => 'A completed unit turn with new carpet, paint, and lighting ready for the next resident.',
     'scope' => 'Carpet · Paint · Lighting',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-88.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 22, 'category' => 'renovations', 'title' => 'Interior Renovation — Framing & Insulation',
+    'id' => 22, 'category' => 'renovations', 'title' => 'Interior Renovation: Framing & Insulation',
     'city' => 'Albuquerque, NM',
     'desc' => 'Mid-project view of interior framing and insulation during a larger renovation build-out.',
     'scope' => 'Framing · Insulation · Rough-in',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-96.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 23, 'category' => 'renovations', 'title' => 'Interior Renovation — Structural Framing',
+    'id' => 23, 'category' => 'renovations', 'title' => 'Interior Renovation: Structural Framing',
     'city' => 'Albuquerque, NM',
     'desc' => 'Structural framing in progress, opening up the interior ahead of drywall and finishes.',
     'scope' => 'Framing · Structural work',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-98.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 24, 'category' => 'renovations', 'title' => 'Commercial Building Renovation — Exterior',
+    'id' => 24, 'category' => 'renovations', 'title' => 'Commercial Building Renovation: Exterior',
     'city' => 'Albuquerque, NM',
     'desc' => 'A large-scale commercial renovation, with exterior work underway across the full building.',
     'scope' => 'Exterior renovation · Commercial scope',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-103.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 25, 'category' => 'renovations', 'title' => 'Interior Renovation — Drywall Finish',
+    'id' => 25, 'category' => 'renovations', 'title' => 'Interior Renovation: Drywall Finish',
     'city' => 'Albuquerque, NM',
     'desc' => 'Freshly finished drywall ahead of paint, with a new patio door bringing in natural light.',
     'scope' => 'Drywall · Patio door · Paint prep',
@@ -228,42 +229,42 @@ $projects = array(
   ),
 
   array(
-    'id' => 26, 'category' => 'remodels', 'title' => 'Kitchen Remodel — White Cabinetry',
+    'id' => 26, 'category' => 'remodels', 'title' => 'Kitchen Remodel: White Cabinetry',
     'city' => 'Albuquerque, NM',
     'desc' => 'A full kitchen remodel with white shaker cabinetry, a center island, and stainless appliances.',
     'scope' => 'Cabinetry · Island · Appliances',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-15.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 27, 'category' => 'remodels', 'title' => 'Bathroom Remodel — Tub & Shower',
+    'id' => 27, 'category' => 'remodels', 'title' => 'Bathroom Remodel: Tub & Shower',
     'city' => 'Albuquerque, NM',
     'desc' => 'A remodeled bathroom with a new tub-shower combo and updated vanity.',
     'scope' => 'Tub-shower · Vanity · Tile',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-46.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 28, 'category' => 'remodels', 'title' => 'Bathroom Remodel — Marble-Look Tile',
+    'id' => 28, 'category' => 'remodels', 'title' => 'Bathroom Remodel: Marble-Look Tile',
     'city' => 'Albuquerque, NM',
     'desc' => 'A bathroom remodel finished with marble-look tile surround from floor to ceiling.',
     'scope' => 'Tile surround · Tub · Lighting',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-61.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 29, 'category' => 'remodels', 'title' => 'Bathroom Remodel — Vanity & Tub',
+    'id' => 29, 'category' => 'remodels', 'title' => 'Bathroom Remodel: Vanity & Tub',
     'city' => 'Albuquerque, NM',
     'desc' => 'A remodeled bathroom pairing a new vanity and mirror with a refreshed tub and tile.',
     'scope' => 'Vanity · Mirror · Tile',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-62.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 30, 'category' => 'remodels', 'title' => 'Bathroom Remodel — Vanity & Lighting',
+    'id' => 30, 'category' => 'remodels', 'title' => 'Bathroom Remodel: Vanity & Lighting',
     'city' => 'Albuquerque, NM',
     'desc' => 'A compact bathroom remodel with a new vanity, updated lighting, and fresh finishes.',
     'scope' => 'Vanity · Lighting · Finishes',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-76.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 31, 'category' => 'remodels', 'title' => 'Kitchen Remodel — Full Galley Kitchen',
+    'id' => 31, 'category' => 'remodels', 'title' => 'Kitchen Remodel: Full Galley Kitchen',
     'city' => 'Albuquerque, NM',
     'desc' => 'A galley kitchen remodel with new cabinetry, countertops, and appliances end to end.',
     'scope' => 'Cabinetry · Countertops · Appliances',
@@ -271,14 +272,14 @@ $projects = array(
   ),
 
   array(
-    'id' => 32, 'category' => 'stucco', 'title' => 'Commercial Stucco — Leasing Office Exterior',
+    'id' => 32, 'category' => 'stucco', 'title' => 'Commercial Stucco: Leasing Office Exterior',
     'city' => 'Albuquerque, NM',
     'desc' => 'A commercial leasing office finished with a clean, durable stucco exterior.',
     'scope' => 'Stucco application · Commercial exterior',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-7.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 33, 'category' => 'stucco', 'title' => 'Stucco Finish — Building Signage Wall',
+    'id' => 33, 'category' => 'stucco', 'title' => 'Stucco Finish: Building Signage Wall',
     'city' => 'Albuquerque, NM',
     'desc' => 'A textured stucco finish on a multi-housing building wall, framing the property signage.',
     'scope' => 'Stucco texture · Exterior finish',
@@ -292,7 +293,7 @@ $projects = array(
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-11.webp', 'before' => '', 'has_ba' => false, 'size' => '',
   ),
   array(
-    'id' => 35, 'category' => 'stucco', 'title' => 'New Stucco Application — Home Exterior',
+    'id' => 35, 'category' => 'stucco', 'title' => 'New Stucco Application: Home Exterior',
     'city' => 'Albuquerque, NM',
     'desc' => 'A fresh stucco application across a full home exterior, weather-resistant and New Mexico tough.',
     'scope' => 'Stucco application · Weather-resistant finish',
@@ -300,21 +301,21 @@ $projects = array(
   ),
 
   array(
-    'id' => 36, 'category' => 'painting', 'title' => 'Exterior Painting — Multi-Housing Stairwell',
+    'id' => 36, 'category' => 'painting', 'title' => 'Exterior Painting: Multi-Housing Stairwell',
     'city' => 'Albuquerque, NM',
     'desc' => 'Exterior painting on a multi-housing stairwell, with bright accent doors against clean white walls.',
     'scope' => 'Exterior painting · Accent doors',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-85.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 37, 'category' => 'painting', 'title' => 'Exterior Painting — Unit Doors & Railings',
+    'id' => 37, 'category' => 'painting', 'title' => 'Exterior Painting: Unit Doors & Railings',
     'city' => 'Albuquerque, NM',
     'desc' => 'Freshly painted unit doors and railings finish off this multi-housing exterior painting project.',
     'scope' => 'Exterior painting · Doors · Railings',
     'img' => '/wp-content/uploads/2026/08/IMAGE-CLI-86.webp', 'before' => '', 'has_ba' => false, 'size' => 'tall',
   ),
   array(
-    'id' => 38, 'category' => 'painting', 'title' => 'Exterior Painting — Building Unit Numbering',
+    'id' => 38, 'category' => 'painting', 'title' => 'Exterior Painting: Building Unit Numbering',
     'city' => 'Albuquerque, NM',
     'desc' => 'A crisp, freshly painted building exterior with clear unit numbering for a multi-housing property.',
     'scope' => 'Exterior painting · Building signage',
@@ -419,7 +420,7 @@ for ($i = 1; $i <= 15; $i++) {
 
     <div id="cli-g-empty" class="hidden text-center py-24">
       <p class="font-display font-bold text-ink text-xl">No projects in this category yet.</p>
-      <p class="mt-2 text-ink/60">Check back soon — new work is added regularly.</p>
+      <p class="mt-2 text-ink/60">Check back soon, new work is added regularly.</p>
     </div>
   </div>
 </section>
@@ -579,8 +580,8 @@ for ($i = 1; $i <= 15; $i++) {
       Like What You See?
     </h2>
     <p class="mt-5 text-ink/70 text-lg leading-relaxed max-w-2xl">
-      Tell us about your property and the scope you have in mind &mdash;
-      we&rsquo;ll get back to you with next steps.
+      Tell us about your property and the scope you have in mind,
+      and we&rsquo;ll get back to you with next steps.
     </p>
     <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-8 bg-brand !text-paper">
       <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>

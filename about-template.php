@@ -10,15 +10,15 @@ $live = 'https://cliconstructions.com/wp-content/uploads/2025/05/'; // TODO: bib
 $why = array(
   array(
     'title' => 'Family-Owned with Trusted Expertise',
-    'desc'  => 'As a family-owned and managed construction company in Albuquerque, CLI Constructions brings personalized service and trusted expertise to every multi-housing and commercial project.',
+    'desc'  => 'As a family-owned and managed construction company in Albuquerque, CLI Construction brings personalized service and trusted expertise to every multi-housing and commercial project.',
   ),
   array(
     'title' => 'Comprehensive Construction Solutions',
-    'desc'  => 'From renovations and painting to stucco, remodels, and roofing, we offer full-service construction solutions tailored to meet the unique needs of commercial and multi-housing properties.',
+    'desc'  => 'From renovations and painting to stucco, remodels, roofing, and flooring, we offer full-service construction solutions tailored to meet the unique needs of commercial and multi-housing properties.',
   ),
   array(
     'title' => 'Certified and Trusted Partners',
-    'desc'  => 'Certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico, CLI Constructions is a reliable choice committed to quality, ethics, and customer satisfaction.',
+    'desc'  => 'Certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico, CLI Construction is a reliable choice committed to quality, ethics, and customer satisfaction.',
   ),
 );
 
@@ -26,7 +26,7 @@ $values = array(
   array(
     'num'   => '01',
     'title' => 'Integrity',
-    'desc'  => 'At CLI Constructions, integrity guides every project. We prioritize honest communication, transparent pricing, and ethical practices to build lasting trust with our commercial and multi-housing clients in Albuquerque and beyond.',
+    'desc'  => 'At CLI Construction, integrity guides every project. We prioritize honest communication, transparent pricing, and ethical practices to build lasting trust with our commercial and multi-housing clients in Albuquerque and beyond.',
   ),
   array(
     'num'   => '02',
@@ -36,29 +36,29 @@ $values = array(
   array(
     'num'   => '03',
     'title' => 'Teamwork',
-    'desc'  => 'Our success is built on teamwork. CLI Constructions fosters strong collaboration among our family-owned management, skilled crew, and clients to ensure exceptional results in multi-housing and commercial construction projects.',
+    'desc'  => 'Our success is built on teamwork. CLI Construction fosters strong collaboration among our family-owned management, skilled crew, and clients to ensure exceptional results in multi-housing and commercial construction projects.',
   ),
 );
 
 $faqs = array(
   array(
-    'q' => 'What services does CLI Constructions offer?',
-    'a' => 'CLI Constructions specializes in renovations, painting, stucco, remodels, and roofing for multi-housing and commercial properties in Albuquerque and surrounding New Mexico areas.',
+    'q' => 'What services does CLI Construction offer?',
+    'a' => 'CLI Construction specializes in renovations, painting, stucco, remodels, roofing, and flooring for multi-housing and commercial properties in Albuquerque and surrounding New Mexico areas.',
   ),
   array(
-    'q' => 'Where does CLI Constructions provide services?',
-    'a' => 'We serve Albuquerque, Santa Fe, Los Lunas, Santa Rosa, and all surrounding areas throughout New Mexico.',
+    'q' => 'Where does CLI Construction provide services?',
+    'a' => 'We serve Albuquerque, Rio Rancho, Santa Fe, Los Lunas, Santa Rosa, and all surrounding areas throughout New Mexico.',
   ),
   array(
-    'q' => 'Is CLI Constructions a licensed and certified company?',
-    'a' => 'Yes, CLI Constructions is certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico.',
+    'q' => 'Is CLI Construction a licensed and certified company?',
+    'a' => 'Yes, CLI Construction is certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico.',
   ),
   array(
-    'q' => 'Can CLI Constructions handle commercial construction projects?',
+    'q' => 'Can CLI Construction handle commercial construction projects?',
     'a' => 'Absolutely. We focus primarily on commercial and multi-housing construction, offering expert renovations, roofing, and remodeling services.',
   ),
   array(
-    'q' => 'How can I request an estimate from CLI Constructions?',
+    'q' => 'How can I request an estimate from CLI Construction?',
     'a' => 'You can request a free estimate by contacting us via phone at (505) 518-1965 or email at office@cliconstructions.com.',
   ),
 );
@@ -78,7 +78,7 @@ $faqs = array(
         About Us
       </h1>
       <p class="mt-5 text-silver-2 text-lg leading-relaxed">
-        Discover who we are &mdash; a family-owned construction company
+        Discover who we are, a family-owned construction company
         committed to quality, trust, and long-term relationships in
         multi-housing and commercial renovations.
       </p>
@@ -99,13 +99,13 @@ $faqs = array(
     <div class="flex items-center">
       <div class="relative w-full max-w-xl mx-auto px-6 py-16 lg:px-10 lg:py-24 cli-reveal-left">
         <p class="text-ink text-xl lg:text-2xl leading-relaxed font-medium">
-          CLI Constructions is a family-owned and managed construction company
+          CLI Construction is a family-owned and managed construction company
           based in Albuquerque, New Mexico.
         </p>
         <p class="mt-5 text-ink/70 text-lg leading-relaxed">
           Specializing in multi-housing and commercial renovations, painting,
-          stucco, remodels, and roofing, we serve Albuquerque, Santa Fe,
-          Los Lunas, Santa Rosa, and surrounding areas.
+          stucco, remodels, roofing, and flooring, we serve Albuquerque,
+          Rio Rancho, Santa Fe, Los Lunas, Santa Rosa, and surrounding areas.
         </p>
         <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-8 inline-flex">
           <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
@@ -115,7 +115,7 @@ $faqs = array(
     <div class="min-h-80 lg:min-h-[34rem] cli-reveal-right">
       <img
         src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/AboutUS-scaled.webp')); ?>"
-        alt="The CLI Constructions team"
+        alt="The CLI Construction team"
         class="w-full h-full object-cover"
         loading="lazy"
       >
@@ -159,7 +159,7 @@ $faqs = array(
     <div class="relative min-h-80 lg:min-h-[34rem] cli-reveal-left">
       <img
         src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/CLIFull.jpg')); ?>"
-        alt="CLI Constructions crew on site"
+        alt="CLI Construction crew on site"
         class="w-full h-full object-cover"
         loading="lazy"
       >
@@ -172,7 +172,7 @@ $faqs = array(
         </p>
         <p class="mt-5 text-ink/70 text-lg leading-relaxed">
           Certified by the Better Business Bureau and affiliated with the
-          Apartment Association of New Mexico, CLI Constructions is committed
+          Apartment Association of New Mexico, CLI Construction is committed
           to exceeding client expectations through trusted, professional
           construction services.
         </p>
@@ -221,7 +221,7 @@ $faqs = array(
       3 Values that Define Our Company
     </h2>
     <p class="mt-4 text-silver-2 text-lg leading-relaxed max-w-xl cli-reveal-up">
-      Not a mission statement on a wall &mdash; the order every CLI Constructions
+      Not a mission statement on a wall, but the order every CLI Construction
       project actually runs in.
     </p>
 
@@ -276,8 +276,8 @@ $faqs = array(
       Expert Construction Solutions You Can <span class="text-brand">Count On</span>
     </h2>
     <p class="mt-6 text-silver-2 text-lg leading-relaxed max-w-2xl">
-      Partner with CLI Constructions for trusted commercial and multi-housing
-      renovations, roofing, and more &mdash; serving Albuquerque, Santa Fe, and
+      Partner with CLI Construction for trusted commercial and multi-housing
+      renovations, roofing, and more, serving Albuquerque, Santa Fe, and
       surrounding New Mexico communities with pride.
     </p>
     <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-9 bg-brand !text-paper">

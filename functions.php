@@ -62,6 +62,7 @@ function cli_handle_contact() {
     wp_send_json_success();
   }
 
+  $propertyName = sanitize_text_field(wp_unslash($_POST['propertyName'] ?? ''));
   $name    = sanitize_text_field(wp_unslash($_POST['name'] ?? ''));
   $phone   = sanitize_text_field(wp_unslash($_POST['phone'] ?? ''));
   $email   = sanitize_email(wp_unslash($_POST['email'] ?? ''));
@@ -73,8 +74,8 @@ function cli_handle_contact() {
   }
 
   $to      = apply_filters('cli_contact_recipient', 'office@cliconstructions.com');
-  $subject = 'New estimate request — ' . $name;
-  $body    = "Name: {$name}\nPhone: {$phone}\nEmail: {$email}\nService: {$service}\n\nMessage:\n{$message}";
+  $subject = 'New estimate request from ' . $name;
+  $body    = "Company/Property: {$propertyName}\nName: {$name}\nPhone: {$phone}\nEmail: {$email}\nService: {$service}\n\nMessage:\n{$message}";
   $headers = array('Reply-To: ' . $name . ' <' . $email . '>');
 
   if (wp_mail($to, $subject, $body, $headers)) {

@@ -74,6 +74,12 @@ const MEGA_SERVICES = [
     desc: "Installation, repairs & maintenance.",
     img: "/wp-content/uploads/2026/08/RoofingCLI.jpg",
   },
+  {
+    label: "Flooring",
+    href: "/service/flooring/",
+    desc: "Installation & replacement for high-traffic properties.",
+    img: "/wp-content/uploads/2026/08/IMAGE-CLI-74.webp",
+  },
 ]
 
 const CTA = { label: "Get an Estimate", href: "/contact/" }
@@ -185,7 +191,7 @@ function Navbar() {
             rel="noopener noreferrer"
             className="cli-spec hidden md:flex items-center gap-2 hover:text-brand transition-colors min-w-0"
           >
-            <MapPinIcon className="w-3.5 h-3.5 shrink-0" />
+            <MapPinIcon className="w-3.5 h-3.5 text-brand shrink-0" />
             <span className="normal-case tracking-normal font-body text-xs truncate">{GEO_LABEL}</span>
           </a>
 
@@ -286,7 +292,7 @@ function Navbar() {
           onMouseLeave={() => setMegaOpen(false)}
         >
           <div className="max-w-7xl mx-auto px-4 py-8">
-            <div className="grid grid-cols-5 gap-5 cli-mega__grid">
+            <div className="grid grid-cols-6 gap-5 cli-mega__grid">
               {MEGA_SERVICES.map(s => (
                 <a
                   key={s.label}

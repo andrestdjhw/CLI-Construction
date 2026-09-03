@@ -9,6 +9,7 @@ const SERVICES = [
   "Painting",
   "Stucco",
   "Roofing",
+  "Flooring",
   "Commercial / Multi-Housing",
 ]
 
@@ -36,6 +37,7 @@ function ContactForm({ variant = "full" }) {
   const isCard = variant === "card"
   const [status, setStatus] = useState("idle") // idle | sending | success | error
   const [values, setValues] = useState({
+    propertyName: "",
     name: "",
     phone: "",
     email: "",
@@ -70,7 +72,7 @@ function ContactForm({ variant = "full" }) {
       if (!res.ok || !json.success) throw new Error("send failed")
 
       setStatus("success")
-      setValues(v => ({ ...v, name: "", phone: "", email: "", message: "", terms: false }))
+      setValues(v => ({ ...v, propertyName: "", name: "", phone: "", email: "", message: "", terms: false }))
     } catch (err) {
       setStatus("error")
     }
@@ -103,7 +105,20 @@ function ContactForm({ variant = "full" }) {
         </h3>
       )}
 
-      <div className={"grid gap-4 " + (isCard ? "mt-5" : "sm:grid-cols-2")}>
+      <div className={isCard ? "mt-5" : "mt-0"}>
+        <Field label="Company / Property Name" htmlFor="cli-f-property">
+          <input
+            id="cli-f-property"
+            type="text"
+            autoComplete="organization"
+            className={inputClasses}
+            value={values.propertyName}
+            onChange={set("propertyName")}
+          />
+        </Field>
+      </div>
+
+      <div className={"grid gap-4 mt-4 " + (isCard ? "" : "sm:grid-cols-2")}>
         <Field label="Name" htmlFor="cli-f-name" required>
           <input
             id="cli-f-name"
@@ -145,7 +160,7 @@ function ContactForm({ variant = "full" }) {
             onChange={set("service")}
           >
             {SERVICES.map(s => (
-              <option key={s} value={s}>
+              <option key={s} value={s} className="bg-paper text-ink">
                 {s}
               </option>
             ))}

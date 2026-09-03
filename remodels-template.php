@@ -44,7 +44,7 @@ get_header(); ?>
         Remodels Done Right
       </h2>
       <p class="mt-5 text-ink/70 text-lg leading-relaxed max-w-2xl">
-        CLI Constructions transforms spaces with expert design and skilled workmanship in Albuquerque and nearby communities. From unit turns to full interior updates, one accountable team manages the remodel from scope to final walk-through.
+        CLI Construction transforms spaces with expert design and skilled workmanship in Albuquerque and nearby communities. From unit turns to full interior updates, one accountable team manages the remodel from scope to final walk-through.
       </p>
       <p class="cli-spec mt-8 text-silver">
         Family-Owned &middot; BBB Certified &middot; AANM Member &middot; Licensed &amp; Insured
@@ -91,7 +91,7 @@ get_header(); ?>
             <span aria-hidden="true" class="text-brand text-2xl leading-none transition-transform group-open:rotate-45">+</span>
           </summary>
           <p class="cli-faq-answer pb-6 text-ink/70 leading-relaxed max-w-3xl">
-            We handle comprehensive remodeling for commercial and multi-housing properties — from unit turns and common areas to full interior updates.
+            We handle comprehensive remodeling for commercial and multi-housing properties, from unit turns and common areas to full interior updates.
           </p>
         </details>
         <details class="group border-b border-ink/15">
@@ -113,18 +113,18 @@ get_header(); ?>
             <span aria-hidden="true" class="text-brand text-2xl leading-none transition-transform group-open:rotate-45">+</span>
           </summary>
           <p class="cli-faq-answer pb-6 text-ink/70 leading-relaxed max-w-3xl">
-            We serve Albuquerque, Santa Fe, Los Lunas, Santa Rosa, and surrounding New Mexico areas.
+            We serve Albuquerque, Rio Rancho, Santa Fe, Los Lunas, Santa Rosa, and surrounding New Mexico areas.
           </p>
         </details>
         <details class="group border-b border-ink/15">
           <summary class="flex items-center justify-between gap-6 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <h3 class="font-display font-bold text-ink text-lg tracking-tight">
-              How do I start a remodel with CLI Constructions?
+              How do I start a remodel with CLI Construction?
             </h3>
             <span aria-hidden="true" class="text-brand text-2xl leading-none transition-transform group-open:rotate-45">+</span>
           </summary>
           <p class="cli-faq-answer pb-6 text-ink/70 leading-relaxed max-w-3xl">
-            Request an estimate with the form on this page or call (505) 518-1965 — we will visit the property and define the scope with you.
+            Request an estimate with the form on this page or call (505) 518-1965, and we will visit the property and define the scope with you.
           </p>
         </details>
     </div>
@@ -140,15 +140,15 @@ get_header(); ?>
         Get a Remodels Estimate
       </h2>
       <p class="mt-5 text-silver-2 leading-relaxed">
-        Tell us about your property and the scope you have in mind &mdash;
-        we&rsquo;ll get back to you with next steps.
+        Tell us about your property and the scope you have in mind,
+        and we&rsquo;ll get back to you with next steps.
       </p>
       <div class="mt-8 space-y-4 text-lg">
         <a href="tel:+15055181965" class="block text-paper hover:text-silver-2 transition-colors">(505) 518-1965</a>
         <a href="mailto:office@cliconstructions.com" class="block text-paper hover:text-silver-2 transition-colors">office@cliconstructions.com</a>
       </div>
       <p class="cli-spec mt-8 text-silver">
-        Mon&ndash;Fri 9:00&ndash;5:00 &middot; Sat 10:00&ndash;2:00
+        Mon&ndash;Fri 9:00&ndash;5:00 &middot; Closed Weekends
       </p>
     </div>
     <div class="lg:col-span-7 cli-reveal-right">
@@ -166,6 +166,7 @@ get_header(); ?>
     <a href="<?php echo esc_url(home_url('/service/stucco/')); ?>" class="cli-link text-ink">Stucco</a>
     <a href="<?php echo esc_url(home_url('/service/painting/')); ?>" class="cli-link text-ink">Painting</a>
     <a href="<?php echo esc_url(home_url('/service/renovations/')); ?>" class="cli-link text-ink">Renovations</a>
+    <a href="<?php echo esc_url(home_url('/service/flooring/')); ?>" class="cli-link text-ink">Flooring</a>
   </div>
 </section>
 

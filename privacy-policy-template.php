@@ -44,7 +44,7 @@ $sections = array(
   ),
   array(
     'title' => 'Contact Us',
-    'body'  => 'If you have questions about this Privacy Policy or how your information is handled, contact CLI Constructions at (505) 518-1965 or office@cliconstructions.com.',
+    'body'  => 'If you have questions about this Privacy Policy or how your information is handled, contact CLI Construction at (505) 518-1965 or office@cliconstructions.com.',
   ),
 );
 ?>
@@ -67,7 +67,7 @@ $sections = array(
 <section class="bg-paper">
   <div class="max-w-3xl mx-auto px-4 py-16 lg:py-20">
     <p class="text-ink/70 text-lg leading-relaxed">
-      CLI Constructions (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+      CLI Construction (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
       &ldquo;our&rdquo;) operates this website to present our construction
       services and receive estimate requests. This Privacy Policy explains
       what information we collect through the site, how we use it, and the

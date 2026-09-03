@@ -5,13 +5,18 @@ Template Name: Locations
 
 get_header();
 
-/* Mismas 4 áreas que "Where We Work" en el home — un cambio ahí
+/* Mismas 5 áreas que "Where We Work" en el home — un cambio ahí
    conviene reflejarlo aquí también. */
 $locations = array(
   array(
     'city'  => 'Albuquerque, NM',
     'href'  => 'https://www.google.com/maps/search/?api=1&query=Albuquerque+NM',
-    'blurb' => 'Our home base — the majority of our renovation, roofing, painting, stucco, and remodel projects for commercial and multi-housing properties are right here in the metro.',
+    'blurb' => 'Our home base: the majority of our renovation, roofing, painting, stucco, flooring, and remodel projects for commercial and multi-housing properties are right here in the metro.',
+  ),
+  array(
+    'city'  => 'Rio Rancho, NM',
+    'href'  => 'https://www.google.com/maps/search/?api=1&query=Rio+Rancho+NM',
+    'blurb' => 'Just across the river from Albuquerque, where we handle renovations, stucco, roofing, and remodel projects for commercial and multi-housing properties with the same crews and accountability.',
   ),
   array(
     'city'  => 'Los Lunas, NM',
@@ -32,12 +37,12 @@ $locations = array(
 
 $faqs = array(
   array(
-    'q' => 'What areas does CLI Constructions serve?',
-    'a' => 'We work throughout Albuquerque, Los Lunas, Santa Fe, Santa Rosa, and the surrounding New Mexico communities in between.',
+    'q' => 'What areas does CLI Construction serve?',
+    'a' => 'We work throughout Albuquerque, Rio Rancho, Los Lunas, Santa Fe, Santa Rosa, and the surrounding New Mexico communities in between.',
   ),
   array(
-    'q' => 'Do you take on projects outside these four locations?',
-    'a' => 'Often, yes. These are our core service areas, but we regularly travel for the right commercial or multi-housing project — send us the address and we will confirm coverage.',
+    'q' => 'Do you take on projects outside these five locations?',
+    'a' => 'Often, yes. These are our core service areas, but we regularly travel for the right commercial or multi-housing project. Send us the address and we will confirm coverage.',
   ),
   array(
     'q' => 'Is there an extra charge for jobs outside Albuquerque?',
@@ -65,8 +70,9 @@ $faqs = array(
         Where We Work
       </h1>
       <p class="mt-5 text-silver-2 text-lg leading-relaxed">
-        Family-owned renovations, roofing, painting, stucco &amp; remodels for
-        commercial and multi-housing properties across New Mexico.
+        Family-owned renovations, roofing, painting, stucco, flooring
+        &amp; remodels for commercial and multi-housing properties across
+        New Mexico.
       </p>
     </div>
   </div>
@@ -86,7 +92,7 @@ $faqs = array(
       Our Service Areas
     </h2>
     <p class="mt-4 text-ink/70 text-lg leading-relaxed max-w-3xl">
-      Four hubs, one accountable team — tap a city to open it in Google Maps.
+      Five hubs, one accountable team. Tap a city to open it in Google Maps.
     </p>
     <div class="mt-16 space-y-16 lg:space-y-24">
       <?php foreach ($locations as $i => $loc) : $flip = $i % 2 === 1; ?>
@@ -157,7 +163,7 @@ $faqs = array(
         Get an Estimate for Your Area
       </h2>
       <p class="mt-5 text-silver-2 leading-relaxed">
-        Tell us where the property is and what you have in mind &mdash;
+        Tell us where the property is and what you have in mind, and
         we&rsquo;ll get back to you with next steps.
       </p>
       <div class="mt-8 space-y-4 text-lg">
@@ -165,7 +171,7 @@ $faqs = array(
         <a href="mailto:office@cliconstructions.com" class="block text-paper hover:text-silver-2 transition-colors">office@cliconstructions.com</a>
       </div>
       <p class="cli-spec mt-8 text-silver">
-        Mon&ndash;Fri 9:00&ndash;5:00 &middot; Sat 10:00&ndash;2:00
+        Mon&ndash;Fri 9:00&ndash;5:00 &middot; Closed Weekends
       </p>
     </div>
     <div class="lg:col-span-7 cli-reveal-right">

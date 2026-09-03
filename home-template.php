@@ -45,10 +45,18 @@ $services = array(
     'desc'  => 'Reliable roofing services focused on multi-housing and commercial buildings in New Mexico.',
     'href'  => '/service/roofing/',
   ),
+  array(
+    'num'   => '06',
+    'img'   => '/wp-content/uploads/2026/08/IMAGE-CLI-74.webp',
+    'title' => 'Flooring',
+    'desc'  => 'Durable flooring installation and replacement for commercial and multi-housing properties.',
+    'href'  => '/service/flooring/',
+  ),
 );
 
 $locations = array(
   array('city' => 'Albuquerque, NM', 'href' => 'https://www.google.com/maps/search/?api=1&query=Albuquerque+NM'),
+  array('city' => 'Rio Rancho, NM',  'href' => 'https://www.google.com/maps/search/?api=1&query=Rio+Rancho+NM'),
   array('city' => 'Los Lunas, NM',   'href' => 'https://www.google.com/maps/search/?api=1&query=Los+Lunas+NM'),
   array('city' => 'Santa Fe, NM',    'href' => 'https://www.google.com/maps/search/?api=1&query=Santa+Fe+NM'),
   array('city' => 'Santa Rosa, NM',  'href' => 'https://www.google.com/maps/search/?api=1&query=Santa+Rosa+NM'),
@@ -71,23 +79,23 @@ $gallery = array(
 
 $faqs = array(
   array(
-    'q' => 'What services does CLI Constructions offer?',
-    'a' => 'CLI Constructions specializes in renovations, painting, stucco, remodels, and roofing for multi-housing and commercial properties in Albuquerque and surrounding New Mexico areas.',
+    'q' => 'What services does CLI Construction offer?',
+    'a' => 'CLI Construction specializes in renovations, painting, stucco, remodels, roofing, and flooring for multi-housing and commercial properties in Albuquerque and surrounding New Mexico areas.',
   ),
   array(
-    'q' => 'Where does CLI Constructions provide services?',
-    'a' => 'We serve Albuquerque, Santa Fe, Los Lunas, Santa Rosa, and all surrounding areas throughout New Mexico.',
+    'q' => 'Where does CLI Construction provide services?',
+    'a' => 'We serve Albuquerque, Rio Rancho, Santa Fe, Los Lunas, Santa Rosa, and all surrounding areas throughout New Mexico.',
   ),
   array(
-    'q' => 'Is CLI Constructions a licensed and certified company?',
-    'a' => 'Yes, CLI Constructions is certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico.',
+    'q' => 'Is CLI Construction a licensed and certified company?',
+    'a' => 'Yes, CLI Construction is certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico.',
   ),
   array(
-    'q' => 'Can CLI Constructions handle commercial construction projects?',
+    'q' => 'Can CLI Construction handle commercial construction projects?',
     'a' => 'Absolutely. We focus primarily on commercial and multi-housing construction, offering expert renovations, roofing, and remodeling services.',
   ),
   array(
-    'q' => 'How can I request an estimate from CLI Constructions?',
+    'q' => 'How can I request an estimate from CLI Construction?',
     'a' => 'You can request a free estimate by contacting us via phone at (505) 518-1965 or email at office@cliconstructions.com.',
   ),
 );
@@ -108,8 +116,9 @@ $faqs = array(
         Trusted Construction Experts for Multi&#8209;Housing &amp; Commercial Projects
       </h1>
       <p class="mt-6 text-silver-2 text-lg leading-relaxed max-w-xl">
-        Family-owned renovations, roofing, painting, stucco &amp; remodels
-        serving Albuquerque, Santa Fe, and surrounding areas in New Mexico.
+        Family-owned renovations, roofing, painting, stucco, flooring
+        &amp; remodels serving Albuquerque, Santa Fe, and surrounding areas
+        in New Mexico.
       </p>
       <div class="mt-9 flex flex-wrap gap-4">
         <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta bg-brand !text-paper">
@@ -161,8 +170,8 @@ $faqs = array(
     </h2>
     <p class="mt-4 text-ink/70 text-lg leading-relaxed max-w-3xl">
       Explore our full range of expert services, including renovations,
-      painting, stucco, remodels, and roofing, tailored specifically for
-      commercial and multi-housing properties.
+      painting, stucco, remodels, roofing, and flooring, tailored
+      specifically for commercial and multi-housing properties.
     </p>
   </div>
 
@@ -253,7 +262,7 @@ $faqs = array(
     <h2 class="font-display font-extrabold text-ink tracking-tight text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight cli-reveal-up">
       Where We Work
     </h2>
-    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
       <?php foreach ($locations as $loc) : ?>
         <a
           href="<?php echo esc_url($loc['href']); ?>"
@@ -308,7 +317,7 @@ $faqs = array(
             <div class="cli-proj-thumb">
               <img
                 src="<?php echo esc_url(strpos($g['img'], '/') === 0 ? home_url($g['img']) : $live . $g['img']); ?>"
-                alt="<?php echo $copy ? '' : esc_attr($g['label'] . ' — CLI Constructions project'); ?>"
+                alt="<?php echo $copy ? '' : esc_attr($g['label'] . ', CLI Construction project'); ?>"
                 class="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               >
@@ -333,7 +342,7 @@ $faqs = array(
     <div class="min-h-80 lg:min-h-[34rem] overflow-hidden cli-reveal-left">
       <img
         src="<?php echo esc_url(home_url('/wp-content/uploads/2026/08/AboutSectionHome-scaled.webp')); ?>"
-        alt="The CLI Constructions team"
+        alt="The CLI Construction team"
         class="w-full h-full object-cover cli-ken-burns"
         loading="lazy"
       >
@@ -344,10 +353,10 @@ $faqs = array(
           A Little About Us
         </h2>
         <p class="mt-5 text-silver-2 text-lg leading-relaxed">
-          CLI Constructions is a family-owned Albuquerque construction company
+          CLI Construction is a family-owned Albuquerque construction company
           specializing in trusted multi-housing and commercial renovations,
           roofing, painting, and stucco services across New Mexico. One
-          accountable partner for the whole scope &mdash; from first
+          accountable partner for the whole scope, from first
           walk-through to final inspection.
         </p>
         <a href="<?php echo esc_url(home_url('/about-us/')); ?>" class="cli-link inline-block mt-7 text-paper">
@@ -398,8 +407,8 @@ $faqs = array(
         Expert Construction Solutions You Can <span class="text-brand">Count On</span>
       </h2>
       <p class="mt-5 text-silver-2 text-lg leading-relaxed">
-        Partner with CLI Constructions for trusted commercial and
-        multi-housing renovations, roofing, and more &mdash; serving
+        Partner with CLI Construction for trusted commercial and
+        multi-housing renovations, roofing, and more, serving
         Albuquerque, Santa Fe, and surrounding New Mexico communities with
         pride.
       </p>
@@ -415,7 +424,7 @@ $faqs = array(
         style="border:0;"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="CLI Constructions location map"
+        title="CLI Construction location map"
       ></iframe>
     </div>
   </div>

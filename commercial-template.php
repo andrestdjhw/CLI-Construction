@@ -11,7 +11,7 @@ $live = 'https://cliconstructions.com/wp-content/uploads/2025/05/'; // TODO: bib
 $segments = array(
   array(
     'title' => 'Commercial Building Owners',
-    'desc'  => 'Exterior and interior scopes handled by one accountable company — painting, stucco, roofing, and renovations that protect your asset and your tenants\' experience.',
+    'desc'  => 'Exterior and interior scopes handled by one accountable company: painting, stucco, roofing, and renovations that protect your asset and your tenants\' experience.',
   ),
   array(
     'title' => 'Multi-Housing Property Managers',
@@ -19,11 +19,11 @@ $segments = array(
   ),
   array(
     'title' => 'General Contractors',
-    'desc'  => 'A reliable subcontract partner for painting, stucco, and remodel scopes — clear deliverables, controlled costs, and crews that show up.',
+    'desc'  => 'A reliable subcontract partner for painting, stucco, and remodel scopes, with clear deliverables, controlled costs, and crews that show up.',
   ),
   array(
     'title' => 'Municipal & Public Work',
-    'desc'  => 'Smaller public scopes done right — demolition, accessibility improvements, and roofing for schools and municipal facilities.',
+    'desc'  => 'Smaller public scopes done right: demolition, accessibility improvements, and roofing for schools and municipal facilities.',
   ),
 );
 
@@ -63,13 +63,20 @@ $capabilities = array(
     'desc'  => 'Reliable roofing services focused on multi-housing and commercial buildings in New Mexico.',
     'href'  => '/service/roofing/',
   ),
+  array(
+    'num'   => '06',
+    'img'   => '/wp-content/uploads/2026/08/IMAGE-CLI-74.webp',
+    'title' => 'Flooring',
+    'desc'  => 'Durable flooring installation and replacement for commercial and multi-housing properties.',
+    'href'  => '/service/flooring/',
+  ),
 );
 
 $process = array(
   array(
     'num'   => '01',
     'title' => 'Walk-Through & Scope',
-    'desc'  => 'We visit your property, walk the scope with you, and document exactly what the project needs — no assumptions, no surprises later.',
+    'desc'  => 'We visit your property, walk the scope with you, and document exactly what the project needs, no assumptions, no surprises later.',
   ),
   array(
     'num'   => '02',
@@ -104,8 +111,8 @@ $process = array(
       </h1>
       <p class="mt-5 text-silver-2 text-lg leading-relaxed">
         One integrated partner for renovations, painting, stucco, remodels,
-        and roofing across New Mexico &mdash; the whole scope, one accountable
-        company.
+        roofing, and flooring across New Mexico: the whole scope, one
+        accountable company.
       </p>
       <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-8 bg-brand !text-paper">
         <span class="cli-cta__text">Get an Estimate</span> <span aria-hidden="true">&rarr;</span>
@@ -125,8 +132,8 @@ $process = array(
         </h2>
         <p class="mt-6 text-silver-2 text-lg leading-relaxed">
           Most commercial projects juggle separate contractors for painting,
-          stucco, roofing, and remodels. CLI Constructions integrates the full
-          scope under one family-owned company &mdash; one contract, one
+          stucco, roofing, and remodels. CLI Construction integrates the full
+          scope under one family-owned company: one contract, one
           schedule, one team accountable for the result.
         </p>
         <p class="cli-spec mt-8 text-silver">
@@ -137,7 +144,7 @@ $process = array(
     <div class="min-h-80 lg:min-h-[34rem] cli-reveal-right">
       <img
         src="<?php echo esc_url($live . 'IMAGE-CLI-1.webp'); ?>"
-        alt="Commercial project by CLI Constructions"
+        alt="Commercial project by CLI Construction"
         class="w-full h-full object-cover"
         loading="lazy"
       >
@@ -243,7 +250,7 @@ $process = array(
       How We Work
     </h2>
     <p class="mt-4 text-silver-2 text-lg leading-relaxed max-w-2xl cli-reveal-up">
-      Clear process, defined deliverables, and schedules we keep &mdash; from
+      Clear process, defined deliverables, and schedules we keep, from
       the first walk-through to the final inspection.
     </p>
 

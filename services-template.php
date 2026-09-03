@@ -11,74 +11,81 @@ $services = array(
   array(
     'num'   => '01',
     'title' => 'Roofing',
-    'desc'  => 'Reliable roofing services focused on multi-housing and commercial buildings in New Mexico. CLI Constructions offers roof installation, repairs, and maintenance to protect your investment.',
+    'desc'  => 'Reliable roofing services focused on multi-housing and commercial buildings in New Mexico. CLI Construction offers roof installation, repairs, and maintenance to protect your investment.',
     'href'  => '/service/roofing/',
     'img'   => '/wp-content/uploads/2026/08/RoofingCLI.jpg',
   ),
   array(
     'num'   => '02',
     'title' => 'Remodels',
-    'desc'  => 'Comprehensive remodeling for commercial and multi-housing properties. CLI Constructions transforms spaces with expert design and skilled workmanship in Albuquerque and nearby communities.',
+    'desc'  => 'Comprehensive remodeling for commercial and multi-housing properties. CLI Construction transforms spaces with expert design and skilled workmanship in Albuquerque and nearby communities.',
     'href'  => '/service/remodels/',
     'img'   => '/wp-content/uploads/2026/08/CLIRemodels.jpg',
   ),
   array(
     'num'   => '03',
     'title' => 'Stucco',
-    'desc'  => 'Top-quality stucco application and repair in Albuquerque. CLI Constructions specializes in durable, weather-resistant stucco solutions tailored for commercial and multi-housing buildings.',
+    'desc'  => 'Top-quality stucco application and repair in Albuquerque. CLI Construction specializes in durable, weather-resistant stucco solutions tailored for commercial and multi-housing buildings.',
     'href'  => '/service/stucco/',
     'img'   => '/wp-content/uploads/2026/08/CLIStucco.webp',
   ),
   array(
     'num'   => '04',
     'title' => 'Painting',
-    'desc'  => 'Professional interior and exterior painting services for commercial and multi-housing properties in New Mexico. CLI Constructions delivers durable finishes that boost aesthetics and property value.',
+    'desc'  => 'Professional interior and exterior painting services for commercial and multi-housing properties in New Mexico. CLI Construction delivers durable finishes that boost aesthetics and property value.',
     'href'  => '/service/painting/',
     'img'   => '/wp-content/uploads/2026/08/PaintingCLI-scaled.webp',
   ),
   array(
     'num'   => '05',
     'title' => 'Renovations',
-    'desc'  => 'Expert renovation services in Albuquerque and surrounding areas. CLI Constructions enhances multi-housing and commercial properties with quality craftsmanship, timely completion, and lasting value.',
+    'desc'  => 'Expert renovation services in Albuquerque and surrounding areas. CLI Construction enhances multi-housing and commercial properties with quality craftsmanship, timely completion, and lasting value.',
     'href'  => '/service/renovations/',
     'img'   => '/wp-content/uploads/2026/08/CLIRenovations.webp',
+  ),
+  array(
+    'num'   => '06',
+    'title' => 'Flooring',
+    'desc'  => 'Durable flooring installation and replacement in Albuquerque and surrounding areas. CLI Construction matches the right material to the traffic and budget of commercial and multi-housing properties.',
+    'href'  => '/service/flooring/',
+    'img'   => '/wp-content/uploads/2026/08/IMAGE-CLI-74.webp',
   ),
 );
 
 $why = array(
   array(
     'title' => 'Family-Owned with Trusted Expertise',
-    'desc'  => 'As a family-owned and managed construction company in Albuquerque, CLI Constructions brings personalized service and trusted expertise to every multi-housing and commercial project.',
+    'desc'  => 'As a family-owned and managed construction company in Albuquerque, CLI Construction brings personalized service and trusted expertise to every multi-housing and commercial project.',
   ),
   array(
     'title' => 'Comprehensive Construction Solutions',
-    'desc'  => 'From renovations and painting to stucco, remodels, and roofing, we offer full-service construction solutions tailored to meet the unique needs of commercial and multi-housing properties.',
+    'desc'  => 'From renovations and painting to stucco, remodels, roofing, and flooring, we offer full-service construction solutions tailored to meet the unique needs of commercial and multi-housing properties.',
   ),
   array(
     'title' => 'Certified and Trusted Partners',
-    'desc'  => 'Certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico, CLI Constructions is a reliable choice committed to quality, ethics, and customer satisfaction.',
+    'desc'  => 'Certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico, CLI Construction is a reliable choice committed to quality, ethics, and customer satisfaction.',
   ),
 );
 
 $faqs = array(
   array(
-    'q' => 'What services does CLI Constructions offer?',
-    'a' => 'CLI Constructions specializes in renovations, painting, stucco, remodels, and roofing for multi-housing and commercial properties in Albuquerque and surrounding New Mexico areas.',
+    'q' => 'What services does CLI Construction offer?',
+    'a' => 'CLI Construction specializes in renovations, painting, stucco, remodels, roofing, and flooring for multi-housing and commercial properties in Albuquerque and surrounding New Mexico areas.',
   ),
   array(
-    'q' => 'Where does CLI Constructions provide services?',
-    'a' => 'We serve Albuquerque, Santa Fe, Los Lunas, Santa Rosa, and all surrounding areas throughout New Mexico.',
+    'q' => 'Where does CLI Construction provide services?',
+    'a' => 'We serve Albuquerque, Rio Rancho, Santa Fe, Los Lunas, Santa Rosa, and all surrounding areas throughout New Mexico.',
   ),
   array(
-    'q' => 'Is CLI Constructions a licensed and certified company?',
-    'a' => 'Yes, CLI Constructions is certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico.',
+    'q' => 'Is CLI Construction a licensed and certified company?',
+    'a' => 'Yes, CLI Construction is certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico.',
   ),
   array(
-    'q' => 'Can CLI Constructions handle commercial construction projects?',
+    'q' => 'Can CLI Construction handle commercial construction projects?',
     'a' => 'Absolutely. We focus primarily on commercial and multi-housing construction, offering expert renovations, roofing, and remodeling services.',
   ),
   array(
-    'q' => 'How can I request an estimate from CLI Constructions?',
+    'q' => 'How can I request an estimate from CLI Construction?',
     'a' => 'You can request a free estimate by contacting us via phone at (505) 518-1965 or email at office@cliconstructions.com.',
   ),
 );
@@ -93,8 +100,8 @@ $faqs = array(
       </h1>
       <p class="mt-5 text-ink/70 text-lg leading-relaxed">
         Explore our full range of expert services, including renovations,
-        painting, stucco, remodels, and roofing, tailored specifically for
-        commercial and multi-housing properties.
+        painting, stucco, remodels, roofing, and flooring, tailored
+        specifically for commercial and multi-housing properties.
       </p>
     </div>
   </div>
@@ -120,7 +127,7 @@ $faqs = array(
             <div class="cli-card-media">
               <img
                 src="<?php echo esc_url(strpos($s['img'], '/') === 0 ? home_url($s['img']) : $live . $s['img']); ?>"
-                alt="<?php echo esc_attr($s['title'] . ' — CLI Constructions'); ?>"
+                alt="<?php echo esc_attr($s['title'] . ', CLI Construction'); ?>"
                 class="w-full aspect-[4/3] object-cover"
                 loading="lazy"
               >
@@ -215,8 +222,8 @@ $faqs = array(
       Expert Construction Solutions You Can <span class="text-brand">Count On</span>
     </h2>
     <p class="mt-6 text-silver-2 text-lg leading-relaxed max-w-2xl">
-      Partner with CLI Constructions for trusted commercial and multi-housing
-      renovations, roofing, and more &mdash; serving Albuquerque, Santa Fe, and
+      Partner with CLI Construction for trusted commercial and multi-housing
+      renovations, roofing, and more, serving Albuquerque, Santa Fe, and
       surrounding New Mexico communities with pride.
     </p>
     <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cli-cta mt-9 bg-brand !text-paper">

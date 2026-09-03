@@ -12,7 +12,7 @@ $sections = array(
   ),
   array(
     'title' => 'Use of This Website',
-    'body'  => 'This website is provided to present the services of CLI Constructions and to allow visitors to request estimates and contact our team. You agree to use the site only for lawful purposes and not to interfere with its operation, attempt to gain unauthorized access, or submit false or misleading information through our forms.',
+    'body'  => 'This website is provided to present the services of CLI Construction and to allow visitors to request estimates and contact our team. You agree to use the site only for lawful purposes and not to interfere with its operation, attempt to gain unauthorized access, or submit false or misleading information through our forms.',
   ),
   array(
     'title' => 'Estimates & Service Information',
@@ -24,7 +24,7 @@ $sections = array(
   ),
   array(
     'title' => 'Intellectual Property',
-    'body'  => 'The content of this website — including text, photographs, logos, and design — belongs to CLI Constructions or is used with permission. You may not copy, reproduce, or use this content for commercial purposes without our written consent.',
+    'body'  => 'The content of this website, including text, photographs, logos, and design, belongs to CLI Construction or is used with permission. You may not copy, reproduce, or use this content for commercial purposes without our written consent.',
   ),
   array(
     'title' => 'Third-Party Links',
@@ -32,7 +32,7 @@ $sections = array(
   ),
   array(
     'title' => 'Disclaimer & Limitation of Liability',
-    'body'  => 'This website is provided on an "as is" and "as available" basis. While we work to keep the information accurate and the site available, we do not guarantee that the site will be error-free or uninterrupted. To the fullest extent permitted by law, CLI Constructions is not liable for damages arising from the use of, or inability to use, this website.',
+    'body'  => 'This website is provided on an "as is" and "as available" basis. While we work to keep the information accurate and the site available, we do not guarantee that the site will be error-free or uninterrupted. To the fullest extent permitted by law, CLI Construction is not liable for damages arising from the use of, or inability to use, this website.',
   ),
   array(
     'title' => 'Governing Law',
@@ -44,7 +44,7 @@ $sections = array(
   ),
   array(
     'title' => 'Contact Us',
-    'body'  => 'If you have questions about these Terms and Conditions, contact CLI Constructions at (505) 518-1965 or office@cliconstructions.com.',
+    'body'  => 'If you have questions about these Terms and Conditions, contact CLI Construction at (505) 518-1965 or office@cliconstructions.com.',
   ),
 );
 ?>
@@ -67,7 +67,7 @@ $sections = array(
 <section class="bg-paper">
   <div class="max-w-3xl mx-auto px-4 py-16 lg:py-20">
     <p class="text-ink/70 text-lg leading-relaxed">
-      These Terms and Conditions govern the use of the CLI Constructions
+      These Terms and Conditions govern the use of the CLI Construction
       website. Please read them together with our
       <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="underline hover:text-brand-2">Privacy Policy</a>.
     </p>

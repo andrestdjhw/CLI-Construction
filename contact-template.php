@@ -7,23 +7,23 @@ get_header();
 
 $faqs = array(
   array(
-    'q' => 'What services does CLI Constructions offer?',
-    'a' => 'CLI Constructions specializes in renovations, painting, stucco, remodels, and roofing for multi-housing and commercial properties in Albuquerque and surrounding New Mexico areas.',
+    'q' => 'What services does CLI Construction offer?',
+    'a' => 'CLI Construction specializes in renovations, painting, stucco, remodels, roofing, and flooring for multi-housing and commercial properties in Albuquerque and surrounding New Mexico areas.',
   ),
   array(
-    'q' => 'Where does CLI Constructions provide services?',
-    'a' => 'We serve Albuquerque, Santa Fe, Los Lunas, Santa Rosa, and all surrounding areas throughout New Mexico.',
+    'q' => 'Where does CLI Construction provide services?',
+    'a' => 'We serve Albuquerque, Rio Rancho, Santa Fe, Los Lunas, Santa Rosa, and all surrounding areas throughout New Mexico.',
   ),
   array(
-    'q' => 'Is CLI Constructions a licensed and certified company?',
-    'a' => 'Yes, CLI Constructions is certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico.',
+    'q' => 'Is CLI Construction a licensed and certified company?',
+    'a' => 'Yes, CLI Construction is certified by the Better Business Bureau and affiliated with the Apartment Association of New Mexico.',
   ),
   array(
-    'q' => 'Can CLI Constructions handle commercial construction projects?',
+    'q' => 'Can CLI Construction handle commercial construction projects?',
     'a' => 'Absolutely. We focus primarily on commercial and multi-housing construction, offering expert renovations, roofing, and remodeling services.',
   ),
   array(
-    'q' => 'How can I request an estimate from CLI Constructions?',
+    'q' => 'How can I request an estimate from CLI Construction?',
     'a' => 'You can request a free estimate by contacting us via phone at (505) 518-1965 or email at office@cliconstructions.com.',
   ),
 );
@@ -88,7 +88,7 @@ $faqs = array(
           <p class="cli-spec text-silver">Hours</p>
           <p class="mt-1 text-paper text-lg leading-relaxed">
             Mon &ndash; Fri &middot; 9:00 AM &ndash; 5:00 PM<br>
-            Saturday &middot; 10:00 AM &ndash; 2:00 PM
+            Closed Saturday &amp; Sunday
           </p>
         </div>
         <div>
@@ -142,7 +142,7 @@ $faqs = array(
       Prefer to Talk It Through?
     </h2>
     <p class="mt-6 text-silver-2 text-lg leading-relaxed max-w-2xl">
-      Call us and tell us about your property &mdash; we&rsquo;ll walk you
+      Call us and tell us about your property, and we&rsquo;ll walk you
       through scope, timelines, and next steps.
     </p>
     <a href="tel:+15055181965" class="cli-cta mt-9 bg-brand !text-paper">

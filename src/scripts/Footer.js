@@ -167,9 +167,7 @@ function Footer() {
               <p className="mt-2.5 text-sm leading-relaxed">
                 Mon – Fri · 9:00 AM – 5:00 PM
                 <br />
-                Saturday · 10:00 AM – 2:00 PM
-                <br />
-                Sunday · Closed
+                Closed Weekends
               </p>
             </div>
 
